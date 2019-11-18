@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Comment CommentText="il peut y avoir bien plus ! Numéro de tel, adresse etc...">
+    <Position X="5.175" Y="13.081" Height="0.604" Width="2.811" />
+  </Comment>
+  <Comment CommentText="PROBLEMES AVEC NHIBERNATE SUR LES OVERRIDE !!!!!">
+    <Position X="1.402" Y="8.511" Height="0.291" Width="3.305" />
+  </Comment>
   <Class Name="Domain.Resume">
     <Position X="13.5" Y="3.25" Width="2.75" />
     <TypeIdentifier>
@@ -18,58 +24,50 @@
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Domain.TextElement">
-    <Position X="2.5" Y="3.25" Width="2.75" />
+  <Class Name="Domain.Text">
+    <Position X="3" Y="6.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAACAAQAIgAggCAkAAAAAAAACAAAAAAAAAAAAAACAAE=</HashCode>
-      <FileName>TextElement.cs</FileName>
+      <HashCode>AAACAAAAIAAggCAgAAAAAAAACAAAAAAAAAAAAAACAAE=</HashCode>
+      <FileName>Text.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Container" />
-    </ShowAsAssociation>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Domain.Paragraph">
-    <Position X="2.25" Y="7.75" Width="1.5" />
+    <Position X="2.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAIAAggCAkAAAAAAAACAAAAAAAAAAAAAACAAE=</HashCode>
       <FileName>Paragraph.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Title">
-    <Position X="4" Y="7.75" Width="1.5" />
+    <Position X="4.5" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Title.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Subtitle">
-    <Position X="5.75" Y="7.75" Width="1.5" />
+    <Position X="6.25" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Subtitle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Separator">
-    <Position X="7.75" Y="6.75" Width="1.5" />
+    <Position X="6.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Separator.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Container" />
-    </ShowAsAssociation>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Domain.Date">
-    <Position X="0.5" Y="7.75" Width="1.5" />
+    <Position X="1" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Date.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.WebParser">
-    <Position X="14.25" Y="2" Width="1.5" />
+    <Position X="18" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Web.cs</FileName>
@@ -77,19 +75,23 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Domain.PDFParser">
-    <Position X="16" Y="2" Width="1.5" />
+    <Position X="19.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PDFParser.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Domain.CareerElement">
-    <Position X="10.5" Y="6.75" Width="1.5" />
+  <Class Name="Domain.Element">
+    <Position X="5.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>CareerElement.cs</FileName>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Element.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Container" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Domain.ISelectable">
     <Position X="4.75" Y="0.5" Width="1.75" />
@@ -106,7 +108,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Domain.IParser">
-    <Position X="15" Y="0.5" Width="1.5" />
+    <Position X="18.75" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IParser.cs</FileName>

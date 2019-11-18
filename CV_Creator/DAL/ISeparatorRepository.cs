@@ -8,5 +8,8 @@ namespace DAL
 {
     public interface ISeparatorRepository
     {
+        void GetAll();
+        void UpdatePosition(Separator separator);
+        void Delete(Separator separator);
     }
 }

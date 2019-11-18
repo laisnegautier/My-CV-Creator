@@ -6,7 +6,7 @@ using Domain;
 
 namespace DAL
 {
-    public interface IParagraphRepository : ITextElementRepository
+    public interface IParagraphRepository : ITextRepository
     {
     }
 }

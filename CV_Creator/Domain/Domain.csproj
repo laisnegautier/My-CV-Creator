@@ -43,10 +43,11 @@
   <ItemGroup>
     <Compile Include="Container.cs" />
     <Compile Include="Date.cs" />
+    <Compile Include="Element.cs" />
     <Compile Include="IParser.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="PDFParser.cs" />
-    <Compile Include="TextElement.cs" />
+    <Compile Include="Text.cs" />
     <Compile Include="IDragAndDroppable.cs" />
     <Compile Include="ISelectable.cs" />
     <Compile Include="Paragraph.cs" />
@@ -60,8 +61,15 @@
   <ItemGroup>
     <None Include="Domain.cd" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Mapping\" />
+    <EmbeddedResource Include="Mapping\Container.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Date.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Paragraph.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Resume.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Separator.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Subtitle.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Title.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

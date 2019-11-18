@@ -6,7 +6,7 @@ using Domain;
 
 namespace DAL
 {
-    public interface IDateRepository : ITextElementRepository
+    public interface IDateRepository : ITextRepository
     {
     }
 }

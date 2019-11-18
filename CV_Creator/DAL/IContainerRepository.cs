@@ -10,6 +10,6 @@ namespace DAL
     {
         void GetAll();
         void Delete(Container container);
-        void ChangePosition(Container container);
+        void UpdatePosition(Container container);
     }
 }

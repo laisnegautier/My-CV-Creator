@@ -64,19 +64,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Repository.cs" />
+    <Content Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Compile Include="IContainerRepository.cs" />
     <Compile Include="IDateRepository.cs" />
     <Compile Include="IParagraphRepository.cs" />
     <Compile Include="IResumeRepository.cs" />
     <Compile Include="ISeparatorRepository.cs" />
     <Compile Include="ISubtitleRepository.cs" />
-    <Compile Include="ITextElementRepository.cs" />
+    <Compile Include="ITextRepository.cs" />
     <Compile Include="ITitleRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="MySql.Data.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="DAL.cd" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{671856e4-bfe5-4254-bc8c-5dbed7a80f44}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

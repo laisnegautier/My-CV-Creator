@@ -6,8 +6,10 @@ using Domain;
 
 namespace DAL
 {
-    public interface ITextElementRepository
+    public interface ITextRepository
     {
-        void ChangePosition(TextElement textElement);
+        void GetAll();
+        void UpdatePosition(Text text);
+        void Delete(Text text);
     }
 }
