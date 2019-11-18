@@ -8,5 +8,6 @@ namespace DAL
 {
     public interface ITextElementRepository
     {
+        void ChangePosition(TextElement textElement);
     }
 }

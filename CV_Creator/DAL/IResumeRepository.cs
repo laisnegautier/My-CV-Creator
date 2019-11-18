@@ -10,6 +10,7 @@ namespace DAL
     {
         void Save(Resume resume);
         void GetAll();
-        Resume CopyAll();
+        void Delete(Resume resume);
+        Resume Copy(Resume resume);
     }
 }
