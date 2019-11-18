@@ -8,9 +8,10 @@ namespace DAL
 {
     public interface IResumeRepository
     {
-        void Save(Resume resume);
         void GetAll();
+        void Create(Resume resume);
         void Delete(Resume resume);
         Resume Copy(Resume resume);
+        void Save(Resume resume);
     }
 }
