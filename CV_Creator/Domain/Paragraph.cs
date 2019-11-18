@@ -5,7 +5,11 @@ using System.Text;
 
 namespace Domain
 {
-    public class Paragraph : Element
+    public class Paragraph : TextElement
     {
+        public Paragraph()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

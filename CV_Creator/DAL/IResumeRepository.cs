@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Domain
+namespace DAL
 {
-    public interface ISelectable
+    public interface IResumeRepository
     {
-        bool IsSelected();
     }
 }

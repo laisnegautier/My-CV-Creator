@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain
 {
-    public abstract class Element : IDragAndDroppable
+    public abstract class TextElement : IDragAndDroppable
     {
         #region Properties
 
@@ -30,7 +30,7 @@ namespace Domain
 
         #region Constructors
 
-        public Element()
+        public TextElement()
         {
             // empty
         }

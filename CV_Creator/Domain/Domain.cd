@@ -1,17 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Comment CommentText="Resume : IEnumerable ?&#xD;&#xA;(foreach resume: tostringShort)">
-    <Position X="9.604" Y="6.677" Height="0.75" Width="1.7" />
-  </Comment>
   <Class Name="Domain.Resume">
-    <Position X="9.5" Y="4" Width="2.75" />
+    <Position X="11" Y="3.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAACAIAAAAAQAEAEAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
       <FileName>Resume.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Container">
-    <Position X="5.25" Y="4" Width="2.75" />
+    <Position X="7" Y="3.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAkAAAAAAACCAAAAAAAAAAAAAgAAAA=</HashCode>
       <FileName>Container.cs</FileName>
@@ -21,11 +18,11 @@
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Domain.Element">
-    <Position X="1.25" Y="3.75" Width="2.75" />
+  <Class Name="Domain.TextElement">
+    <Position X="2.5" Y="3.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAACAAQAIgAggCAkAAAAAAAACAAAAAAAAAAAAAACAAE=</HashCode>
-      <FileName>Element.cs</FileName>
+      <FileName>TextElement.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Container" />
@@ -33,45 +30,79 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Domain.Paragraph">
-    <Position X="1" Y="7.75" Width="1.5" />
+    <Position X="2.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Paragraph.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Title">
-    <Position X="2.75" Y="7.75" Width="1.5" />
+    <Position X="4" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Title.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Subtitle">
-    <Position X="4.5" Y="7.75" Width="1.5" />
+    <Position X="5.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Subtitle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Separator">
-    <Position X="6.25" Y="7.75" Width="1.5" />
+    <Position X="7.75" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Separator.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Container" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="Domain.ISelectable">
-    <Position X="4.5" Y="0.75" Width="1.5" />
+  <Class Name="Domain.Date">
+    <Position X="0.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Date.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.WebParser">
+    <Position X="14.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.PDFParser">
+    <Position X="16" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PDFParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Domain.ISelectable">
+    <Position X="4.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ISelectable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Domain.IDragAndDroppable">
-    <Position X="4.25" Y="2" Width="1.75" />
+    <Position X="4.75" Y="1.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IDragAndDroppable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Domain.IParser">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IParser.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

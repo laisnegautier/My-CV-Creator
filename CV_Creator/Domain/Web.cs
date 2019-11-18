@@ -5,8 +5,7 @@ using System.Text;
 
 namespace Domain
 {
-    public interface ISelectable
+    public class WebParser : IParser
     {
-        bool IsSelected();
     }
 }

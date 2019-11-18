@@ -5,7 +5,11 @@ using System.Text;
 
 namespace Domain
 {
-    public class Date : Element
+    public class Date : TextElement
     {
+        public Date()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
