@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Domain
 {
-    public interface IDragAndDroppable : ISelectable
+    public interface IDraggable : ISelectable
     {
+        bool IsDraggable { get; set; }
     }
 }

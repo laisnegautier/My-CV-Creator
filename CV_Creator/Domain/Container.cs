@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain
 {
-    public class Container : IDragAndDroppable
+    public class Container : IDraggable
     {
         #region Properties
 
