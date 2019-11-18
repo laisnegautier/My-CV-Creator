@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Domain
 {
-    public class Separator
+    public class Separator : IDragAndDroppable
     {
+        public virtual Container Container { get; set; }
     }
 }

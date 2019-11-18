@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain
 {
-    public class Paragraph : Element
+    public class Date : Element
     {
     }
 }

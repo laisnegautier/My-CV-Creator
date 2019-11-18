@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain
 {
-    public class Subtitle
+    public class Subtitle : Element
     {
     }
 }
