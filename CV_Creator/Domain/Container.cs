@@ -10,6 +10,7 @@ namespace Domain
         #region Properties
 
         public virtual int Id { get; set; }
+        public virtual int Name { get; set; }
         public virtual Resume Resume { get; set; }
         public virtual int Position { get; set; } // position in the resume
 
