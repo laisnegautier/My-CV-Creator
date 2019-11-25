@@ -4,7 +4,7 @@
     <Position X="5.175" Y="13.081" Height="0.604" Width="2.811" />
   </Comment>
   <Comment CommentText="PROBLEMES AVEC NHIBERNATE SUR LES OVERRIDE !!!!!">
-    <Position X="1.402" Y="8.511" Height="0.291" Width="3.305" />
+    <Position X="0.964" Y="8.969" Height="0.291" Width="3.305" />
   </Comment>
   <Class Name="Domain.Resume">
     <Position X="13.5" Y="3.25" Width="2.75" />
@@ -32,21 +32,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Paragraph">
-    <Position X="2.75" Y="10.25" Width="1.5" />
+    <Position X="2.75" Y="10.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAACAAAAIAAggCAkAAAAAAAACAAAAAAAAAAAAAACAAE=</HashCode>
       <FileName>Paragraph.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Title">
-    <Position X="4.5" Y="10.25" Width="1.5" />
+    <Position X="5.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Title.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Subtitle">
-    <Position X="6.25" Y="10.25" Width="1.5" />
+    <Position X="7.5" Y="10.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Subtitle.cs</FileName>
@@ -67,7 +67,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.WebParser">
-    <Position X="18" Y="8.25" Width="1.5" />
+    <Position X="12.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Web.cs</FileName>
@@ -75,7 +75,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Domain.PDFParser">
-    <Position X="19.75" Y="8.25" Width="1.5" />
+    <Position X="14.25" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PDFParser.cs</FileName>
@@ -94,21 +94,21 @@
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Domain.ISelectable">
-    <Position X="4.75" Y="0.5" Width="1.75" />
+    <Position X="4.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ISelectable.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Domain.IDragAndDroppable">
-    <Position X="4.75" Y="1.75" Width="1.75" />
+  <Interface Name="Domain.IDraggable">
+    <Position X="5" Y="1.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
       <FileName>IDragAndDroppable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Domain.IParser">
-    <Position X="18.75" Y="6.75" Width="1.5" />
+    <Position X="13.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IParser.cs</FileName>

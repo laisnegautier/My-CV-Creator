@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain
 {
-    public abstract class Element : IDragAndDroppable
+    public abstract class Element : IDraggable
     {
         public virtual Container Container
         {

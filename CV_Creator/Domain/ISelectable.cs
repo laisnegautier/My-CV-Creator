@@ -7,6 +7,6 @@ namespace Domain
 {
     public interface ISelectable
     {
-        bool IsSelected();
+        bool IsSelected { get; set; }
     }
 }
