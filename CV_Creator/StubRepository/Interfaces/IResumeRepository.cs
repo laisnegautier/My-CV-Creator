@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Domain;
 
-namespace DAL
+namespace StubRepository
 {
     public interface IResumeRepository
     {
