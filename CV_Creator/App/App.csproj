@@ -47,25 +47,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Editor.cs">
+    <Compile Include="View\EditorView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Editor.Designer.cs">
-      <DependentUpon>Editor.cs</DependentUpon>
+    <Compile Include="View\EditorView.Designer.cs">
+      <DependentUpon>EditorView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Opening.cs">
+    <Compile Include="View\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Opening.Designer.cs">
-      <DependentUpon>Opening.cs</DependentUpon>
+    <Compile Include="View\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Editor.resx">
-      <DependentUpon>Editor.cs</DependentUpon>
+    <EmbeddedResource Include="View\EditorView.resx">
+      <DependentUpon>EditorView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Opening.resx">
-      <DependentUpon>Opening.cs</DependentUpon>
+    <EmbeddedResource Include="View\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,16 +89,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{e4c79e3b-3919-4d84-b445-3be490073845}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{671856e4-bfe5-4254-bc8c-5dbed7a80f44}</Project>
-      <Name>Domain</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

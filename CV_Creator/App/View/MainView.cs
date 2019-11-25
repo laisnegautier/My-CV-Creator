@@ -16,5 +16,10 @@ namespace App
         {
             InitializeComponent();
         }
+
+        private void dragPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
