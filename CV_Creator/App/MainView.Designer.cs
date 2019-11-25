@@ -1,6 +1,6 @@
 ﻿namespace App
 {
-    partial class Opening
+    partial class MainView
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace App
 {
-    public partial class Opening : Form
+    public partial class MainView : Form
     {
-        public Opening()
+        public MainView()
         {
             InitializeComponent();
         }
