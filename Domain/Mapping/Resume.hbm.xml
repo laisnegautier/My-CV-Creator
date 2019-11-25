@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain"
+                   namespace="Domain">
+
+  <class name="Resume" table="tbl_resume">
+
+    <id name="Id" column="resume_id" type="int">
+      <generator class="native"></generator>
+    </id>
+
+    <property name="Title" column="resume_title" not-null="true"/>
+    <property name="Save" column="resume_save" not-null="true"/>
+    <property name="Favorite" column="resume_favorite" not-null="true"/>
+    <property name="LastModification" column="resume_last_modification" not-null="true"/>
+
+    <!-- list pour conserver l'ordre -->
+    <list name = "Containers" cascade = "all-delete-orphan" >
+      <key column = "resume_id" />
+      <index column = "resume_index" />
+      <one-to-many class="Container"/>
+    </list>
+    
+  </class>
+
+</hibernate-mapping>
