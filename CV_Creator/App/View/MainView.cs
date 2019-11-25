@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using App.View;
 
 namespace App
 {
-    public partial class MainView : Form
+    public partial class MainView : Form , IMainView
     {
         private bool mouseDown;
         private Point lastLocation;
@@ -20,6 +21,7 @@ namespace App
             InitializeComponent();
         }
 
+        #region FonctionnalitiesButton
         private void CloseButton_Click(object sender, EventArgs e)
         {
             Close();
@@ -56,5 +58,6 @@ namespace App
         {
             mouseDown = false;
         }
+        #endregion
     }
 }

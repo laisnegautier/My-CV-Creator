@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.dragPanel = new System.Windows.Forms.Panel();
             this.cvListView = new System.Windows.Forms.ListView();
             this.buttonPanel = new System.Windows.Forms.Panel();
@@ -69,7 +70,7 @@
             this.cvListView.HideSelection = false;
             this.cvListView.Location = new System.Drawing.Point(44, 51);
             this.cvListView.Name = "cvListView";
-            this.cvListView.Size = new System.Drawing.Size(857, 347);
+            this.cvListView.Size = new System.Drawing.Size(857, 245);
             this.cvListView.TabIndex = 9;
             this.cvListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -84,9 +85,9 @@
             this.buttonPanel.Controls.Add(this.button3);
             this.buttonPanel.Controls.Add(this.button2);
             this.buttonPanel.Controls.Add(this.button1);
-            this.buttonPanel.Location = new System.Drawing.Point(0, 424);
+            this.buttonPanel.Location = new System.Drawing.Point(0, 322);
             this.buttonPanel.Name = "buttonPanel";
-            this.buttonPanel.Size = new System.Drawing.Size(949, 188);
+            this.buttonPanel.Size = new System.Drawing.Size(949, 185);
             this.buttonPanel.TabIndex = 10;
             // 
             // button6
@@ -157,6 +158,8 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
@@ -216,7 +219,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(949, 610);
+            this.ClientSize = new System.Drawing.Size(949, 508);
             this.Controls.Add(this.buttonPanel);
             this.Controls.Add(this.cvListView);
             this.Controls.Add(this.dragPanel);
