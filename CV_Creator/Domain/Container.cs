@@ -5,14 +5,12 @@ using System.Text;
 
 namespace Domain
 {
-    public class Container : IDraggable
+    public class Container
     {
         #region Properties
 
         public virtual int Id { get; set; }
         public virtual int Name { get; set; }
-        public virtual Resume Resume { get; set; }
-        public virtual int Position { get; set; } // position in the resume
 
         // Style properties
         public virtual string BackgroundColor { get; set; }

@@ -8,8 +8,8 @@ namespace DAL
 {
     public interface IContainerRepository
     {
-        void GetAll();
-        void Delete(Container container);
-        void UpdatePosition(Container container);
+        List<Container> GetAll();
+        //void Delete(Container container);
+        //void UpdatePosition(Container container);
     }
 }
