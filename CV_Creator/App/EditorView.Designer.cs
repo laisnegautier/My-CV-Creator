@@ -1,6 +1,6 @@
 ﻿namespace App
 {
-    partial class Editor
+    partial class EditorView
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
