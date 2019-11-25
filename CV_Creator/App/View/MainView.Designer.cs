@@ -142,6 +142,7 @@
             // 
             // closeButton
             // 
+            this.closeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
             this.closeButton.FlatAppearance.BorderSize = 0;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -152,9 +153,11 @@
             this.closeButton.TabIndex = 0;
             this.closeButton.Text = "X";
             this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // maximizeButton
             // 
+            this.maximizeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.maximizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
             this.maximizeButton.FlatAppearance.BorderSize = 0;
             this.maximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -165,9 +168,11 @@
             this.maximizeButton.TabIndex = 1;
             this.maximizeButton.Text = "[]";
             this.maximizeButton.UseVisualStyleBackColor = false;
+            this.maximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
             // 
             // minimizeButton
             // 
+            this.minimizeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
             this.minimizeButton.FlatAppearance.BorderSize = 0;
             this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -178,6 +183,7 @@
             this.minimizeButton.TabIndex = 2;
             this.minimizeButton.Text = "_";
             this.minimizeButton.UseVisualStyleBackColor = false;
+            this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             // 
             // MainView
             // 
