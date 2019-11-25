@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
 
 namespace App
 {
@@ -16,6 +17,10 @@ namespace App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Setting up the Presenter and its dependencies
+            IResumeRepository resumeRepo = new StubRepository();
+
             Application.Run(new MainView());
         }
     }
