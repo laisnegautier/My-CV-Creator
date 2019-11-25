@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace App
 {
-    public partial class Editor : Form
+    public partial class EditorView : Form
     {
-        public Editor()
+        public EditorView()
         {
             InitializeComponent();
         }
