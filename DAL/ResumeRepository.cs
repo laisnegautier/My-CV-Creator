@@ -12,5 +12,13 @@ namespace DAL
         {
             return Session.Query<Resume>().ToList();
         }
+        public Resume GetById(int id)
+        {
+            return Session.Get<Resume>(id);
+        }
+        public List<Container> GetContainers()
+        {
+            return null;
+        }
     }
 }

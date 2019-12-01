@@ -26,7 +26,7 @@
   <Class Name="DAL.ParagraphRepository">
     <Position X="7.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAIA=</HashCode>
       <FileName>ParagraphRepository.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -38,17 +38,10 @@
       <FileName>IResumeRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="DAL.IContainerRepository">
-    <Position X="9.25" Y="0.75" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
-      <FileName>IContainerRepository.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="DAL.IParagraphRepository">
     <Position X="5.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAIA=</HashCode>
       <FileName>IParagraphRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>

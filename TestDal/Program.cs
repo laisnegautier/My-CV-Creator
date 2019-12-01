@@ -49,6 +49,8 @@ namespace TestDal
             {
                 Console.WriteLine(p.Content);
             }
+
+            Console.WriteLine("test : " + testParagraph.GetById(3));
         }
     }
 }

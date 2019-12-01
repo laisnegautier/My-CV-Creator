@@ -9,6 +9,7 @@ namespace DAL
     public interface IContainerRepository
     {
         List<Container> GetAll();
+        Container GetById(int id);
         //void Delete(Container container);
         //void UpdatePosition(Container container);
     }

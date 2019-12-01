@@ -12,5 +12,9 @@ namespace DAL
         {
             return Session.Query<Container>().ToList();
         }
+        public Container GetById(int id)
+        {
+            return Session.Get<Container>(id);
+        }
     }
 }

@@ -12,5 +12,10 @@ namespace DAL
         {
             return Session.Query<Paragraph>().ToList();
         }
+
+        public Paragraph GetById(int id)
+        {
+            return Session.Get<Paragraph>(id);
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace DAL
     public interface IParagraphRepository
     {
         List<Paragraph> GetAll();
+        Paragraph GetById(int id);
     }
 }
