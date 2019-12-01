@@ -22,13 +22,12 @@ namespace TestDal
                 Console.WriteLine(r.Title);
                 Console.WriteLine(r.Containers.Count());
 
-                // Attention la faut ABSOLUMENT PARTIR DE 1 car r.Containers[0] = null : il n'y a pas d'index en 1 pour mysql
-                for(int i = 1; i < r.Containers.Count; i++)
+                for(int i = 0; i < r.Containers.Count; i++)
                     Console.WriteLine("Valeur name : " + r.Containers[i].Name);
             }
 
             Console.WriteLine("-----------------------------------------------");
-            // Marche pas
+
             IContainerRepository testContainer;
             testContainer = new ContainerRepository();
             List<Container> Containers = testContainer.GetAll();
@@ -37,6 +36,18 @@ namespace TestDal
             foreach (Container c in Containers)
             {
                 Console.WriteLine(c.Name);
+            }
+
+            Console.WriteLine("-----------------------------------------------");
+
+            IParagraphRepository testParagraph;
+            testParagraph = new ParagraphRepository();
+            List<Paragraph> Paragraphs = testParagraph.GetAll();
+
+            Console.WriteLine(Paragraphs.Count);
+            foreach (Paragraph p in Paragraphs)
+            {
+                Console.WriteLine(p.Content);
             }
         }
     }

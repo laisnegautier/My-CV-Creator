@@ -3,7 +3,7 @@
   <Class Name="Domain.Container">
     <Position X="2.75" Y="1.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAEAAAAAAQCCAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAEAAAQAAQCCAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Container.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -12,6 +12,20 @@
     <TypeIdentifier>
       <HashCode>AAACAIAAAAAQAEAEAAAAAAAAAAAAAAAAAAiAAAAAAAA=</HashCode>
       <FileName>Resume.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Element">
+    <Position X="11.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Element.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Paragraph">
+    <Position X="11.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Paragraph.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
