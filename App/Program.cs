@@ -1,9 +1,9 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAL;
 
 namespace App
 {
@@ -19,7 +19,7 @@ namespace App
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Setting up the Presenter and its dependencies
-            IResumeRepository resumeRepo = new StubRepository();
+            IResumeRepository resumeRepo = (IResumeRepository)new StubRepository.ResumeRepository();
 
             Application.Run(new MainView());
         }

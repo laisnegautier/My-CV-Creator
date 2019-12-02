@@ -17,3 +17,7 @@ C:\Users\glaisne\Downloads\projet-gl-audrix_laisne\DAL\bin\Debug\Remotion.Linq.E
 C:\Users\glaisne\Downloads\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\glaisne\Downloads\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.dll
 C:\Users\glaisne\Downloads\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.pdb
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.dll
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.pdb

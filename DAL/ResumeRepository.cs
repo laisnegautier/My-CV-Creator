@@ -8,6 +8,21 @@ namespace DAL
 {
     public class ResumeRepository : Repository, IResumeRepository
     {
+        public Resume Copy(Resume resume)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Create(Resume resume)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Resume resume)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Resume> GetAll()
         {
             return Session.Query<Resume>().ToList();
@@ -21,6 +36,11 @@ namespace DAL
         {
             Session.SaveOrUpdate(resume);
             Session.Flush();
+        }
+
+        void IResumeRepository.GetAll()
+        {
+            throw new NotImplementedException();
         }
     }
 }
