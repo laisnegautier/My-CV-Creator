@@ -17,6 +17,8 @@ namespace Domain
         // Style properties
         public virtual string BackgroundColor { get; set; }
         public virtual string BorderColor { get; set; } // null means no border
+        public bool IsDraggable { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool IsSelected { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         #endregion
 
