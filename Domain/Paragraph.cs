@@ -16,10 +16,10 @@ namespace Domain
 
         #region Constructors
 
-        public Paragraph()
-        {
-            // empty
-        }
+        /// <summary>
+        /// Constructeur sans paramètre nécesessaire pour NHibernate
+        /// </summary>
+        public Paragraph() { }
 
         #endregion
 

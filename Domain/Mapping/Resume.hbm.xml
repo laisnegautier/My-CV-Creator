@@ -13,7 +13,8 @@
     <property name="Title" column="resume_title" not-null="true"/>
     <property name="Save" column="resume_save" not-null="true"/>
     <property name="Favorite" column="resume_favorite" not-null="true"/>
-    <property name="LastModification" column="resume_last_modification" not-null="true"/>
+    <!-- Local DateTime pour préciser le format de la date -->
+    <property name="LastModification" column="resume_last_modification" type="LocalDateTime" not-null="true"/>
 
     <!-- list pour conserver l'ordre -->
     <list name = "Containers" cascade = "all-delete-orphan" >

@@ -23,10 +23,10 @@ namespace Domain
 
         #region Constructors
 
-        public Container()
-        {
-            // empty
-        }
+        /// <summary>
+        /// Constructeur sans paramètre nécesessaire pour NHibernate
+        /// </summary>
+        public Container() { }
 
         #endregion
 

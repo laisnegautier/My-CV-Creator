@@ -1,8 +1,8 @@
 ﻿
 insert into tbl_resume values
-(1, 'Mon_CV1', false, true, 'a faire');
+(1, 'Mon_CV1', false, true, '0000-00-00 00:00');
 insert into tbl_resume values
-(2, 'Mon_CV2', false, true, 'a faireereee');
+(2, 'Mon_CV2', false, true, '0000-00-00 00:00');
 
 insert into tbl_container values
 (1, 'container11', 'fond_bleu', 'bordure_rouge', 1, 0);

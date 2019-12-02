@@ -44,7 +44,7 @@ namespace DAL.Tests
             Resume monResume = new Resume("essai");
             //monResume.Id = 3;
             monResume.Save = true;
-            monResume.LastModification = "now";
+            monResume.LastModification = DateTime.Now;
             monResume.Favorite = false;
 
             IResumeRepository testResume;
@@ -55,6 +55,25 @@ namespace DAL.Tests
 
             Assert.IsNotNull(resumeFromDB);
             Assert.IsTrue(resumeFromDB.Title == "essai");
+        }
+
+        [TestMethod()]
+        public void UpdateTest()
+        {
+            Resume monResume = new Resume("bleubleu");
+            monResume.Id = 3;
+            monResume.Save = false;
+            monResume.LastModification = DateTime.Now;
+            monResume.Favorite = false;
+
+            IResumeRepository testResume;
+            testResume = new ResumeRepository();
+            testResume.Save(monResume);
+
+            Resume resumeFromDB = testResume.GetById(3);
+
+            Assert.IsNotNull(resumeFromDB);
+            Assert.IsTrue(resumeFromDB.Title == "bleubleu");
         }
 
         /* Marche
