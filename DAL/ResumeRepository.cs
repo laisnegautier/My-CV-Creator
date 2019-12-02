@@ -12,6 +12,7 @@ namespace DAL
         {
             return Session.Query<Resume>().ToList();
         }
+
         public Resume GetById(int id)
         {
             return Session.Get<Resume>(id);
@@ -19,7 +20,8 @@ namespace DAL
 
         public void Save(Resume resume)
         {
-            resume.Save = true;
+
+            resume.Save = true; // doit passer en false lors d'une modification dans le CV
             Session.SaveOrUpdate(resume);
             Session.Flush();
         }

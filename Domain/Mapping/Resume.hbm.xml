@@ -6,7 +6,10 @@
 
   <class name="Resume" table="tbl_resume">
 
-    <id name="Id" column="resume_id" type="int">
+    <!-- Le 'unsaved-value="0"' permet de faire des verifications si l'objet existe deja dans la BDD ou non
+    car on ne peut pas le savoir directement avec SaveOrUpdate(Object obj) method. 
+    cf. ResumeRepository pour l'utilite donc -->
+    <id name="Id" column="resume_id" type="int" unsaved-value="0">
       <generator class="native"></generator>
     </id>
 
@@ -14,6 +17,7 @@
     <property name="Save" column="resume_save" not-null="true"/>
     <property name="Favorite" column="resume_favorite" not-null="true"/>
     <!-- Local DateTime pour préciser le format de la date -->
+    <property name="Creation" column="resume_creation" type="LocalDateTime" not-null="true"/>
     <property name="LastModification" column="resume_last_modification" type="LocalDateTime" not-null="true"/>
 
     <!-- list pour conserver l'ordre -->

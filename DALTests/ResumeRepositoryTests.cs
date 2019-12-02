@@ -51,7 +51,7 @@ namespace DAL.Tests
             testResume = new ResumeRepository();
             testResume.Save(monResume);
             
-            Resume resumeFromDB = testResume.GetById(3);
+            Resume resumeFromDB = testResume.GetById(5);
 
             Assert.IsNotNull(resumeFromDB);
             Assert.IsTrue(resumeFromDB.Title == "essai");
@@ -65,6 +65,12 @@ namespace DAL.Tests
             monResume.Save = false;
             monResume.LastModification = DateTime.Now;
             monResume.Favorite = false;
+
+            /* PB AVEC 1ere CREATION
+            // Pour conserver la date de creation
+            if (monResume.Id == default) monResume.Creation = DateTime.Now;
+            else monResume.Creation = DateTime.Now;
+            */
 
             IResumeRepository testResume;
             testResume = new ResumeRepository();

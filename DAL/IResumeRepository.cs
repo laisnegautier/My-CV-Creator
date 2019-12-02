@@ -14,6 +14,5 @@ namespace DAL
 
         //void Delete(Resume resume);
         //Resume Copy(Resume resume);
-        //void Save(Resume resume);
     }
 }
