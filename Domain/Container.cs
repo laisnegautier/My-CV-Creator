@@ -5,20 +5,20 @@ using System.Text;
 
 namespace Domain
 {
-    public class Container : IDraggable
+    public class Container
     {
         #region Properties
 
         public virtual int Id { get; set; }
-        public virtual int Name { get; set; }
-        public virtual Resume Resume { get; set; }
-        public virtual int Position { get; set; } // position in the resume
+        public virtual string Name { get; set; }
 
         // Style properties
         public virtual string BackgroundColor { get; set; }
-        public virtual string BorderColor { get; set; } // null means no border
-        public bool IsDraggable { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool IsSelected { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public virtual string BorderColor { get; set; }
+
+        public virtual IList<Element> Elements { get; set; }
+
 
         #endregion
 

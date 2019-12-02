@@ -6,7 +6,9 @@ using Domain;
 
 namespace DAL
 {
-    public interface IParagraphRepository : ITextRepository
+    public interface IParagraphRepository
     {
+        List<Paragraph> GetAll();
+        Paragraph GetById(int id);
     }
 }

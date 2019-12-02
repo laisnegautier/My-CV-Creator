@@ -13,7 +13,8 @@ namespace Domain
         public virtual string Title { get; set; }
         public virtual bool Save { get; set; } // To check if the current resume is saved before quitting the form
         public virtual bool Favorite { get; set; }
-        public virtual DateTime LastModification { get; set; }
+        public virtual string LastModification { get; set; }
+        public virtual IList<Container> Containers { get; set; }
 
         #endregion
 

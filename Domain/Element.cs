@@ -5,18 +5,21 @@ using System.Text;
 
 namespace Domain
 {
-    public abstract class Element : IDraggable
+    public abstract class Element
     {
-        public virtual Container Container
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        #region Properties
 
-            set
-            {
-            }
+        public virtual int Id { get; set; }
+
+        #endregion
+
+        #region Methods
+
+        public override string ToString()
+        {
+            throw new System.NotImplementedException();
         }
+
+        #endregion
     }
 }
