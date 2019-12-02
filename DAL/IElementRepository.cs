@@ -8,6 +8,7 @@ namespace DAL
 {
     public interface IElementRepository
     {
+        //List<Element> GetFavoriteOnes();
         Element GetById(int id);
 
         void Delete(Element element);

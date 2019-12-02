@@ -104,7 +104,7 @@ namespace DAL.Tests
         {
             IResumeRepository testResume;
             testResume = new ResumeRepository();
-
+ 
             Resume resumeToDelete = testResume.GetById(7);
 
             testResume.Delete(resumeToDelete);
