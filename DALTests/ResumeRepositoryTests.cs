@@ -39,7 +39,36 @@ namespace DAL.Tests
         }
 
         [TestMethod()]
-        public void SaveTest()
+        public void GetTheLastFiveTest()
+        {
+            IResumeRepository testResume;
+            testResume = new ResumeRepository();
+
+            List<Resume> Resumes = testResume.GetTheLastFive();
+
+            Assert.AreEqual(Resumes.Count, 5);
+            Assert.IsTrue(Resumes[0].Title == "essai");
+            Assert.IsTrue(Resumes[1].Title == "test");
+            Assert.IsTrue(Resumes[2].Title == "test");
+            Assert.IsTrue(Resumes[3].Title == "bleubleu");
+            Assert.IsTrue(Resumes[4].Title == "essai");
+        }
+
+        [TestMethod()]
+        public void GetTheFavoriteOnesTest()
+        {
+            IResumeRepository testResume;
+            testResume = new ResumeRepository();
+
+            List<Resume> Resumes = testResume.GetTheFavoriteOnes();
+
+            Assert.AreEqual(Resumes.Count, 2);
+            Assert.IsTrue(Resumes[0].Title == "Mon_CV1");
+            Assert.IsTrue(Resumes[1].Title == "Mon_CV2");
+        }
+
+        [TestMethod()]
+        public void InsertTest()
         {
             Resume monResume = new Resume("essai");
 
@@ -47,7 +76,7 @@ namespace DAL.Tests
             testResume = new ResumeRepository();
             testResume.Save(monResume);
             
-            Resume resumeFromDB = testResume.GetById(7);
+            Resume resumeFromDB = testResume.GetById(8);
 
             Assert.IsNotNull(resumeFromDB);
             Assert.IsTrue(resumeFromDB.Title == "essai");

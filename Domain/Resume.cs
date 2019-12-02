@@ -15,7 +15,7 @@ namespace Domain
         public virtual bool Favorite { get; set; }
         
         public virtual DateTime Creation { get; set; }
-        public virtual DateTime LastModification { get; set; }
+        public virtual DateTime LastUpdate { get; set; }
         public virtual IList<Container> Containers { get; set; }
 
         #endregion

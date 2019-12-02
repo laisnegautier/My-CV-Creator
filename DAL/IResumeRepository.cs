@@ -10,6 +10,9 @@ namespace DAL
     {
         List<Resume> GetAll();
         Resume GetById(int id);
+        List<Resume> GetTheLastFive();
+        List<Resume> GetTheFavoriteOnes();
+
         void Save(Resume resume);
 
         //void Delete(Resume resume);

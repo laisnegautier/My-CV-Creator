@@ -8,7 +8,7 @@ create table tbl_resume (
 	resume_save boolean not null,
 	resume_favorite boolean not null,
 	resume_creation datetime not null,
-	resume_last_modification datetime not null
+	resume_last_update datetime not null
 );
 
 create table tbl_container (
