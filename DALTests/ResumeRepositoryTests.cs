@@ -91,7 +91,7 @@ namespace DAL.Tests
             Resume resumeToModif = testResume.GetById(7);
             resumeToModif.Title = "test";
             
-            // On update une ligne deja existante
+            // Update an already existing resume
             testResume.Save(resumeToModif);
 
             Resume resumeModified = testResume.GetById(7);
@@ -100,33 +100,28 @@ namespace DAL.Tests
             Assert.IsTrue(resumeModified.Title == resumeToModif.Title);
         }
 
-        /* Marche
+        [TestMethod()]
+        public void DeleteTest()
+        {
+            IResumeRepository testResume;
+            testResume = new ResumeRepository();
 
-    Console.WriteLine("-----------------------------------------------");
+            Resume resumeToDelete = testResume.GetById(7);
 
-            IContainerRepository testContainer;
-    testContainer = new ContainerRepository();
-    List<Container> Containers = testContainer.GetAll();
+            testResume.Delete(resumeToDelete);
 
-    Console.WriteLine(Containers.Count);
-            foreach (Container c in Containers)
-            {
-                Console.WriteLine(c.Name);
-            }
+            Resume resumeToDeleteCheck = testResume.GetById(7);
 
-Console.WriteLine("-----------------------------------------------");
+            Assert.IsNull(resumeToDeleteCheck);
+        }
 
-            IParagraphRepository testParagraph;
-testParagraph = new ParagraphRepository();
-List<Paragraph> Paragraphs = testParagraph.GetAll();
-
-Console.WriteLine(Paragraphs.Count);
-            foreach (Paragraph p in Paragraphs)
-            {
-                Console.WriteLine(p.Content);
-            }
-
-            Console.WriteLine("test : " + testParagraph.GetById(3));
-            */
+        /** 
+         * TO DOOOOOOOO
+         */
+        [TestMethod()]
+        public void DeleteInCascadeTest()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

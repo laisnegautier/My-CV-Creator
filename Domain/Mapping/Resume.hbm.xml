@@ -20,10 +20,12 @@
     <property name="Creation" column="resume_creation" type="LocalDateTime" not-null="true"/>
     <property name="LastUpdate" column="resume_last_update" type="LocalDateTime" not-null="true"/>
 
-    <!-- list pour conserver l'ordre -->
-    <list name = "Containers" cascade = "all-delete-orphan" >
-      <key column = "resume_id" />
-      <index column = "resume_index" />
+    <!-- 'list' : to keep the container order 
+    'cascade="all-delete-orphan"' : when a resume is saved/updated/deleted, all the containers inside it are too. 
+    Same for the elements inside containers -->
+    <list name="Containers" cascade="all-delete-orphan" >
+      <key column="resume_id" />
+      <index column="resume_index" />
       <one-to-many class="Container"/>
     </list>
     

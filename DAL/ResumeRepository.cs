@@ -34,6 +34,11 @@ namespace DAL
                 .ToList();
         }
 
+        /// <summary>
+        /// Saving a resume, i.e. insert or update it in the DB.
+        /// NB : it does it in cascade, so every containers and elements in it are insert/updated too
+        /// </summary>
+        /// <param name="resume"></param>
         public void Save(Resume resume)
         {
             // In case of an update or insert that fails : it avoids to declare the Resume as saved when it may be not
@@ -54,6 +59,12 @@ namespace DAL
             {
                 throw new Exception();
             }
+        }
+
+        public void Delete(Resume resume)
+        {
+            Session.Delete(resume);
+            Session.Flush();
         }
     }
 }

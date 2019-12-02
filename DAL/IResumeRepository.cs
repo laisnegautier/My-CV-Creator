@@ -14,6 +14,7 @@ namespace DAL
         List<Resume> GetTheFavoriteOnes();
 
         void Save(Resume resume);
+        void Delete(Resume resume);
 
         //void Delete(Resume resume);
         //Resume Copy(Resume resume);
