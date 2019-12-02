@@ -19,6 +19,7 @@ namespace DAL
 
         public void Save(Resume resume)
         {
+            resume.Save = true;
             Session.SaveOrUpdate(resume);
             Session.Flush();
         }

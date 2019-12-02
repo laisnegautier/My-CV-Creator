@@ -12,6 +12,7 @@
     </property>
     <property name="connection.connection_string">
       Server=localhost;Database=bdd_projet_glog;User ID=pseudo;Password=secret;
+      Convert Zero Datetime=true;
     </property>
     <property name="dialect">
       NHibernate.Dialect.MySQL5Dialect

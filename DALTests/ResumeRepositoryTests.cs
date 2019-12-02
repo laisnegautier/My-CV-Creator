@@ -31,11 +31,11 @@ namespace DAL.Tests
             testResume = new ResumeRepository();
             Resume monResume1 = testResume.GetById(1);
             Resume monResume2 = testResume.GetById(2);
-            Resume monResume3 = testResume.GetById(3);
+            Resume monResume20000 = testResume.GetById(20000);
 
             Assert.IsTrue(monResume1.Title == "Mon_CV1");
             Assert.IsTrue(monResume2.Title == "Mon_CV2");
-            Assert.IsNull(monResume3);
+            Assert.IsNull(monResume20000);
         }
 
         [TestMethod()]
