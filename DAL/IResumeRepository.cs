@@ -10,7 +10,8 @@ namespace DAL
     {
         List<Resume> GetAll();
         Resume GetById(int id);
-        //void Create(Resume resume);
+        void Save(Resume resume);
+
         //void Delete(Resume resume);
         //Resume Copy(Resume resume);
         //void Save(Resume resume);

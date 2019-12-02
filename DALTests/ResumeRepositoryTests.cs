@@ -16,28 +16,48 @@ namespace DAL.Tests
         [TestMethod()]
         public void GetAllTest()
         {
-            // Marche
             IResumeRepository testResume;
             testResume = new ResumeRepository();
             List<Resume> Resumes = testResume.GetAll();
 
-
             Assert.IsTrue(Resumes[0].Title == "Mon_CV1");
+            Assert.IsTrue(Resumes[1].Title == "Mon_CV2");
+        }
+
+        [TestMethod()]
+        public void GetByIdTest()
+        {
+            IResumeRepository testResume;
+            testResume = new ResumeRepository();
+            Resume monResume1 = testResume.GetById(1);
+            Resume monResume2 = testResume.GetById(2);
+            Resume monResume3 = testResume.GetById(3);
+
+            Assert.IsTrue(monResume1.Title == "Mon_CV1");
+            Assert.IsTrue(monResume2.Title == "Mon_CV2");
+            Assert.IsNull(monResume3);
+        }
+
+        [TestMethod()]
+        public void SaveTest()
+        {
+            Resume monResume = new Resume("essai");
+            //monResume.Id = 3;
+            monResume.Save = true;
+            monResume.LastModification = "now";
+            monResume.Favorite = false;
+
+            IResumeRepository testResume;
+            testResume = new ResumeRepository();
+            testResume.Save(monResume);
+            
+            Resume resumeFromDB = testResume.GetById(3);
+
+            Assert.IsNotNull(resumeFromDB);
+            Assert.IsTrue(resumeFromDB.Title == "essai");
         }
 
         /* Marche
-        IResumeRepository testResume;
-        testResume = new ResumeRepository();
-        List<Resume> Resumes = testResume.GetAll();
-
-            foreach (Resume r in Resumes)
-            {
-                Console.WriteLine(r.Title);
-                Console.WriteLine(r.Containers.Count());
-
-                for(int i = 0; i<r.Containers.Count; i++)
-                    Console.WriteLine("Valeur name : " + r.Containers[i].Name);
-            }
 
     Console.WriteLine("-----------------------------------------------");
 

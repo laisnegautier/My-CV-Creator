@@ -21,9 +21,14 @@ namespace Domain
 
         #region Constructors
 
-        public Resume()
+        /// <summary>
+        /// Constructeur sans paramètre nécesessaire pour NHibernate
+        /// </summary>
+        public Resume() { }
+
+        public Resume(string title)
         {
-            // empty
+            Title = title;
         }
 
         #endregion
