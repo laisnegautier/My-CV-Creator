@@ -6,15 +6,19 @@ using Domain;
 
 namespace DAL
 {
-    public class ParagraphRepository : Repository, IParagraphRepository
+    public class ParagraphRepository : Repository, IElementRepository
     {
-        public List<Paragraph> GetAll()
-        {
-            return Session.Query<Paragraph>().ToList();
-        }
-        public Paragraph GetById(int id)
+        public Element GetById(int id)
         {
             return Session.Get<Paragraph>(id);
+        }
+
+        public void Delete(Element paragraph)
+        {
+            paragraph = (Paragraph)paragraph;
+
+            Session.Delete(paragraph);
+            Session.Flush();
         }
     }
 }

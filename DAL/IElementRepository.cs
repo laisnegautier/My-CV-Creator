@@ -6,9 +6,10 @@ using Domain;
 
 namespace DAL
 {
-    public interface IParagraphRepository
+    public interface IElementRepository
     {
-        List<Paragraph> GetAll();
-        Paragraph GetById(int id);
+        Element GetById(int id);
+
+        void Delete(Element element);
     }
 }

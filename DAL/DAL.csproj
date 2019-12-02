@@ -61,7 +61,7 @@
   <ItemGroup>
     <Compile Include="ContainerRepository.cs" />
     <Compile Include="IContainerRepository.cs" />
-    <Compile Include="IParagraphRepository.cs" />
+    <Compile Include="IElementRepository.cs" />
     <Compile Include="IResumeRepository.cs" />
     <Compile Include="ParagraphRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

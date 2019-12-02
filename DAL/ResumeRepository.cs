@@ -36,7 +36,7 @@ namespace DAL
 
         /// <summary>
         /// Saving a resume, i.e. insert or update it in the DB.
-        /// NB : it does it in cascade, so every containers and elements in it are insert/updated too
+        /// NB : it does it in cascade, so every containers and elements in it are inserted/updated too
         /// </summary>
         /// <param name="resume"></param>
         public void Save(Resume resume)
