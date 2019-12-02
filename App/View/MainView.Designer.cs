@@ -30,7 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.dragPanel = new System.Windows.Forms.Panel();
-            this.cvListView = new System.Windows.Forms.ListView();
+            this.minimizeButton = new System.Windows.Forms.Button();
+            this.maximizeButton = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.Button();
+            this.resumeListView = new System.Windows.Forms.ListView();
             this.buttonPanel = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -38,9 +41,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.closeButton = new System.Windows.Forms.Button();
-            this.maximizeButton = new System.Windows.Forms.Button();
-            this.minimizeButton = new System.Windows.Forms.Button();
+            this.resumeListBox = new System.Windows.Forms.ListBox();
             this.dragPanel.SuspendLayout();
             this.buttonPanel.SuspendLayout();
             this.SuspendLayout();
@@ -60,19 +61,64 @@
             this.dragPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             this.dragPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
             // 
-            // cvListView
+            // minimizeButton
             // 
-            this.cvListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.minimizeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
+            this.minimizeButton.FlatAppearance.BorderSize = 0;
+            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeButton.ForeColor = System.Drawing.Color.White;
+            this.minimizeButton.Location = new System.Drawing.Point(862, 4);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.Size = new System.Drawing.Size(24, 23);
+            this.minimizeButton.TabIndex = 2;
+            this.minimizeButton.Text = "_";
+            this.minimizeButton.UseVisualStyleBackColor = false;
+            this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            // 
+            // maximizeButton
+            // 
+            this.maximizeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.maximizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
+            this.maximizeButton.FlatAppearance.BorderSize = 0;
+            this.maximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.maximizeButton.ForeColor = System.Drawing.Color.White;
+            this.maximizeButton.Location = new System.Drawing.Point(892, 4);
+            this.maximizeButton.Name = "maximizeButton";
+            this.maximizeButton.Size = new System.Drawing.Size(24, 23);
+            this.maximizeButton.TabIndex = 1;
+            this.maximizeButton.Text = "[]";
+            this.maximizeButton.UseVisualStyleBackColor = false;
+            this.maximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
+            // 
+            // closeButton
+            // 
+            this.closeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.ForeColor = System.Drawing.Color.White;
+            this.closeButton.Location = new System.Drawing.Point(922, 4);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(24, 23);
+            this.closeButton.TabIndex = 0;
+            this.closeButton.Text = "X";
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
+            // resumeListView
+            // 
+            this.resumeListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cvListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.cvListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cvListView.HideSelection = false;
-            this.cvListView.Location = new System.Drawing.Point(44, 51);
-            this.cvListView.Name = "cvListView";
-            this.cvListView.Size = new System.Drawing.Size(857, 245);
-            this.cvListView.TabIndex = 9;
-            this.cvListView.UseCompatibleStateImageBehavior = false;
+            this.resumeListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.resumeListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.resumeListView.HideSelection = false;
+            this.resumeListView.Location = new System.Drawing.Point(44, 51);
+            this.resumeListView.Name = "resumeListView";
+            this.resumeListView.Size = new System.Drawing.Size(857, 245);
+            this.resumeListView.TabIndex = 9;
+            this.resumeListView.UseCompatibleStateImageBehavior = false;
             // 
             // buttonPanel
             // 
@@ -169,50 +215,13 @@
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // closeButton
+            // resumeListBox
             // 
-            this.closeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
-            this.closeButton.FlatAppearance.BorderSize = 0;
-            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.Location = new System.Drawing.Point(922, 4);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(24, 23);
-            this.closeButton.TabIndex = 0;
-            this.closeButton.Text = "X";
-            this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
-            // 
-            // maximizeButton
-            // 
-            this.maximizeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.maximizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
-            this.maximizeButton.FlatAppearance.BorderSize = 0;
-            this.maximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.Location = new System.Drawing.Point(892, 4);
-            this.maximizeButton.Name = "maximizeButton";
-            this.maximizeButton.Size = new System.Drawing.Size(24, 23);
-            this.maximizeButton.TabIndex = 1;
-            this.maximizeButton.Text = "[]";
-            this.maximizeButton.UseVisualStyleBackColor = false;
-            this.maximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
-            // 
-            // minimizeButton
-            // 
-            this.minimizeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
-            this.minimizeButton.FlatAppearance.BorderSize = 0;
-            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.Location = new System.Drawing.Point(862, 4);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(24, 23);
-            this.minimizeButton.TabIndex = 2;
-            this.minimizeButton.Text = "_";
-            this.minimizeButton.UseVisualStyleBackColor = false;
-            this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            this.resumeListBox.FormattingEnabled = true;
+            this.resumeListBox.Location = new System.Drawing.Point(44, 51);
+            this.resumeListBox.Name = "resumeListBox";
+            this.resumeListBox.Size = new System.Drawing.Size(427, 238);
+            this.resumeListBox.TabIndex = 11;
             // 
             // MainView
             // 
@@ -220,8 +229,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(949, 508);
+            this.Controls.Add(this.resumeListBox);
             this.Controls.Add(this.buttonPanel);
-            this.Controls.Add(this.cvListView);
+            this.Controls.Add(this.resumeListView);
             this.Controls.Add(this.dragPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainView";
@@ -235,7 +245,7 @@
 
         #endregion
         private System.Windows.Forms.Panel dragPanel;
-        private System.Windows.Forms.ListView cvListView;
+        private System.Windows.Forms.ListView resumeListView;
         private System.Windows.Forms.Panel buttonPanel;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
@@ -246,5 +256,6 @@
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button minimizeButton;
         private System.Windows.Forms.Button maximizeButton;
+        private System.Windows.Forms.ListBox resumeListBox;
     }
 }

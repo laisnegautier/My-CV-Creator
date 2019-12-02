@@ -8,7 +8,7 @@ namespace DAL
 {
     public interface IResumeRepository
     {
-        void GetAll();
+        List<Resume> GetAll();
         void Create(Resume resume);
         void Delete(Resume resume);
         Resume Copy(Resume resume);

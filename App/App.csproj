@@ -90,7 +90,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
@@ -100,6 +102,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{671856e4-bfe5-4254-bc8c-5dbed7a80f44}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StubRepository\StubRepository.csproj">
+      <Project>{9c736d04-1cf6-439f-a4b1-baa958d6e8c3}</Project>
+      <Name>StubRepository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

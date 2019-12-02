@@ -24,9 +24,14 @@ namespace StubRepository
             throw new NotImplementedException();
         }
 
-        public void GetAll()
+        public List<Resume> GetAll()
         {
-            throw new NotImplementedException();
+            List<Resume> result = new List<Resume>();
+            Resume test = new Resume("CVtest1");
+            Resume test2 = new Resume("CVtest2");
+            result.Add(test);
+            result.Add(test2);
+            return result;
         }
 
         public void Save(Resume resume)

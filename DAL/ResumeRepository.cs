@@ -37,10 +37,5 @@ namespace DAL
             Session.SaveOrUpdate(resume);
             Session.Flush();
         }
-
-        void IResumeRepository.GetAll()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

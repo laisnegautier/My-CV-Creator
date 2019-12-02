@@ -26,6 +26,10 @@ namespace Domain
             // empty
         }
 
+        public Resume(string title)
+        {
+            Title = title;
+        }
         #endregion
 
 
@@ -33,7 +37,7 @@ namespace Domain
 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return Title;
         }
 
         #endregion

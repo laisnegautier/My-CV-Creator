@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using App.Presenter;
 using App.View;
+using Domain;
 
 namespace App
 {
@@ -16,10 +18,30 @@ namespace App
         private bool mouseDown;
         private Point lastLocation;
 
+        #region IMainView
+        public List<Resume> Resumes
+        {
+            get { return (List<Resume>)resumeListBox.DataSource; }
+            set { resumeListBox.DataSource = value; }
+        }
+
+        public Resume CurrentResume{ get; set; }
+
+        public MainPresenter Presenter { private get; set; }
+        #endregion
+
+        #region Initialisation
         public MainView()
         {
             InitializeComponent();
         }
+        #endregion
+
+
+        /*private void resumeListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CurrentResume = (Resume)resumeListBox.Items[resumeListBox.Items.IndexOf((Resume)sender)];
+        }*/
 
         #region FonctionnalitiesButton
         private void CloseButton_Click(object sender, EventArgs e)
@@ -59,5 +81,6 @@ namespace App
             mouseDown = false;
         }
         #endregion
+
     }
 }

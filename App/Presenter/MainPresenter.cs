@@ -18,6 +18,11 @@ namespace App.Presenter
         {
             _resumeRepository = resumeRepository;
             _view = view;
+            _view.Presenter = this;
+            _view.Resumes = _resumeRepository.GetAll();
         }
+
+
     }
 }
+
