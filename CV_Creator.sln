@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDal", "TestDal\TestDal.csproj", "{434E6579-358E-4441-B217-3E21B444A4F9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{8CE50579-42DD-479E-9377-C2B344AEAA74}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{F1992A27-BDDC-4A64-B49B-C437A09C8DBC}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{434E6579-358E-4441-B217-3E21B444A4F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{434E6579-358E-4441-B217-3E21B444A4F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{434E6579-358E-4441-B217-3E21B444A4F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{434E6579-358E-4441-B217-3E21B444A4F9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8CE50579-42DD-479E-9377-C2B344AEAA74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8CE50579-42DD-479E-9377-C2B344AEAA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CE50579-42DD-479E-9377-C2B344AEAA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
