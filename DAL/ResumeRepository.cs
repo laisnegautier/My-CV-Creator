@@ -20,6 +20,10 @@ namespace DAL
 
         public void Save(Resume resume)
         {
+            resume.Save = true;
+            // Pour conserver la date de creation
+            if (resume.Id == default) resume.Creation = DateTime.Now;
+            resume.LastModification = DateTime.Now;
 
             resume.Save = true; // doit passer en false lors d'une modification dans le CV
             Session.SaveOrUpdate(resume);

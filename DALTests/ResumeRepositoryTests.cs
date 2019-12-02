@@ -42,16 +42,12 @@ namespace DAL.Tests
         public void SaveTest()
         {
             Resume monResume = new Resume("essai");
-            //monResume.Id = 3;
-            monResume.Save = true;
-            monResume.LastModification = DateTime.Now;
-            monResume.Favorite = false;
 
             IResumeRepository testResume;
             testResume = new ResumeRepository();
             testResume.Save(monResume);
             
-            Resume resumeFromDB = testResume.GetById(5);
+            Resume resumeFromDB = testResume.GetById(7);
 
             Assert.IsNotNull(resumeFromDB);
             Assert.IsTrue(resumeFromDB.Title == "essai");
@@ -60,26 +56,19 @@ namespace DAL.Tests
         [TestMethod()]
         public void UpdateTest()
         {
-            Resume monResume = new Resume("bleubleu");
-            monResume.Id = 3;
-            monResume.Save = false;
-            monResume.LastModification = DateTime.Now;
-            monResume.Favorite = false;
-
-            /* PB AVEC 1ere CREATION
-            // Pour conserver la date de creation
-            if (monResume.Id == default) monResume.Creation = DateTime.Now;
-            else monResume.Creation = DateTime.Now;
-            */
-
             IResumeRepository testResume;
             testResume = new ResumeRepository();
-            testResume.Save(monResume);
 
-            Resume resumeFromDB = testResume.GetById(3);
+            Resume resumeToModif = testResume.GetById(7);
+            resumeToModif.Title = "test";
+            
+            // On update une ligne deja existante
+            testResume.Save(resumeToModif);
 
-            Assert.IsNotNull(resumeFromDB);
-            Assert.IsTrue(resumeFromDB.Title == "bleubleu");
+            Resume resumeModified = testResume.GetById(7);
+
+            Assert.IsNotNull(resumeModified);
+            Assert.IsTrue(resumeModified.Title == resumeToModif.Title);
         }
 
         /* Marche
