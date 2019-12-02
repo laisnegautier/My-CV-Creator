@@ -42,6 +42,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.resumeListBox = new System.Windows.Forms.ListBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dragPanel.SuspendLayout();
             this.buttonPanel.SuspendLayout();
             this.SuspendLayout();
@@ -218,10 +219,17 @@
             // resumeListBox
             // 
             this.resumeListBox.FormattingEnabled = true;
-            this.resumeListBox.Location = new System.Drawing.Point(44, 51);
+            this.resumeListBox.Location = new System.Drawing.Point(635, 51);
             this.resumeListBox.Name = "resumeListBox";
-            this.resumeListBox.Size = new System.Drawing.Size(427, 238);
+            this.resumeListBox.Size = new System.Drawing.Size(188, 238);
             this.resumeListBox.TabIndex = 11;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(112, 74);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(321, 200);
+            this.flowLayoutPanel1.TabIndex = 12;
             // 
             // MainView
             // 
@@ -229,6 +237,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(949, 508);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.resumeListBox);
             this.Controls.Add(this.buttonPanel);
             this.Controls.Add(this.resumeListView);
@@ -257,5 +266,6 @@
         private System.Windows.Forms.Button minimizeButton;
         private System.Windows.Forms.Button maximizeButton;
         private System.Windows.Forms.ListBox resumeListBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
