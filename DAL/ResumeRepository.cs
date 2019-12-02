@@ -16,9 +16,11 @@ namespace DAL
         {
             return Session.Get<Resume>(id);
         }
-        public List<Container> GetContainers()
+
+        public void Save(Resume resume)
         {
-            return null;
+            Session.SaveOrUpdate(livre);
+            Session.Flush();
         }
     }
 }
