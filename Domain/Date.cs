@@ -33,7 +33,22 @@ namespace Domain
 
 
         #region Methods
-        
+
+        public virtual IElement Copy()
+        {
+            Date copy = new Date();
+
+            copy.Container = Container;
+            copy.Content = Content;
+            copy.Italic = Italic;
+            copy.Bold = Bold;
+            copy.Size = Size;
+            copy.ForegroundColor = ForegroundColor;
+            copy.BackgroundColor = BackgroundColor;
+
+            return copy;
+        }
+
         #endregion
     }
 }

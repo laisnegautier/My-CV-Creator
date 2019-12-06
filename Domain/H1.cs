@@ -39,6 +39,21 @@ namespace Domain
             return Content;
         }
 
+        public virtual IElement Copy()
+        {
+            H1 copy = new H1();
+
+            copy.Container = Container;
+            copy.Content = Content;
+            copy.Italic = Italic;
+            copy.Bold = Bold;
+            copy.Size = Size;
+            copy.ForegroundColor = ForegroundColor;
+            copy.BackgroundColor = BackgroundColor;
+
+            return copy;
+        }
+
         #endregion
     }
 }

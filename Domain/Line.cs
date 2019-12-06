@@ -25,5 +25,16 @@ namespace Domain
         public Line() { }
 
         #endregion
+
+
+        public virtual IElement Copy()
+        {
+            Line copy = new Line();
+
+            copy.Container = Container;
+            copy.Color = Color;
+
+            return copy;
+        }
     }
 }

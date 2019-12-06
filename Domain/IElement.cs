@@ -9,5 +9,7 @@ namespace Domain
     {
         int Id { get; set; }
         Container Container { get; set; }
+
+        IElement Copy();
     }
 }

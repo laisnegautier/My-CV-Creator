@@ -42,6 +42,23 @@ namespace Domain
             throw new System.NotImplementedException();
         }
 
+        public virtual Container Copy()
+        {
+            Container copy = new Container();
+
+            copy.Name = Name;
+            copy.Favorite = Favorite;
+            copy.FavoriteName = FavoriteName;
+            copy.BackgroundColor = BackgroundColor;
+            copy.BorderColor = BorderColor;
+            copy.Resume = Resume;
+
+            foreach (IElement e in Elements)
+                copy.Elements.Add(e.Copy());
+
+            return copy;
+        }
+
         #endregion
     }
 }
