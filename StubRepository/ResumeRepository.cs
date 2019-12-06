@@ -21,7 +21,7 @@ namespace StubRepository
 
         public void Delete(Resume resume)
         {
-            throw new NotImplementedException();
+            
         }
 
         public List<Resume> GetAll()

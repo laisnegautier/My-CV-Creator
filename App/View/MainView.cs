@@ -19,16 +19,18 @@ namespace App
         private Point lastLocation;
 
         #region IMainView
-        public Resume CurrentResume{ get; set; }
-
         public MainPresenter Presenter { private get; set; }
+
         List<ResumeMiniaturePic> IMainView.Resumes
         {
-            set { foreach (ResumeMiniaturePic rmp in value)
-                    {
-                        rmp.Click += Presenter.SetCurrentResume;
-                        resumeLayoutPanel.Controls.Add(rmp);
-                    }
+            set
+            {
+                resumeLayoutPanel.Controls.Clear();
+                foreach (ResumeMiniaturePic rmp in value)
+                {
+                    rmp.Click += Presenter.SetCurrentResume;
+                    resumeLayoutPanel.Controls.Add(rmp);
+                }
             }
         }
         
@@ -170,6 +172,12 @@ namespace App
             }
         }
         #endregion
+
+        public DialogResult ConfirmDelete(string title)
+        {
+            DialogResult dialogResult = MessageBox.Show("Voulez vous supprimer ce CV ?", title, MessageBoxButtons.YesNo);
+            return dialogResult;
+        }
 
         private void AddButton_Click(object sender, EventArgs e)
         {

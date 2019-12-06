@@ -14,10 +14,12 @@ namespace App
     public partial class ResumeMiniaturePic : UserControl
     {
         public Resume Resume { get; set; }
+        public bool isSelected { get; set; }
 
         public ResumeMiniaturePic( Resume resume )
         {
             InitializeComponent();
+            isSelected = false;
             Resume = resume;
             resumeTitle.Text = resume.Title;
             containerLabel.Text += resume.Containers.Count;
@@ -30,6 +32,9 @@ namespace App
             Paint += DropShadow;
             Paint += RightShadow;
             Paint += Pic_OnPaint;
+
+            MouseEnter += Pic_OnMouseEnter;
+            MouseLeave += Pic_OnMouseLeave;
         }
 
         #region Shadows
@@ -103,6 +108,20 @@ namespace App
            int nWidthEllipse, // height of ellipse
            int nHeightEllipse // width of ellipse
           );
+        #endregion
+
+        #region Hover
+        public void Pic_OnMouseEnter(object sender, EventArgs e)
+        {
+            if (isSelected) BackColor = Color.FromArgb(50,50,50);
+            else BackColor = Color.FromArgb(48, 48, 48);
+        }
+
+        public void Pic_OnMouseLeave(object sender, EventArgs e)
+        {
+            if (isSelected) BackColor = Color.FromArgb(58, 58, 58);
+            else BackColor = Color.FromArgb(38, 38, 38);
+        }
         #endregion
     }
 }

@@ -7,6 +7,7 @@ using Domain;
 using App.View;
 using DAL;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace App.Presenter
 {
@@ -35,24 +36,39 @@ namespace App.Presenter
 
         public void SetCurrentResume(object sender, EventArgs eventArgs)
         {
-            if(currentResume != null) currentResume.BackColor = Color.FromArgb(38,38,38);
+            if (currentResume != null)
+            {
+                currentResume.isSelected = false;
+                currentResume.BackColor = Color.FromArgb(38, 38, 38);
+            }
             currentResume = (ResumeMiniaturePic)sender;
+            currentResume.isSelected = true;
             currentResume.BackColor = Color.FromArgb(58, 58, 58);
         }
 
         public void Edit()
         {
-
+            if(currentResume != null)
+            {
+                // Ouvrir l'éditeur avec le CV courrant
+            }
         }
 
         public void AddNew()
         {
-
+            // Ouvrir l'éditeur avec un CV vierge - Template dans le futur
         }
 
         public void Delete()
         {
-
+            if(currentResume != null)
+                if (_view.ConfirmDelete(currentResume.Resume.Title) == DialogResult.Yes)
+                {
+                    _resumeRepository.Delete(currentResume.Resume);
+                    ResumesView.Remove(currentResume);
+                    currentResume = null;
+                    _view.Resumes = ResumesView;
+                }
         }
 
         public void Copy()
