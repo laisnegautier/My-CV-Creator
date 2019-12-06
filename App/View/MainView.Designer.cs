@@ -31,32 +31,26 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.dragPanel = new System.Windows.Forms.Panel();
             this.minimizeButton = new System.Windows.Forms.Button();
-            this.maximizeButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.resumeListView = new System.Windows.Forms.ListView();
             this.buttonPanel = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.resumeListBox = new System.Windows.Forms.ListBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.resumeLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.dragPanel.SuspendLayout();
             this.buttonPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // dragPanel
             // 
-            this.dragPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.dragPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.dragPanel.Controls.Add(this.panel1);
             this.dragPanel.Controls.Add(this.minimizeButton);
-            this.dragPanel.Controls.Add(this.maximizeButton);
             this.dragPanel.Controls.Add(this.closeButton);
             this.dragPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.dragPanel.Location = new System.Drawing.Point(0, 0);
             this.dragPanel.Name = "dragPanel";
-            this.dragPanel.Size = new System.Drawing.Size(949, 30);
+            this.dragPanel.Size = new System.Drawing.Size(949, 45);
             this.dragPanel.TabIndex = 8;
             this.dragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
             this.dragPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
@@ -69,7 +63,7 @@
             this.minimizeButton.FlatAppearance.BorderSize = 0;
             this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.Location = new System.Drawing.Point(862, 4);
+            this.minimizeButton.Location = new System.Drawing.Point(832, 11);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.Size = new System.Drawing.Size(24, 23);
             this.minimizeButton.TabIndex = 2;
@@ -77,29 +71,14 @@
             this.minimizeButton.UseVisualStyleBackColor = false;
             this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             // 
-            // maximizeButton
-            // 
-            this.maximizeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.maximizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
-            this.maximizeButton.FlatAppearance.BorderSize = 0;
-            this.maximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maximizeButton.ForeColor = System.Drawing.Color.White;
-            this.maximizeButton.Location = new System.Drawing.Point(892, 4);
-            this.maximizeButton.Name = "maximizeButton";
-            this.maximizeButton.Size = new System.Drawing.Size(24, 23);
-            this.maximizeButton.TabIndex = 1;
-            this.maximizeButton.Text = "[]";
-            this.maximizeButton.UseVisualStyleBackColor = false;
-            this.maximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
-            // 
             // closeButton
             // 
             this.closeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
+            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(94)))), ((int)(((byte)(107)))));
             this.closeButton.FlatAppearance.BorderSize = 0;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.Location = new System.Drawing.Point(922, 4);
+            this.closeButton.Location = new System.Drawing.Point(892, 11);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(24, 23);
             this.closeButton.TabIndex = 0;
@@ -107,87 +86,18 @@
             this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // resumeListView
-            // 
-            this.resumeListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.resumeListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.resumeListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.resumeListView.HideSelection = false;
-            this.resumeListView.Location = new System.Drawing.Point(44, 51);
-            this.resumeListView.Name = "resumeListView";
-            this.resumeListView.Size = new System.Drawing.Size(857, 245);
-            this.resumeListView.TabIndex = 9;
-            this.resumeListView.UseCompatibleStateImageBehavior = false;
-            // 
             // buttonPanel
             // 
             this.buttonPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonPanel.BackColor = System.Drawing.Color.Black;
-            this.buttonPanel.Controls.Add(this.button6);
-            this.buttonPanel.Controls.Add(this.button5);
-            this.buttonPanel.Controls.Add(this.button4);
-            this.buttonPanel.Controls.Add(this.button3);
+            this.buttonPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.buttonPanel.Controls.Add(this.button2);
             this.buttonPanel.Controls.Add(this.button1);
-            this.buttonPanel.Location = new System.Drawing.Point(0, 322);
+            this.buttonPanel.Location = new System.Drawing.Point(0, 44);
             this.buttonPanel.Name = "buttonPanel";
-            this.buttonPanel.Size = new System.Drawing.Size(949, 185);
+            this.buttonPanel.Size = new System.Drawing.Size(186, 463);
             this.buttonPanel.TabIndex = 10;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(793, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(152, 137);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(635, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(152, 137);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(477, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(152, 137);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(319, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(152, 137);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainView_Paint);
             // 
             // button2
             // 
@@ -195,9 +105,9 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(161, 3);
+            this.button2.Location = new System.Drawing.Point(12, 87);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(152, 137);
+            this.button2.Size = new System.Drawing.Size(48, 58);
             this.button2.TabIndex = 1;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = false;
@@ -210,37 +120,37 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Location = new System.Drawing.Point(12, 21);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 137);
+            this.button1.Size = new System.Drawing.Size(43, 44);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // resumeListBox
+            // resumeLayoutPanel
             // 
-            this.resumeListBox.FormattingEnabled = true;
-            this.resumeListBox.Location = new System.Drawing.Point(635, 51);
-            this.resumeListBox.Name = "resumeListBox";
-            this.resumeListBox.Size = new System.Drawing.Size(188, 238);
-            this.resumeListBox.TabIndex = 11;
+            this.resumeLayoutPanel.Location = new System.Drawing.Point(208, 65);
+            this.resumeLayoutPanel.Name = "resumeLayoutPanel";
+            this.resumeLayoutPanel.Size = new System.Drawing.Size(721, 420);
+            this.resumeLayoutPanel.TabIndex = 12;
             // 
-            // flowLayoutPanel1
+            // panel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(112, 74);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(321, 200);
-            this.flowLayoutPanel1.TabIndex = 12;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(89)))));
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(186, 45);
+            this.panel1.TabIndex = 11;
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(949, 508);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.resumeListBox);
+            this.Controls.Add(this.resumeLayoutPanel);
             this.Controls.Add(this.buttonPanel);
-            this.Controls.Add(this.resumeListView);
             this.Controls.Add(this.dragPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainView";
@@ -254,18 +164,12 @@
 
         #endregion
         private System.Windows.Forms.Panel dragPanel;
-        private System.Windows.Forms.ListView resumeListView;
         private System.Windows.Forms.Panel buttonPanel;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button minimizeButton;
-        private System.Windows.Forms.Button maximizeButton;
-        private System.Windows.Forms.ListBox resumeListBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel resumeLayoutPanel;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -48,6 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Presenter\MainPresenter.cs" />
+    <Compile Include="Widgets\RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\ResumeMiniaturePic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\ResumeMiniaturePic.Designer.cs">
+      <DependentUpon>ResumeMiniaturePic.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\EditorView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Widgets\ResumeMiniaturePic.resx">
+      <DependentUpon>ResumeMiniaturePic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\EditorView.resx">
       <DependentUpon>EditorView.cs</DependentUpon>
     </EmbeddedResource>
