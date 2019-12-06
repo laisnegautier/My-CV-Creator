@@ -5,19 +5,20 @@ using System.Text;
 
 namespace Domain
 {
-    public class Container
+    public class H1 : IText
     {
         #region Properties
-
         public virtual int Id { get; set; }
-        public virtual string Name { get; set; }
+        public virtual Container Container { get; set; }
+        public virtual string Content { get; set; }
 
         // Style properties
+        public virtual bool Italic { get; set; }
+        public virtual bool Bold { get; set; }
+        public virtual int Size { get; set; }
+        public virtual string ForegroundColor { get; set; }
         public virtual string BackgroundColor { get; set; }
-        public virtual string BorderColor { get; set; }
-
-        public virtual IList<IElement> Elements { get; set; }
-
+        
         #endregion
 
 
@@ -26,7 +27,7 @@ namespace Domain
         /// <summary>
         /// Constructeur sans paramètre nécesessaire pour NHibernate
         /// </summary>
-        public Container() { }
+        public H1() { }
 
         #endregion
 
@@ -35,7 +36,7 @@ namespace Domain
 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return Content;
         }
 
         #endregion

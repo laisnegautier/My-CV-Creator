@@ -42,7 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Container.cs" />
-    <Compile Include="Element.cs" />
+    <Compile Include="Date.cs" />
+    <Compile Include="H1.cs" />
+    <Compile Include="H2.cs" />
+    <Compile Include="IElement.cs" />
+    <Compile Include="IText.cs" />
     <Compile Include="Paragraph.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resume.cs" />
@@ -51,14 +55,13 @@
     <None Include="Domain.cd" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Mapping\Element.hbm.xml" />
-    <EmbeddedResource Include="Mapping\Paragraph.hbm.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Mapping\Container.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Mapping\Resume.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\IElement.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

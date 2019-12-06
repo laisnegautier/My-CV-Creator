@@ -32,8 +32,13 @@ namespace DAL.Tests
             Resume monResume2 = testResume.GetById(2);
             Resume monResume20000 = testResume.GetById(20000);
 
+            H1 h1 = (H1)monResume2.Containers[3].Elements[1];
+
             Assert.IsTrue(monResume1.Title == "Mon_CV1");
             Assert.IsTrue(monResume2.Title == "Mon_CV2");
+            Assert.IsTrue(monResume2.Containers[3].Elements[1].Id == 5);
+            Assert.IsTrue(h1.Content == "h1Cont7Pos1");
+            Assert.IsTrue(h1.Bold == false);
             Assert.IsNull(monResume20000);
         }
 
@@ -75,7 +80,7 @@ namespace DAL.Tests
             testResume = new ResumeRepository();
             testResume.Save(monResume);
             
-            Resume resumeFromDB = testResume.GetById(8);
+            Resume resumeFromDB = testResume.GetById(4);
 
             Assert.IsNotNull(resumeFromDB);
             Assert.IsTrue(resumeFromDB.Title == "essai");

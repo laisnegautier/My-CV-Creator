@@ -10,23 +10,39 @@
   <Class Name="Domain.Resume">
     <Position X="7.25" Y="1.5" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAACAIAAAAAQAEAEAAAAAAAAAAAAAAAAAAiAAAAAAAA=</HashCode>
+      <HashCode>AAACAIACAAAAAEAEAAAAAAAQAAAAAAAAAAiAAAAAAAA=</HashCode>
       <FileName>Resume.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Domain.Element">
-    <Position X="11.75" Y="2.25" Width="1.5" />
+  <Class Name="Domain.Date">
+    <Position X="17.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Element.cs</FileName>
+      <HashCode>AAACAAQAAgAggCAAAAAAAAAACAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Date.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Domain.Paragraph">
-    <Position X="11.75" Y="5.25" Width="1.5" />
+  <Class Name="Domain.H2">
+    <Position X="12.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Paragraph.cs</FileName>
+      <HashCode>AAACAAQAAgAggCAEAAAAAAAACAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>H2.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
+  <Interface Name="Domain.IElement">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Domain.IText">
+    <Position X="13.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAggCAAAAAAAAAACAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>IText.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

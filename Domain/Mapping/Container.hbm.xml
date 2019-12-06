@@ -19,7 +19,7 @@
     <list name="Elements" cascade="all-delete-orphan" >
       <key column="container_id" />
       <index column="container_index" />
-      <one-to-many class="Element"/>
+      <one-to-many class="IElement"/>      
     </list>
     
   </class>
