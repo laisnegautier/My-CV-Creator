@@ -48,6 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Presenter\MainPresenter.cs" />
+    <Compile Include="Widgets\FlatVScroll.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Widgets\RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>

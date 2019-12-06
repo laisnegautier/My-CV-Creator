@@ -40,6 +40,25 @@ namespace App.Presenter
             currentResume.BackColor = Color.FromArgb(58, 58, 58);
         }
 
+        public void Edit()
+        {
+
+        }
+
+        public void AddNew()
+        {
+
+        }
+
+        public void Delete()
+        {
+
+        }
+
+        public void Copy()
+        {
+
+        }
     }
 }
 

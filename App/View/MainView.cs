@@ -24,7 +24,6 @@ namespace App
         public MainPresenter Presenter { private get; set; }
         List<ResumeMiniaturePic> IMainView.Resumes
         {
-            get {  throw new NotImplementedException(); }// return resumeLayoutPanel.Controls; }
             set { foreach (ResumeMiniaturePic rmp in value)
                     {
                         rmp.Click += Presenter.SetCurrentResume;
@@ -32,18 +31,34 @@ namespace App
                     }
             }
         }
-    
+        
         #endregion
 
         #region Initialisation
         public MainView()
         {
             InitializeComponent();
-            dragPanel.Paint += DropShadow;
-            buttonPanel.Paint += DropShadow;
+            SetUpDesing();
+            //SetRoundAdd();
         }
         #endregion
         
+        void SetUpDesing()
+        {
+            dragPanel.Paint += DropShadow;
+            buttonPanel.Paint += DropShadow;
+        }
+
+        void SetRoundAdd()
+        {
+            RoundButton addNewButton = new RoundButton();
+            addNewButton.BackColor = Color.FromArgb(64, 94, 107);
+            addNewButton.Location = new Point(10, 10);
+            addNewButton.Click += AddButton_Click;
+            Controls.Add(addNewButton);
+            addNewButton.BringToFront();
+        }
+
         #region FonctionnalitiesButton
         private void CloseButton_Click(object sender, EventArgs e)
         {
@@ -155,5 +170,25 @@ namespace App
             }
         }
         #endregion
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            Presenter.AddNew();
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            Presenter.Edit();
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            Presenter.Delete();
+        }
+
+        private void CopyButton_Click(object sender, EventArgs e)
+        {
+            Presenter.Copy();
+        }
     }
 }

@@ -70,8 +70,9 @@
             this.Controls.Add(this.containerLabel);
             this.Controls.Add(this.resumeTitle);
             this.ForeColor = System.Drawing.Color.White;
+            this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "ResumeMiniaturePic";
-            this.Size = new System.Drawing.Size(143, 184);
+            this.Size = new System.Drawing.Size(139, 191);
             this.ResumeLayout(false);
             this.PerformLayout();
 

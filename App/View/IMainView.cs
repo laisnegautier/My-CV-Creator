@@ -10,7 +10,7 @@ namespace App.View
 {
     public interface IMainView
     {
-        List<ResumeMiniaturePic> Resumes { get; set; }
+        List<ResumeMiniaturePic> Resumes { set; }
         Resume CurrentResume { get; set; }
         Presenter.MainPresenter Presenter { set; }
     }
