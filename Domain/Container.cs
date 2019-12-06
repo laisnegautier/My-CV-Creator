@@ -11,6 +11,8 @@ namespace Domain
 
         public virtual int Id { get; set; }
         public virtual string Name { get; set; }
+        public virtual bool Favorite { get; set; }
+        public virtual string FavoriteName { get; set; }
 
         // Style properties
         public virtual string BackgroundColor { get; set; }

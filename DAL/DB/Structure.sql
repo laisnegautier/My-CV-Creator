@@ -14,6 +14,8 @@ create table tbl_resume (
 create table tbl_container (
 	container_id integer not null primary key auto_increment,
 	container_name varchar(100) not null,
+	container_favorite boolean not null,
+	container_favorite_name varchar(100) not null,
 	container_bg_color varchar(100) not null,
 	container_border_color varchar(100) not null,
 	resume_id integer,

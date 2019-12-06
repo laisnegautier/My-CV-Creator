@@ -11,7 +11,7 @@
     </id>
     
     <!-- Used for bidirectional mapping between Container and Element.
-    A container has a list of elements. An element is linked to one and only one container -->
+    A container has a list of elements. An element is linked to one container -->
     <many-to-one name="Container" column="container_id" not-null="true"/>
     
     <joined-subclass name="Paragraph" table="tbl_paragraph">

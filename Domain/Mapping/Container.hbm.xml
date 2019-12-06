@@ -11,9 +11,10 @@
     </id>
 
     <property name="Name" column="container_name" not-null="true"/>
+    <property name="Favorite" column="container_favorite" not-null="true"/>
+    <property name="FavoriteName" column="container_favorite_name" not-null="true"/>
     <property name="BackgroundColor" column="container_bg_color" not-null="true"/>
     <property name="BorderColor" column="container_border_color" not-null="true"/>
-
 
     <!-- Every elements in the container will be saved/updated/deleted when the container is -->
     <list name="Elements" cascade="all-delete-orphan" >
