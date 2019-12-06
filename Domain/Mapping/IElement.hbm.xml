@@ -53,6 +53,11 @@
       <property name="ForegroundColor" column="date_foreground_color" not-null="true"/>
       <property name="BackgroundColor" column="date_background_color" not-null="true"/>
     </joined-subclass>
+
+    <joined-subclass name="Line" table="tbl_line">
+      <key column="element_id"/>
+      <property name="Color" column="line_color" not-null="true"/>
+    </joined-subclass>
   </class>
 
 </hibernate-mapping>

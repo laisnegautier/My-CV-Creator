@@ -75,3 +75,10 @@ create table tbl_date (
 	element_id integer,
 	FOREIGN KEY (element_id) references tbl_element(element_id)
 );
+
+create table tbl_line (
+	date_id integer not null primary key auto_increment,
+	line_color varchar(100) not null,
+	element_id integer,
+	FOREIGN KEY (element_id) references tbl_element(element_id)
+);
