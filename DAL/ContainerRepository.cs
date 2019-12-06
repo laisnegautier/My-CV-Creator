@@ -11,7 +11,7 @@ namespace DAL
         public List<Container> GetFavoriteOnes()
         {
             return Session.Query<Container>()
-                .Where(x => x.Favorite)
+                .Where(x => x.Favorite == true)
                 .ToList();
         }
 

@@ -9,7 +9,6 @@ namespace DAL
     public interface IElementRepository
     {
         IElement GetById(int id);
-
         void Delete(IElement element);
     }
 }

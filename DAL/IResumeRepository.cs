@@ -15,7 +15,5 @@ namespace DAL
 
         void Save(Resume resume);
         void Delete(Resume resume);
-
-        //Resume Copy(Resume resume);
     }
 }
