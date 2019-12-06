@@ -23,5 +23,7 @@ namespace Domain
         /// Constructeur sans paramètre nécesessaire pour NHibernate
         /// </summary>
         public Line() { }
+
+        #endregion
     }
 }
