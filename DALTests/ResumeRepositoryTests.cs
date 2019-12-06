@@ -50,12 +50,9 @@ namespace DAL.Tests
 
             List<Resume> Resumes = testResume.GetTheLastFive();
 
-            Assert.AreEqual(Resumes.Count, 5);
-            Assert.IsTrue(Resumes[0].Title == "essai");
-            Assert.IsTrue(Resumes[1].Title == "test");
-            Assert.IsTrue(Resumes[2].Title == "test");
-            Assert.IsTrue(Resumes[3].Title == "bleubleu");
-            Assert.IsTrue(Resumes[4].Title == "essai");
+            Assert.AreEqual(Resumes.Count, 2);
+            Assert.IsTrue(Resumes[0].Title == "Mon_CV1");
+            Assert.IsTrue(Resumes[1].Title == "Mon_CV2");
         }
 
         [TestMethod()]
@@ -80,7 +77,7 @@ namespace DAL.Tests
             testResume = new ResumeRepository();
             testResume.Save(monResume);
             
-            Resume resumeFromDB = testResume.GetById(4);
+            Resume resumeFromDB = testResume.GetById(3);
 
             Assert.IsNotNull(resumeFromDB);
             Assert.IsTrue(resumeFromDB.Title == "essai");

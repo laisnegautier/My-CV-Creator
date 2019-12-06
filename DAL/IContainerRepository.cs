@@ -8,7 +8,7 @@ namespace DAL
 {
     public interface IContainerRepository
     {
-        //List<Container> GetFavoriteOnes();
+        List<Container> GetFavoriteOnes();
         void Delete(Container container);
     }
 }

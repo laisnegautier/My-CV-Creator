@@ -18,7 +18,9 @@ namespace Domain
         public virtual string BackgroundColor { get; set; }
         public virtual string BorderColor { get; set; }
 
+        // Mapping
         public virtual IList<IElement> Elements { get; set; }
+        public virtual Resume Resume { get; set; }
 
         #endregion
 
