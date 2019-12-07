@@ -56,7 +56,11 @@ namespace App.Presenter
 
         public void AddNew()
         {
-            // Ouvrir l'éditeur avec un CV vierge - Template dans le futur
+            EditorView editForm = new EditorView();
+            IResumeRepository resumeRepo = new StubRepository.ResumeRepository();
+            EditorPresenter mainPresenter = new EditorPresenter(resumeRepo, editForm);
+            editForm.Show();
+            _view.Close();
         }
 
         public void Delete()

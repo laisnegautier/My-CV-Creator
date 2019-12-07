@@ -22,10 +22,10 @@ namespace App
             IResumeRepository resumeRepo = new StubRepository.ResumeRepository();
             MainView mainForm = new MainView();
             Presenter.MainPresenter mainPresenter = new Presenter.MainPresenter(resumeRepo, mainForm);
-
-            EditorView editView = new EditorView();
+            mainForm.Show();
+            //EditorView editView = new EditorView();
             //Application.Run(mainForm);
-            Application.Run(mainForm);
+            Application.Run();
         }
     }
 }

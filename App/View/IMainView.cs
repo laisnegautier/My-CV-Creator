@@ -14,5 +14,6 @@ namespace App.View
         List<ResumeMiniaturePic> Resumes { set; }
         Presenter.MainPresenter Presenter { set; }
         DialogResult ConfirmDelete(string title);
+        void Close();
     }
 }
