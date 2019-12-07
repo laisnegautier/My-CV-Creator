@@ -23,7 +23,9 @@ namespace App
             MainView mainForm = new MainView();
             Presenter.MainPresenter mainPresenter = new Presenter.MainPresenter(resumeRepo, mainForm);
 
-            Application.Run(mainForm);
+            EditorView editView = new EditorView();
+            //Application.Run(mainForm);
+            Application.Run(editView);
         }
     }
 }

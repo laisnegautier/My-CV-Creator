@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presenter\EditorPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
+    <Compile Include="View\IEditorView.cs" />
     <Compile Include="Widgets\FlatVScroll.cs">
       <SubType>Component</SubType>
     </Compile>

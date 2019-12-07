@@ -15,6 +15,7 @@ namespace App
         public EditorView()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
         }
     }
 }
