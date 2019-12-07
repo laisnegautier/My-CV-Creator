@@ -5,28 +5,50 @@ using System.Text;
 
 namespace Domain
 {
-    public class Date : Text
+    public class Date : IText
     {
-        public Date()
-        {
-            throw new System.NotImplementedException();
-        }
+        #region Properties
+        public virtual int Id { get; set; }
+        public virtual Container Container { get; set; }
+        public virtual DateTime Content { get; set; }
 
-        public override int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override int Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override string BackgroundColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override string ForegroundColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override string Font { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override int Size { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override bool Bold { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override bool Italic { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override bool Underlined { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        // Style properties
+        public virtual bool Italic { get; set; }
+        public virtual bool Bold { get; set; }
+        public virtual int Size { get; set; }
+        public virtual string ForegroundColor { get; set; }
+        public virtual string BackgroundColor { get; set; }
+
+        #endregion
+
+
+        #region Constructors
+
+        /// <summary>
+        /// Constructeur sans paramètre nécesessaire pour NHibernate
+        /// </summary>
+        public Date() { }
+
+        #endregion
+
 
         #region Methods
-        public override string ToString()
+
+        public virtual IElement Copy()
         {
-            throw new System.NotImplementedException();
+            Date copy = new Date();
+
+            copy.Container = Container;
+            copy.Content = Content;
+            copy.Italic = Italic;
+            copy.Bold = Bold;
+            copy.Size = Size;
+            copy.ForegroundColor = ForegroundColor;
+            copy.BackgroundColor = BackgroundColor;
+
+            return copy;
         }
+
         #endregion
     }
 }

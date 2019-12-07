@@ -9,9 +9,11 @@ namespace DAL
     public interface IResumeRepository
     {
         List<Resume> GetAll();
-        void Create(Resume resume);
-        void Delete(Resume resume);
-        Resume Copy(Resume resume);
+        Resume GetById(int id);
+        List<Resume> GetTheLastFive();
+        List<Resume> GetTheFavoriteOnes();
+
         void Save(Resume resume);
+        void Delete(Resume resume);
     }
 }

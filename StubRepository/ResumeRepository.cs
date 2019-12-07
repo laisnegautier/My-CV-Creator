@@ -26,10 +26,10 @@ namespace StubRepository
 
         public List<Resume> GetAll()
         {
-            Element elTest1 = new Paragraph();
-            Element elTest2 = new Paragraph();
-            List<Element> elem1 = new List<Element>();
-            List<Element> elem2 = new List<Element>();
+            IElement elTest1 = new Paragraph();
+            IElement elTest2 = new Paragraph();
+            List<IElement> elem1 = new List<IElement>();
+            List<IElement> elem2 = new List<IElement>();
             elem1.Add(elTest1); elem2.Add(elTest1); elem2.Add(elTest2);
             Container container1 = new Container();
 
@@ -58,6 +58,21 @@ namespace StubRepository
             result.Add(test2);
             result.Add(test2);
             return result;
+        }
+
+        public Resume GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Resume> GetTheFavoriteOnes()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Resume> GetTheLastFive()
+        {
+            throw new NotImplementedException();
         }
 
         public void Save(Resume resume)

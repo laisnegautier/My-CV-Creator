@@ -13,7 +13,9 @@ namespace Domain
         public virtual string Title { get; set; }
         public virtual bool Save { get; set; } // To check if the current resume is saved before quitting the form
         public virtual bool Favorite { get; set; }
-        public virtual string LastModification { get; set; }
+        
+        public virtual DateTime Creation { get; set; }
+        public virtual DateTime LastUpdate { get; set; }
         public virtual IList<Container> Containers { get; set; }
 
         #endregion
@@ -21,15 +23,16 @@ namespace Domain
 
         #region Constructors
 
-        public Resume()
-        {
-            // empty
-        }
+        /// <summary>
+        /// Constructeur sans paramètre nécesessaire pour NHibernate
+        /// </summary>
+        public Resume() { }
 
         public Resume(string title)
         {
             Title = title;
         }
+
         #endregion
 
 
@@ -37,7 +40,27 @@ namespace Domain
 
         public override string ToString()
         {
-            return Title;
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// Create a copy of the resume
+        /// </summary>
+        /// <returns></returns>
+        public virtual Resume Copy()
+        {
+            Resume copy = new Resume();
+
+            copy.Title = Title;
+            copy.Save = Save;
+            copy.Favorite = Favorite;
+            copy.Creation = Creation;
+            copy.LastUpdate = LastUpdate;
+
+            foreach (Container c in Containers)
+                copy.Containers.Add(c.Copy());
+
+            return copy;
         }
 
         #endregion

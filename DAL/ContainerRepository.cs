@@ -8,13 +8,17 @@ namespace DAL
 {
     public class ContainerRepository : Repository, IContainerRepository
     {
-        public List<Container> GetAll()
+        public List<Container> GetFavoriteOnes()
         {
-            return Session.Query<Container>().ToList();
+            return Session.Query<Container>()
+                .Where(x => x.Favorite == true)
+                .ToList();
         }
-        public Container GetById(int id)
+
+        public void Delete(Container container)
         {
-            return Session.Get<Container>(id);
+            Session.Delete(container);
+            Session.Flush();
         }
     }
 }

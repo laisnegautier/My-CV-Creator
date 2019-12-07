@@ -25,7 +25,7 @@ namespace App
 
             EditorView editView = new EditorView();
             //Application.Run(mainForm);
-            Application.Run(editView);
+            Application.Run(mainForm);
         }
     }
 }

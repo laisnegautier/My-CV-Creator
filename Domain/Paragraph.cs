@@ -5,20 +5,31 @@ using System.Text;
 
 namespace Domain
 {
-    public class Paragraph : Element
+    public class Paragraph : IText
     {
         #region Properties
-        // Id en abstract pour le moment
+        public virtual int Id { get; set; }
+        public virtual Container Container { get; set; }
         public virtual string Content { get; set; }
 
+        // Style properties
+        public virtual bool Italic { get; set; }
+        public virtual bool Bold { get; set; }
+        public virtual int Size { get; set; }
+        public virtual string ForegroundColor { get; set; }
+        public virtual string BackgroundColor { get; set; }
+        
         #endregion
 
 
         #region Constructors
 
-        public Paragraph()
-        {
-            // empty
+        /// <summary>
+        /// Constructeur sans paramètre nécesessaire pour NHibernate
+        /// </summary>
+        public Paragraph() {
+            ForegroundColor = "";
+            BackgroundColor = "";
         }
 
         #endregion
@@ -29,6 +40,21 @@ namespace Domain
         public override string ToString()
         {
             return Content;
+        }
+
+        public virtual IElement Copy()
+        {
+            Paragraph copy = new Paragraph();
+
+            copy.Container = Container;
+            copy.Content = Content;
+            copy.Italic = Italic;
+            copy.Bold = Bold;
+            copy.Size = Size;
+            copy.ForegroundColor = ForegroundColor;
+            copy.BackgroundColor = BackgroundColor;
+
+            return copy;
         }
 
         #endregion
