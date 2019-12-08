@@ -15,17 +15,17 @@ namespace App.Presenter
         #region Attributes
         private IResumeRepository _resumeRepo;
         private EditorView _view;
-        private ContainerDrop _currentSelction;
+        private ContainerDrop _currentSelection;
         private Resume _currentResume;
         #endregion
 
         private ContainerDrop CurrentSelection
         {
-            get { return _currentSelction; }
+            get { return _currentSelection; }
             set {
-                if(_currentSelction != null) _currentSelction.IsSelected = false;
-                _currentSelction = value;
-                _currentSelction.IsSelected = true;
+                if(_currentSelection != null) _currentSelection.IsSelected = false;
+                _currentSelection = value;
+                _currentSelection.IsSelected = true;
             }
         }
         
@@ -41,18 +41,31 @@ namespace App.Presenter
         public void RenderResume()
         {
             _view.ResumeEditor.Controls.Clear();
-            if(_currentResume != null)
-                if(_currentResume.Containers != null)
+            if (_currentResume != null)
+                if (_currentResume.Containers != null)
                     foreach (Container c in _currentResume.Containers)
                     {
                         ContainerDrop cd = new ContainerDrop(c);
+                        if (_currentSelection != null && c == _currentSelection.Content)
+                        {
+                            cd.IsSelected = true;
+                            _currentSelection = cd;
+                        }
+                        if (_currentResume.Containers.IndexOf(c) == 0) cd.UpButton.Hide();
+                        else if (_currentResume.Containers.IndexOf(c) == _currentResume.Containers.Count - 1) cd.DownButton.Hide();
                         _view.ResumeEditor.Controls.Add(cd);
                         cd.Width = _view.ResumeEditor.Width - 10;
                         // Action de selection autorisée
                         cd.Click += SetCurrentSelectedContainer;
                         cd.ElementPanel.Click += SetCurrentSelectedContainer;
+
                         // Gestion des boutons
                         cd.FavButton.Click += SetContainerFav;
+                        cd.UpButton.Click += MoveContainerUp;
+                        cd.DownButton.Click += MoveContainerDown;
+
+                        //cd.UpButton.C
+
                         if (c.Elements != null)
                             foreach(IElement e in c.Elements)
                             {
@@ -73,6 +86,38 @@ namespace App.Presenter
             containerDrop.Refresh();
         }
 
+        public void MoveContainerUp(object sender, EventArgs e)
+        {
+            bool moved = false;
+            ContainerDrop containerDrop = (ContainerDrop)((Button)sender).Parent.Parent;
+            Container container = containerDrop.Content;
+
+            int pos = _currentResume.Containers.IndexOf(container);
+            if(pos != 0)
+            {
+                _currentResume.Containers.RemoveAt(pos);
+                _currentResume.Containers.Insert(pos-1, container);
+                moved = true;
+            }
+            if(moved) RenderResume();
+        }
+
+        public void MoveContainerDown(object sender, EventArgs e)
+        {
+            bool moved = false;
+            ContainerDrop containerDrop = (ContainerDrop)((Button)sender).Parent.Parent;
+            Container container = containerDrop.Content;
+
+            int pos = _currentResume.Containers.IndexOf(container);
+            if (pos != _currentResume.Containers.Count - 1)
+            {
+                _currentResume.Containers.RemoveAt(pos);
+                _currentResume.Containers.Insert(pos + 1, container);
+                moved = true;
+            }
+            if(moved) RenderResume();
+        }
+
         public void SetCurrentSelectedContainer(object sender, EventArgs e)
         {
             try{
@@ -80,15 +125,18 @@ namespace App.Presenter
                 ContainerDrop lastSelection = CurrentSelection;
                 CurrentSelection = active;
                 //CurrentSelection.ElementPanel.Refresh();
-                lastSelection.Refresh();
+                if(lastSelection != null) lastSelection.Refresh();
                 CurrentSelection.Refresh();
             }
             catch ( InvalidCastException ){
                 try
                 {
                     FlowLayoutPanel active = (FlowLayoutPanel)sender;
+                    ContainerDrop lastSelection = CurrentSelection;
                     CurrentSelection = (ContainerDrop)active.Parent;
-                    CurrentSelection.Parent.Refresh();
+
+                    if (lastSelection != null) lastSelection.Refresh();
+                    CurrentSelection.Refresh();
                 }
                 catch { }
             }
@@ -104,6 +152,7 @@ namespace App.Presenter
             Container empty = new Container() { Name = "Empty" };
             basicContainers.Add(empty);
 
+            // Adding the defaults containers
             foreach(Container c in basicContainers)
             {
                 ContainerDragItem DraggablePic = new ContainerDragItem(c);
@@ -111,6 +160,9 @@ namespace App.Presenter
                 DraggablePic.Width = _view.DefaultSectionPanel.Width - 20;
                 DraggablePic.Left = _view.DefaultSectionPanel.Left + 10;
             }
+            // Adding the favorites containers
+
+            // Adding the defaults elements
         }
 
         public void DealDragDrop(object sender, DragEventArgs e)
@@ -118,11 +170,14 @@ namespace App.Presenter
             try
             {
                 Container _container = (Container)e.Data.GetData(e.Data.GetFormats()[0]);
-                ContainerDrop c = new ContainerDrop(_container); // Pourquoi la Copy bug
-                _currentResume.Containers.Add(_container);
+                ContainerDrop c = new ContainerDrop(_container.Copy());
+                _currentResume.Containers.Add(_container.Copy());
                 RenderResume();
             }
-            catch (Exception exp) { }
+            catch (Exception exp)
+            {
+                Console.WriteLine(exp.Message);
+            }
         }
     }
 }

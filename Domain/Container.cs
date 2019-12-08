@@ -53,8 +53,9 @@ namespace Domain
             copy.BorderColor = BorderColor;
             copy.Resume = Resume;
 
-            foreach (IElement e in Elements)
-                copy.Elements.Add(e.Copy());
+            if(Elements != null)
+                foreach (IElement e in Elements)
+                    copy.Elements.Add(e.Copy());
 
             return copy;
         }

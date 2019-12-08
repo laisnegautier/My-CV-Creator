@@ -17,6 +17,8 @@ namespace App.Widgets
         public Domain.Container Content { get; set; }
         public Control ElementPanel { get{ return elementPanel; } }
         public Button FavButton { get { return favButton; } }
+        public Button UpButton { get { return upButton; } }
+        public Button DownButton { get { return downButton; } }
 
         public ContainerDrop()
         {
@@ -36,10 +38,45 @@ namespace App.Widgets
             containerNameLabel.Text = Content.Name != null ? Content.Name : "Unknown";
             controlPanel.Paint += ControlPanel_Paint;
 
+            InitializeButton();
+
+        }
+
+        public void InitializeButton()
+        {
+            #region FavButton
             favButton.FlatAppearance.MouseOverBackColor = favButton.BackColor;
-            favButton.BackColorChanged += (s, e) => {  favButton.FlatAppearance.MouseOverBackColor = favButton.BackColor; };
+            favButton.BackColorChanged += (s, e) =>
+            {
+                favButton.FlatAppearance.MouseOverBackColor = favButton.BackColor;
+                favButton.FlatAppearance.MouseDownBackColor = favButton.BackColor;
+            };
             favButton.MouseEnter += (s, e) => { favButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\favHover.png"); };
             favButton.MouseLeave += (s, e) => { Refresh(); };
+            favButton.MouseHover += (s, e) => { addTip.Show("Add to Favorites", favButton); };
+            #endregion
+
+            #region UpButton
+            upButton.FlatAppearance.MouseOverBackColor = upButton.BackColor;
+            upButton.BackColorChanged += (s, e) =>
+            {
+                upButton.FlatAppearance.MouseOverBackColor = upButton.BackColor;
+                upButton.FlatAppearance.MouseDownBackColor = upButton.BackColor;
+            };
+            upButton.MouseEnter += (s, e) => { upButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\upHover.png"); };
+            upButton.MouseLeave += (s, e) => { upButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\up.png"); };
+            #endregion
+
+            #region DownButton
+            DownButton.FlatAppearance.MouseOverBackColor = DownButton.BackColor;
+            DownButton.BackColorChanged += (s, e) =>
+            {
+                DownButton.FlatAppearance.MouseOverBackColor = DownButton.BackColor;
+                DownButton.FlatAppearance.MouseDownBackColor = DownButton.BackColor;
+            };
+            DownButton.MouseEnter += (s, e) => { DownButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\downHover.png"); };
+            DownButton.MouseLeave += (s, e) => { DownButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\down.png"); };
+            #endregion
         }
 
         public void ElemPanel_OnPaint(object sender, PaintEventArgs e)

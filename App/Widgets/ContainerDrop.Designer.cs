@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContainerDrop));
             this.elementPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.containerNameLabel = new System.Windows.Forms.Label();
@@ -35,6 +36,7 @@
             this.favButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.downButton = new System.Windows.Forms.Button();
+            this.addTip = new System.Windows.Forms.ToolTip(this.components);
             this.upButton = new System.Windows.Forms.Button();
             this.controlPanel.SuspendLayout();
             this.SuspendLayout();
@@ -63,10 +65,10 @@
             // controlPanel
             // 
             this.controlPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.controlPanel.Controls.Add(this.upButton);
             this.controlPanel.Controls.Add(this.favButton);
             this.controlPanel.Controls.Add(this.deleteButton);
             this.controlPanel.Controls.Add(this.downButton);
-            this.controlPanel.Controls.Add(this.upButton);
             this.controlPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.controlPanel.Location = new System.Drawing.Point(537, 0);
             this.controlPanel.Name = "controlPanel";
@@ -88,7 +90,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(3, 106);
+            this.deleteButton.Location = new System.Drawing.Point(3, 131);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(65, 45);
             this.deleteButton.TabIndex = 2;
@@ -97,21 +99,36 @@
             // 
             // downButton
             // 
-            this.downButton.Location = new System.Drawing.Point(3, 157);
+            this.downButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("downButton.BackgroundImage")));
+            this.downButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.downButton.FlatAppearance.BorderSize = 0;
+            this.downButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.downButton.Location = new System.Drawing.Point(18, 89);
             this.downButton.Name = "downButton";
-            this.downButton.Size = new System.Drawing.Size(65, 45);
+            this.downButton.Size = new System.Drawing.Size(34, 36);
             this.downButton.TabIndex = 1;
-            this.downButton.Text = "V";
             this.downButton.UseVisualStyleBackColor = true;
+            // 
+            // addTip
+            // 
+            this.addTip.AutoPopDelay = 5000;
+            this.addTip.BackColor = System.Drawing.Color.DimGray;
+            this.addTip.ForeColor = System.Drawing.Color.Black;
+            this.addTip.InitialDelay = 100;
+            this.addTip.ReshowDelay = 100;
             // 
             // upButton
             // 
-            this.upButton.Location = new System.Drawing.Point(3, 55);
+            this.upButton.BackColor = System.Drawing.Color.Transparent;
+            this.upButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("upButton.BackgroundImage")));
+            this.upButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.upButton.FlatAppearance.BorderSize = 0;
+            this.upButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.upButton.Location = new System.Drawing.Point(18, 52);
             this.upButton.Name = "upButton";
-            this.upButton.Size = new System.Drawing.Size(65, 45);
-            this.upButton.TabIndex = 0;
-            this.upButton.Text = "^";
-            this.upButton.UseVisualStyleBackColor = true;
+            this.upButton.Size = new System.Drawing.Size(34, 34);
+            this.upButton.TabIndex = 4;
+            this.upButton.UseVisualStyleBackColor = false;
             // 
             // ContainerDrop
             // 
@@ -134,8 +151,9 @@
         private System.Windows.Forms.Label containerNameLabel;
         private System.Windows.Forms.Panel controlPanel;
         private System.Windows.Forms.Button downButton;
-        private System.Windows.Forms.Button upButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button favButton;
+        private System.Windows.Forms.ToolTip addTip;
+        private System.Windows.Forms.Button upButton;
     }
 }
