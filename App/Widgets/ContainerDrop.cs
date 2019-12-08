@@ -16,6 +16,7 @@ namespace App.Widgets
         public bool IsSelected { get; set; }
         public Domain.Container Content { get; set; }
         public Control ElementPanel { get{ return elementPanel; } }
+        public Button FavButton { get { return favButton; } }
 
         public ContainerDrop()
         {
@@ -29,10 +30,16 @@ namespace App.Widgets
         public ContainerDrop(Domain.Container content)
         {
             InitializeComponent();
+            Content = content;
             elementPanel.Paint += ElemPanel_OnPaint;
             IsSelected = false;
-            Content = content;
             containerNameLabel.Text = Content.Name != null ? Content.Name : "Unknown";
+            controlPanel.Paint += ControlPanel_Paint;
+
+            favButton.FlatAppearance.MouseOverBackColor = favButton.BackColor;
+            favButton.BackColorChanged += (s, e) => {  favButton.FlatAppearance.MouseOverBackColor = favButton.BackColor; };
+            favButton.MouseEnter += (s, e) => { favButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\favHover.png"); };
+            favButton.MouseLeave += (s, e) => { Refresh(); };
         }
 
         public void ElemPanel_OnPaint(object sender, PaintEventArgs e)
@@ -40,6 +47,9 @@ namespace App.Widgets
             // Displaying the container control panel
             if (IsSelected) controlPanel.Show();
             else controlPanel.Hide();
+            // Favori ou non
+            if (Content.Favorite == false) favButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\favFalse.png");
+            else favButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\favTrue.png");
             // Design
             FlowLayoutPanel panel = (FlowLayoutPanel)sender;
             if(IsSelected) ControlPaint.DrawBorder(e.Graphics, panel.ClientRectangle, 
@@ -50,10 +60,28 @@ namespace App.Widgets
             else ControlPaint.DrawBorder(e.Graphics, panel.ClientRectangle, Color.FromArgb(220, 220, 220), ButtonBorderStyle.None);
         }
 
-        private void favButton_Click(object sender, EventArgs e)
+
+        #region RoundCornerView
+        private void ControlPanel_Paint(object sender, PaintEventArgs e)
         {
-            if (Content != null) Content.Favorite = !Content.Favorite;
-            // Modification de style
+            System.IntPtr ptr = CreateRoundRectRgn(0, 0, this.Width, this.Height, 20, 20); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
+            this.Region = Region.FromHrgn(ptr);
+            DeleteObject(ptr);
         }
+
+        [System.Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint = "DeleteObject")]
+        private static extern bool DeleteObject(System.IntPtr hObject);
+
+        [System.Runtime.InteropServices.DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern System.IntPtr CreateRoundRectRgn
+          (
+           int nLeftRect, // x-coordinate of upper-left corner
+           int nTopRect, // y-coordinate of upper-left corner
+           int nRightRect, // x-coordinate of lower-right corner
+           int nBottomRect, // y-coordinate of lower-right corner
+           int nWidthEllipse, // height of ellipse
+           int nHeightEllipse // width of ellipse
+          );
+        #endregion
     }
 }

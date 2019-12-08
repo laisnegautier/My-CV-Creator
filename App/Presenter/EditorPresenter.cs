@@ -12,9 +12,13 @@ namespace App.Presenter
 {
     public class EditorPresenter
     {
+        #region Attributes
         private IResumeRepository _resumeRepo;
         private EditorView _view;
         private ContainerDrop _currentSelction;
+        private Resume _currentResume;
+        #endregion
+
         private ContainerDrop CurrentSelection
         {
             get { return _currentSelction; }
@@ -24,7 +28,7 @@ namespace App.Presenter
                 _currentSelction.IsSelected = true;
             }
         }
-        private Resume _currentResume;
+        
 
         public EditorPresenter(IResumeRepository resumeRepo, EditorView editForm)
         {
@@ -47,13 +51,26 @@ namespace App.Presenter
                         // Action de selection autorisée
                         cd.Click += SetCurrentSelectedContainer;
                         cd.ElementPanel.Click += SetCurrentSelectedContainer;
-                        if(c.Elements != null)
+                        // Gestion des boutons
+                        cd.FavButton.Click += SetContainerFav;
+                        if (c.Elements != null)
                             foreach(IElement e in c.Elements)
                             {
 
                             }
                         _view.ResumeEditor.Refresh();
                     }
+        }
+
+        #region Container Managers
+        public void SetContainerFav(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            ContainerDrop containerDrop = (ContainerDrop)button.Parent.Parent;
+            Container container = containerDrop.Content;
+
+            container.Favorite = !container.Favorite;
+            containerDrop.Refresh();
         }
 
         public void SetCurrentSelectedContainer(object sender, EventArgs e)
@@ -77,7 +94,10 @@ namespace App.Presenter
             }
             // RenderResume();
         }
-        
+
+        #endregion
+
+
         public void SetUpView()
         {
             List<Container> basicContainers = new List<Container>();
@@ -98,7 +118,7 @@ namespace App.Presenter
             try
             {
                 Container _container = (Container)e.Data.GetData(e.Data.GetFormats()[0]);
-                ContainerDrop c = new ContainerDrop(_container);
+                ContainerDrop c = new ContainerDrop(_container); // Pourquoi la Copy bug
                 _currentResume.Containers.Add(_container);
                 RenderResume();
             }

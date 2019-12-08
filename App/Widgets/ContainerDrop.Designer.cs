@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContainerDrop));
             this.elementPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.containerNameLabel = new System.Windows.Forms.Label();
             this.controlPanel = new System.Windows.Forms.Panel();
+            this.favButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.downButton = new System.Windows.Forms.Button();
             this.upButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.favButton = new System.Windows.Forms.Button();
             this.controlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +73,28 @@
             this.controlPanel.Size = new System.Drawing.Size(71, 230);
             this.controlPanel.TabIndex = 2;
             // 
+            // favButton
+            // 
+            this.favButton.BackColor = System.Drawing.Color.Transparent;
+            this.favButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("favButton.BackgroundImage")));
+            this.favButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.favButton.FlatAppearance.BorderSize = 0;
+            this.favButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.favButton.Location = new System.Drawing.Point(18, 12);
+            this.favButton.Name = "favButton";
+            this.favButton.Size = new System.Drawing.Size(34, 34);
+            this.favButton.TabIndex = 3;
+            this.favButton.UseVisualStyleBackColor = false;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(3, 106);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(65, 45);
+            this.deleteButton.TabIndex = 2;
+            this.deleteButton.Text = "X";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            // 
             // downButton
             // 
             this.downButton.Location = new System.Drawing.Point(3, 157);
@@ -89,25 +112,6 @@
             this.upButton.TabIndex = 0;
             this.upButton.Text = "^";
             this.upButton.UseVisualStyleBackColor = true;
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.Location = new System.Drawing.Point(3, 106);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(65, 45);
-            this.deleteButton.TabIndex = 2;
-            this.deleteButton.Text = "X";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            // 
-            // favButton
-            // 
-            this.favButton.Location = new System.Drawing.Point(3, 3);
-            this.favButton.Name = "favButton";
-            this.favButton.Size = new System.Drawing.Size(65, 45);
-            this.favButton.TabIndex = 3;
-            this.favButton.Text = "<>";
-            this.favButton.UseVisualStyleBackColor = true;
-            this.favButton.Click += new System.EventHandler(this.favButton_Click);
             // 
             // ContainerDrop
             // 
@@ -131,7 +135,7 @@
         private System.Windows.Forms.Panel controlPanel;
         private System.Windows.Forms.Button downButton;
         private System.Windows.Forms.Button upButton;
-        private System.Windows.Forms.Button favButton;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button favButton;
     }
 }
