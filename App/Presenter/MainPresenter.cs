@@ -16,7 +16,7 @@ namespace App.Presenter
         private IResumeRepository _resumeRepository;
         private IMainView _view;
         private List<Resume> Resumes { get; set; }
-        private List<ResumeMiniaturePic> ResumesView {get;set;}
+        private List<ResumeMiniaturePic> ResumesView { get; set; }
         private ResumeMiniaturePic currentResume { get; set; }
 
         public MainPresenter(IResumeRepository resumeRepository, IMainView view)
@@ -48,9 +48,15 @@ namespace App.Presenter
 
         public void Edit()
         {
-            if(currentResume != null)
+            if (currentResume != null)
             {
-                // Ouvrir l'éditeur avec le CV courrant
+                EditorView editForm = new EditorView();
+                IResumeRepository resumeRepo = new StubRepository.ResumeRepository();
+                editForm.CurrentResume = currentResume.Resume;
+                EditorPresenter editorPresenter = new EditorPresenter(resumeRepo, editForm);
+                editForm.Show();
+                editorPresenter.RenderResume();
+                _view.Close();
             }
         }
 
@@ -58,7 +64,7 @@ namespace App.Presenter
         {
             EditorView editForm = new EditorView();
             IResumeRepository resumeRepo = new StubRepository.ResumeRepository();
-            EditorPresenter mainPresenter = new EditorPresenter(resumeRepo, editForm);
+            EditorPresenter editorPresenter = new EditorPresenter(resumeRepo, editForm);
             editForm.Show();
             _view.Close();
         }

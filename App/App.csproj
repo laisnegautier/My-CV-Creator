@@ -67,6 +67,18 @@
     <Compile Include="Presenter\EditorPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
     <Compile Include="View\IEditorView.cs" />
+    <Compile Include="Widgets\ContainerDragItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\ContainerDragItem.Designer.cs">
+      <DependentUpon>ContainerDragItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\ContainerDrop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\ContainerDrop.Designer.cs">
+      <DependentUpon>ContainerDrop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Widgets\FlatVScroll.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -94,6 +106,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Widgets\ContainerDragItem.resx">
+      <DependentUpon>ContainerDragItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Widgets\ContainerDrop.resx">
+      <DependentUpon>ContainerDrop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Widgets\ResumeMiniaturePic.resx">
       <DependentUpon>ResumeMiniaturePic.cs</DependentUpon>
     </EmbeddedResource>
