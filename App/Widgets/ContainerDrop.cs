@@ -37,10 +37,16 @@ namespace App.Widgets
 
         public void ElemPanel_OnPaint(object sender, PaintEventArgs e)
         {
+            // Displaying the container control panel
             if (IsSelected) controlPanel.Show();
             else controlPanel.Hide();
+            // Design
             FlowLayoutPanel panel = (FlowLayoutPanel)sender;
-            if(IsSelected) ControlPaint.DrawBorder(e.Graphics, panel.ClientRectangle, Color.FromArgb(220,220,220), ButtonBorderStyle.Dotted);
+            if(IsSelected) ControlPaint.DrawBorder(e.Graphics, panel.ClientRectangle, 
+                                                    Color.FromArgb(200,200,200), 3 , ButtonBorderStyle.Dashed,
+                                                    Color.FromArgb(200, 200, 200), 3, ButtonBorderStyle.Dashed,
+                                                    Color.FromArgb(200, 200, 200), 3, ButtonBorderStyle.Dashed,
+                                                    Color.FromArgb(200, 200, 200), 3, ButtonBorderStyle.Dashed);
             else ControlPaint.DrawBorder(e.Graphics, panel.ClientRectangle, Color.FromArgb(220, 220, 220), ButtonBorderStyle.None);
         }
 

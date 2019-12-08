@@ -14,7 +14,16 @@ namespace App.Presenter
     {
         private IResumeRepository _resumeRepo;
         private EditorView _view;
-        private ContainerDrop _currentSelection { get; set; }
+        private ContainerDrop _currentSelction;
+        private ContainerDrop CurrentSelection
+        {
+            get { return _currentSelction; }
+            set {
+                if(_currentSelction != null) _currentSelction.IsSelected = false;
+                _currentSelction = value;
+                _currentSelction.IsSelected = true;
+            }
+        }
         private Resume _currentResume;
 
         public EditorPresenter(IResumeRepository resumeRepo, EditorView editForm)
@@ -35,6 +44,7 @@ namespace App.Presenter
                         ContainerDrop cd = new ContainerDrop(c);
                         _view.ResumeEditor.Controls.Add(cd);
                         cd.Width = _view.ResumeEditor.Width - 10;
+                        // Action de selection autorisée
                         cd.Click += SetCurrentSelectedContainer;
                         cd.ElementPanel.Click += SetCurrentSelectedContainer;
                         if(c.Elements != null)
@@ -49,10 +59,21 @@ namespace App.Presenter
         public void SetCurrentSelectedContainer(object sender, EventArgs e)
         {
             try{
-
+                ContainerDrop active = (ContainerDrop) sender;
+                ContainerDrop lastSelection = CurrentSelection;
+                CurrentSelection = active;
+                //CurrentSelection.ElementPanel.Refresh();
+                lastSelection.Refresh();
+                CurrentSelection.Refresh();
             }
-            catch{
-
+            catch ( InvalidCastException ){
+                try
+                {
+                    FlowLayoutPanel active = (FlowLayoutPanel)sender;
+                    CurrentSelection = (ContainerDrop)active.Parent;
+                    CurrentSelection.Parent.Refresh();
+                }
+                catch { }
             }
             // RenderResume();
         }
