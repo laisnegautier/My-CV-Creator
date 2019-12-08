@@ -38,6 +38,7 @@
             this.downButton = new System.Windows.Forms.Button();
             this.addTip = new System.Windows.Forms.ToolTip(this.components);
             this.upButton = new System.Windows.Forms.Button();
+            this.copyButton = new System.Windows.Forms.Button();
             this.controlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +66,7 @@
             // controlPanel
             // 
             this.controlPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.controlPanel.Controls.Add(this.copyButton);
             this.controlPanel.Controls.Add(this.upButton);
             this.controlPanel.Controls.Add(this.favButton);
             this.controlPanel.Controls.Add(this.deleteButton);
@@ -90,11 +92,14 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(3, 131);
+            this.deleteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deleteButton.BackgroundImage")));
+            this.deleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.deleteButton.FlatAppearance.BorderSize = 0;
+            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteButton.Location = new System.Drawing.Point(18, 135);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(65, 45);
+            this.deleteButton.Size = new System.Drawing.Size(34, 33);
             this.deleteButton.TabIndex = 2;
-            this.deleteButton.Text = "X";
             this.deleteButton.UseVisualStyleBackColor = true;
             // 
             // downButton
@@ -130,6 +135,18 @@
             this.upButton.TabIndex = 4;
             this.upButton.UseVisualStyleBackColor = false;
             // 
+            // copyButton
+            // 
+            this.copyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("copyButton.BackgroundImage")));
+            this.copyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.copyButton.FlatAppearance.BorderSize = 0;
+            this.copyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.copyButton.Location = new System.Drawing.Point(18, 185);
+            this.copyButton.Name = "copyButton";
+            this.copyButton.Size = new System.Drawing.Size(34, 33);
+            this.copyButton.TabIndex = 5;
+            this.copyButton.UseVisualStyleBackColor = true;
+            // 
             // ContainerDrop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,5 +172,6 @@
         private System.Windows.Forms.Button favButton;
         private System.Windows.Forms.ToolTip addTip;
         private System.Windows.Forms.Button upButton;
+        private System.Windows.Forms.Button copyButton;
     }
 }

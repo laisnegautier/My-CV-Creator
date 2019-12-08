@@ -39,7 +39,7 @@ namespace Domain
 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public virtual Container Copy()
@@ -54,9 +54,11 @@ namespace Domain
             copy.Resume = Resume;
 
             if(Elements != null)
+            {
+                copy.Elements = new List<IElement>();
                 foreach (IElement e in Elements)
                     copy.Elements.Add(e.Copy());
-
+            }
             return copy;
         }
 

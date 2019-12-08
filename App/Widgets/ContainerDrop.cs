@@ -19,6 +19,8 @@ namespace App.Widgets
         public Button FavButton { get { return favButton; } }
         public Button UpButton { get { return upButton; } }
         public Button DownButton { get { return downButton; } }
+        public Button CopyButton { get { return copyButton; } }
+        public Button DeleteButton { get { return deleteButton;  } }
 
         public ContainerDrop()
         {
@@ -56,6 +58,7 @@ namespace App.Widgets
             favButton.MouseHover += (s, e) => { addTip.Show("Add to Favorites", favButton); };
             #endregion
 
+            // Créer une fonction générique
             #region UpButton
             upButton.FlatAppearance.MouseOverBackColor = upButton.BackColor;
             upButton.BackColorChanged += (s, e) =>
@@ -76,6 +79,28 @@ namespace App.Widgets
             };
             DownButton.MouseEnter += (s, e) => { DownButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\downHover.png"); };
             DownButton.MouseLeave += (s, e) => { DownButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\down.png"); };
+            #endregion
+
+            #region DeleteButton
+            DeleteButton.FlatAppearance.MouseOverBackColor = DeleteButton.BackColor;
+            DeleteButton.BackColorChanged += (s, e) =>
+            {
+                DeleteButton.FlatAppearance.MouseOverBackColor = DeleteButton.BackColor;
+                DeleteButton.FlatAppearance.MouseDownBackColor = DeleteButton.BackColor;
+            };
+            DeleteButton.MouseEnter += (s, e) => { DeleteButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\deleteHover.png"); };
+            DeleteButton.MouseLeave += (s, e) => { DeleteButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\delete.png"); };
+            #endregion
+
+            #region CopyButton
+            CopyButton.FlatAppearance.MouseOverBackColor = CopyButton.BackColor;
+            CopyButton.BackColorChanged += (s, e) =>
+            {
+                CopyButton.FlatAppearance.MouseOverBackColor = CopyButton.BackColor;
+                CopyButton.FlatAppearance.MouseDownBackColor = CopyButton.BackColor;
+            };
+            CopyButton.MouseEnter += (s, e) => { CopyButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\copyHover.png"); };
+            CopyButton.MouseLeave += (s, e) => { CopyButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\copy.png"); };
             #endregion
         }
 

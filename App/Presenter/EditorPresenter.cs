@@ -63,7 +63,8 @@ namespace App.Presenter
                         cd.FavButton.Click += SetContainerFav;
                         cd.UpButton.Click += MoveContainerUp;
                         cd.DownButton.Click += MoveContainerDown;
-
+                        cd.DeleteButton.Click += DeleteContainer;
+                        cd.CopyButton.Click += CopyContainer;
                         //cd.UpButton.C
 
                         if (c.Elements != null)
@@ -143,6 +144,25 @@ namespace App.Presenter
             // RenderResume();
         }
 
+        public void DeleteContainer(object sender, EventArgs e)
+        {
+            Container c = ((ContainerDrop)((Button)sender).Parent.Parent).Content;
+            if(_view.ConfirmDeleteContainer(c.Name) == DialogResult.Yes)
+            {
+                _currentResume.Containers.Remove(c);
+                RenderResume();
+            }
+        }
+
+        public void CopyContainer(object sender, EventArgs e)
+        {
+            Container c = ((ContainerDrop)((Button)sender).Parent.Parent).Content;
+            if (_view.ConfirmCopyContainer(c.Name) == DialogResult.Yes)
+            {
+                _currentResume.Containers.Add(c.Copy());
+                RenderResume();
+            }
+        }
         #endregion
 
 

@@ -32,6 +32,18 @@ namespace App
             Presenter.SetUpView();
         }
 
+        public DialogResult ConfirmDeleteContainer(string title)
+        {
+            DialogResult dialogResult = MessageBox.Show("Voulez vous supprimer cette section ?", title, MessageBoxButtons.YesNo);
+            return dialogResult;
+        }
+
+        public DialogResult ConfirmCopyContainer(string title)
+        {
+            DialogResult dialogResult = MessageBox.Show("Voulez vous copier cette section ?", title, MessageBoxButtons.YesNo);
+            return dialogResult;
+        }
+
         #region DragDrop
         public void OnDragDrop(object sender, DragEventArgs e)
         {
