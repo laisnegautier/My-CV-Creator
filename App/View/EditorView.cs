@@ -33,8 +33,6 @@ namespace App
         }
 
         #region DragDrop
-
-
         public void OnDragDrop(object sender, DragEventArgs e)
         {
             Presenter.DealDragDrop(sender, e);
@@ -43,16 +41,16 @@ namespace App
         public void OnDragEnter(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Copy;
-            Cursor.Current = Cursors.Hand;
         }
 
         public void OnDragLeave(object sender, EventArgs e)
         {
+
         }
 
         public void OnDragOver(object sender, DragEventArgs e)
         {
-            //BackColor = Color.Khaki;
+            Cursor.Current = Cursors.Hand;
         }
 
         #endregion
