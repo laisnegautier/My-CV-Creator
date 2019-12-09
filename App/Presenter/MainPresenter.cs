@@ -72,13 +72,17 @@ namespace App.Presenter
         public void Delete()
         {
             if(currentResume != null)
-                if (_view.ConfirmDelete(currentResume.Resume.Title) == DialogResult.Yes)
+            {
+                DialogResult result = _view.ConfirmDelete(currentResume.Resume.Title);
+                if (result == DialogResult.OK || result == DialogResult.Yes)
                 {
                     _resumeRepository.Delete(currentResume.Resume);
                     ResumesView.Remove(currentResume);
                     currentResume = null;
                     _view.Resumes = ResumesView;
                 }
+            }
+                
         }
 
         public void Copy()

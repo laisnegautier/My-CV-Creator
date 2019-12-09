@@ -292,7 +292,7 @@
             this.resumeLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.resumeLayoutPanel.Location = new System.Drawing.Point(181, 51);
             this.resumeLayoutPanel.Name = "resumeLayoutPanel";
-            this.resumeLayoutPanel.Size = new System.Drawing.Size(657, 453);
+            this.resumeLayoutPanel.Size = new System.Drawing.Size(637, 453);
             this.resumeLayoutPanel.TabIndex = 12;
             // 
             // panel2
@@ -300,9 +300,9 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.panel2.Location = new System.Drawing.Point(844, 44);
+            this.panel2.Location = new System.Drawing.Point(824, 44);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(146, 463);
+            this.panel2.Size = new System.Drawing.Size(166, 463);
             this.panel2.TabIndex = 11;
             // 
             // MainView

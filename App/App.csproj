@@ -79,6 +79,12 @@
     <Compile Include="Widgets\ContainerDrop.Designer.cs">
       <DependentUpon>ContainerDrop.cs</DependentUpon>
     </Compile>
+    <Compile Include="Widgets\CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Widgets\CustomMessageBox.Designer.cs">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Widgets\FlatVScroll.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Widgets\ContainerDrop.resx">
       <DependentUpon>ContainerDrop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Widgets\CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Widgets\ResumeMiniaturePic.resx">
       <DependentUpon>ResumeMiniaturePic.cs</DependentUpon>

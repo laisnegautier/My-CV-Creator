@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using App.Presenter;
 using App.View;
+using App.Widgets;
 using Domain;
 
 namespace App
@@ -183,7 +184,11 @@ namespace App
 
         public DialogResult ConfirmDelete(string title)
         {
-            DialogResult dialogResult = MessageBox.Show("Voulez vous supprimer ce CV ?", title, MessageBoxButtons.YesNo);
+            DialogResult dialogResult = DialogResult.None;
+            CustomMessageBox confirmDeleterMsgBox = new CustomMessageBox();
+            confirmDeleterMsgBox.Disposed += (s, e) => { dialogResult = confirmDeleterMsgBox.choice; };
+            confirmDeleterMsgBox.Show("Are you sure you want to delete this container ?",title);
+            //DialogResult dialogResult = MessageBox.Show("Voulez vous supprimer ce CV ?", title, MessageBoxButtons.YesNo);
             return dialogResult;
         }
 
