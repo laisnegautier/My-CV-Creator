@@ -11,6 +11,7 @@ namespace Domain
         public virtual int Id { get; set; }
         public virtual Container Container { get; set; }
         public virtual DateTime Content { get; set; }
+        public virtual bool VisibilityParser { get; set; }
 
         // Style properties
         public virtual bool Italic { get; set; }
@@ -27,12 +28,20 @@ namespace Domain
         /// <summary>
         /// Constructeur sans paramètre nécesessaire pour NHibernate
         /// </summary>
-        public Date() { }
+        public Date()
+        {
+            VisibilityParser = true;
+        }
 
         #endregion
 
 
         #region Methods
+
+        public override string ToString()
+        {
+            return Content.ToString();
+        }
 
         public virtual IElement Copy()
         {

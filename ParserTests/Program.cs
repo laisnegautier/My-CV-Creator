@@ -5,10 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.IO;
-using iText.Kernel.Pdf;
-using iText.Layout;
-using iText.Layout.Element;
-using iText.Layout.Properties;
+using System.Web;
 
 namespace ParserTests
 {
@@ -16,12 +13,20 @@ namespace ParserTests
     {
         static void Main(string[] args)
         {
-            using (PdfWriter pdfWriter = new PdfWriter("hello.pdf"))
-            using (PdfDocument pdfDocument = new PdfDocument(pdfWriter))
-            using (Document document = new Document(pdfDocument))
-            {
-                document.Add(new Paragraph("Hello World!"));
-            }
+            Console.WriteLine("Enter a string having '&', '<', '>' or '\"' in it: ");
+            string myString = Console.ReadLine();
+
+            // Encode the string.
+            string myEncodedString = HttpUtility.HtmlEncode(myString);
+
+            Console.WriteLine($"HTML Encoded string is: {myEncodedString}");
+            StringWriter myWriter = new StringWriter();
+
+            // Decode the encoded string.
+            HttpUtility.HtmlDecode(myEncodedString, myWriter);
+
+            string myDecodedString = myWriter.ToString();
+            Console.Write($"Decoded string of the above encoded string is: {myDecodedString}");
         }
     }
 }

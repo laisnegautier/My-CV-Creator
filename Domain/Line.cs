@@ -10,6 +10,7 @@ namespace Domain
         #region Properties
         public virtual int Id { get; set; }
         public virtual Container Container { get; set; }
+        public virtual bool VisibilityParser { get; set; }
 
         // Style propertie
         public virtual string Color { get; set; }
@@ -22,7 +23,10 @@ namespace Domain
         /// <summary>
         /// Constructeur sans paramètre nécesessaire pour NHibernate
         /// </summary>
-        public Line() { }
+        public Line()
+        {
+            VisibilityParser = true;
+        }
 
         #endregion
 

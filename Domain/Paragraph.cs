@@ -11,6 +11,7 @@ namespace Domain
         public virtual int Id { get; set; }
         public virtual Container Container { get; set; }
         public virtual string Content { get; set; }
+        public virtual bool VisibilityParser { get; set; }
 
         // Style properties
         public virtual bool Italic { get; set; }
@@ -28,6 +29,7 @@ namespace Domain
         /// Constructeur sans paramètre nécesessaire pour NHibernate
         /// </summary>
         public Paragraph() {
+            VisibilityParser = true;
             ForegroundColor = "";
             BackgroundColor = "";
         }

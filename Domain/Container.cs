@@ -13,6 +13,7 @@ namespace Domain
         public virtual string Name { get; set; }
         public virtual bool Favorite { get; set; }
         public virtual string FavoriteName { get; set; }
+        public virtual bool VisibilityParser { get; set; }
 
         // Style properties
         public virtual string BackgroundColor { get; set; }
@@ -30,7 +31,10 @@ namespace Domain
         /// <summary>
         /// Constructeur sans paramètre nécesessaire pour NHibernate
         /// </summary>
-        public Container() { }
+        public Container() 
+        {
+            VisibilityParser = true;
+        }
 
         #endregion
 
