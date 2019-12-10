@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALTests", "DALTests\DALTests.csproj", "{2641E101-17EB-4282-90F9-27E97A3B0081}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserTests", "ParserTests\ParserTests.csproj", "{3624F2AE-9F3A-4030-9A66-75EE27DDBEEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2641E101-17EB-4282-90F9-27E97A3B0081}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2641E101-17EB-4282-90F9-27E97A3B0081}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2641E101-17EB-4282-90F9-27E97A3B0081}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3624F2AE-9F3A-4030-9A66-75EE27DDBEEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3624F2AE-9F3A-4030-9A66-75EE27DDBEEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3624F2AE-9F3A-4030-9A66-75EE27DDBEEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3624F2AE-9F3A-4030-9A66-75EE27DDBEEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
