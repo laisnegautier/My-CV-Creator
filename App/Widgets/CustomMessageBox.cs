@@ -104,5 +104,11 @@ namespace App.Widgets
             choice = DialogResult.Cancel;
             Dispose();
         }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            choice = DialogResult.None;
+            Dispose();
+        }
     }
 }

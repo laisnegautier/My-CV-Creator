@@ -33,10 +33,10 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.descritpionLabel = new System.Windows.Forms.Label();
             this.headPanel = new System.Windows.Forms.Panel();
-            this.titleLabel = new System.Windows.Forms.Label();
             this.leftHeadPanel = new System.Windows.Forms.Panel();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.warningIcon = new System.Windows.Forms.PictureBox();
-            this.roundButton1 = new App.RoundButton();
+            this.closeButton = new App.RoundButton();
             this.headPanel.SuspendLayout();
             this.leftHeadPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.warningIcon)).BeginInit();
@@ -86,7 +86,7 @@
             // headPanel
             // 
             this.headPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.headPanel.Controls.Add(this.roundButton1);
+            this.headPanel.Controls.Add(this.closeButton);
             this.headPanel.Controls.Add(this.leftHeadPanel);
             this.headPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headPanel.Location = new System.Drawing.Point(0, 0);
@@ -96,6 +96,18 @@
             this.headPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
             this.headPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             this.headPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
+            // 
+            // leftHeadPanel
+            // 
+            this.leftHeadPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(89)))));
+            this.leftHeadPanel.Controls.Add(this.titleLabel);
+            this.leftHeadPanel.Location = new System.Drawing.Point(0, 0);
+            this.leftHeadPanel.Name = "leftHeadPanel";
+            this.leftHeadPanel.Size = new System.Drawing.Size(181, 40);
+            this.leftHeadPanel.TabIndex = 4;
+            this.leftHeadPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.leftHeadPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            this.leftHeadPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
             // 
             // titleLabel
             // 
@@ -111,38 +123,28 @@
             this.titleLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             this.titleLabel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
             // 
-            // leftHeadPanel
-            // 
-            this.leftHeadPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(89)))));
-            this.leftHeadPanel.Controls.Add(this.titleLabel);
-            this.leftHeadPanel.Location = new System.Drawing.Point(0, 0);
-            this.leftHeadPanel.Name = "leftHeadPanel";
-            this.leftHeadPanel.Size = new System.Drawing.Size(181, 40);
-            this.leftHeadPanel.TabIndex = 4;
-            this.leftHeadPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
-            this.leftHeadPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
-            this.leftHeadPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
-            // 
             // warningIcon
             // 
             this.warningIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("warningIcon.BackgroundImage")));
             this.warningIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.warningIcon.Location = new System.Drawing.Point(40, 76);
+            this.warningIcon.Location = new System.Drawing.Point(39, 74);
             this.warningIcon.Name = "warningIcon";
             this.warningIcon.Size = new System.Drawing.Size(85, 85);
             this.warningIcon.TabIndex = 4;
             this.warningIcon.TabStop = false;
             // 
-            // roundButton1
+            // closeButton
             // 
-            this.roundButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(94)))), ((int)(((byte)(107)))));
-            this.roundButton1.FlatAppearance.BorderSize = 0;
-            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton1.Location = new System.Drawing.Point(360, 9);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(24, 23);
-            this.roundButton1.TabIndex = 5;
-            this.roundButton1.UseVisualStyleBackColor = false;
+            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(112)))), ((int)(((byte)(102)))));
+            this.closeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Location = new System.Drawing.Point(360, 9);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(24, 23);
+            this.closeButton.TabIndex = 5;
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // CustomMessageBox
             // 
@@ -179,6 +181,6 @@
         private System.Windows.Forms.Panel leftHeadPanel;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.PictureBox warningIcon;
-        private RoundButton roundButton1;
+        private RoundButton closeButton;
     }
 }

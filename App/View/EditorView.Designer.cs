@@ -31,8 +31,9 @@
             this.logoLabel = new System.Windows.Forms.Label();
             this.headerPanelLogo = new System.Windows.Forms.Panel();
             this.headerPanel = new System.Windows.Forms.Panel();
-            this.minimizeButton = new System.Windows.Forms.Button();
-            this.closeButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.minimizeButton = new App.RoundButton();
+            this.closeButton = new App.RoundButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.favSectionPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -42,6 +43,7 @@
             this.resumeEditorPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.headerPanelLogo.SuspendLayout();
             this.headerPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.SuspendLayout();
@@ -68,42 +70,53 @@
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.headerPanel.Controls.Add(this.panel1);
             this.headerPanel.Controls.Add(this.headerPanelLogo);
-            this.headerPanel.Controls.Add(this.minimizeButton);
-            this.headerPanel.Controls.Add(this.closeButton);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
             this.headerPanel.Name = "headerPanel";
             this.headerPanel.Size = new System.Drawing.Size(1152, 45);
             this.headerPanel.TabIndex = 9;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.minimizeButton);
+            this.panel1.Controls.Add(this.closeButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(1023, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(129, 45);
+            this.panel1.TabIndex = 16;
+            // 
             // minimizeButton
             // 
-            this.minimizeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
+            this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.minimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.minimizeButton.FlatAppearance.BorderSize = 0;
             this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.Location = new System.Drawing.Point(1049, 11);
+            this.minimizeButton.Location = new System.Drawing.Point(60, 12);
             this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(24, 23);
-            this.minimizeButton.TabIndex = 2;
-            this.minimizeButton.Text = "_";
+            this.minimizeButton.Size = new System.Drawing.Size(22, 22);
+            this.minimizeButton.TabIndex = 14;
             this.minimizeButton.UseVisualStyleBackColor = false;
+            this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            this.minimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButton_Enter);
+            this.minimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_Leave);
             // 
             // closeButton
             // 
-            this.closeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(94)))), ((int)(((byte)(107)))));
+            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.closeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.closeButton.FlatAppearance.BorderSize = 0;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.Location = new System.Drawing.Point(1089, 11);
+            this.closeButton.Location = new System.Drawing.Point(91, 12);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(24, 23);
-            this.closeButton.TabIndex = 0;
-            this.closeButton.Text = "X";
+            this.closeButton.Size = new System.Drawing.Size(22, 22);
+            this.closeButton.TabIndex = 15;
             this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.closeButton.MouseEnter += new System.EventHandler(this.CloseButton_Enter);
+            this.closeButton.MouseLeave += new System.EventHandler(this.CloseButton_Leave);
             // 
             // panel3
             // 
@@ -203,6 +216,7 @@
             this.headerPanelLogo.ResumeLayout(false);
             this.headerPanelLogo.PerformLayout();
             this.headerPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.leftPanel.ResumeLayout(false);
             this.rightPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -214,8 +228,6 @@
         private System.Windows.Forms.Label logoLabel;
         private System.Windows.Forms.Panel headerPanelLogo;
         private System.Windows.Forms.Panel headerPanel;
-        private System.Windows.Forms.Button minimizeButton;
-        private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel leftPanel;
         private System.Windows.Forms.Panel rightPanel;
@@ -223,6 +235,9 @@
         private System.Windows.Forms.FlowLayoutPanel defaultSectionPanel;
         private System.Windows.Forms.FlowLayoutPanel elementPanel;
         private System.Windows.Forms.FlowLayoutPanel resumeEditorPanel;
+        private RoundButton closeButton;
+        private RoundButton minimizeButton;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

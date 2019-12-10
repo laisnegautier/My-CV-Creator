@@ -34,7 +34,7 @@ namespace App
                 }
             }
         }
-        
+        // 255; 112; 102
         #endregion
 
         #region Initialisation
@@ -74,6 +74,7 @@ namespace App
         private void CloseButton_Click(object sender, EventArgs e)
         {
             Close();
+            Application.Exit();
         }
 
         private void MaximizeButton_Click(object sender, EventArgs e)
@@ -84,6 +85,30 @@ namespace App
         private void MinimizeButton_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+        
+        public void CloseButton_Enter(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.FromArgb(255, 112, 102);
+        }
+
+        public void CloseButton_Leave(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.FromArgb(100,100,100);
+        }
+
+        public void MinimizeButton_Enter(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.FromArgb(64, 94, 107);
+        }
+
+        public void MinimizeButton_Leave(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.FromArgb(100, 100, 100);
         }
 
         private void DragPanel_MouseDown(object sender, MouseEventArgs e)

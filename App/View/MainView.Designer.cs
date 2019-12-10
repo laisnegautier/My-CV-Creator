@@ -32,8 +32,6 @@
             this.dragPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.minimizeButton = new System.Windows.Forms.Button();
-            this.closeButton = new System.Windows.Forms.Button();
             this.buttonPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.copyPicture = new System.Windows.Forms.PictureBox();
@@ -46,6 +44,8 @@
             this.addButton = new System.Windows.Forms.Button();
             this.resumeLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.minimizeButton = new App.RoundButton();
+            this.closeButton = new App.RoundButton();
             this.dragPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.buttonPanel.SuspendLayout();
@@ -58,9 +58,9 @@
             // dragPanel
             // 
             this.dragPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.dragPanel.Controls.Add(this.panel1);
-            this.dragPanel.Controls.Add(this.minimizeButton);
             this.dragPanel.Controls.Add(this.closeButton);
+            this.dragPanel.Controls.Add(this.minimizeButton);
+            this.dragPanel.Controls.Add(this.panel1);
             this.dragPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.dragPanel.Location = new System.Drawing.Point(0, 0);
             this.dragPanel.Name = "dragPanel";
@@ -96,36 +96,6 @@
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             this.label1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
-            // 
-            // minimizeButton
-            // 
-            this.minimizeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
-            this.minimizeButton.FlatAppearance.BorderSize = 0;
-            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.Location = new System.Drawing.Point(887, 11);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(24, 23);
-            this.minimizeButton.TabIndex = 2;
-            this.minimizeButton.Text = "_";
-            this.minimizeButton.UseVisualStyleBackColor = false;
-            this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
-            // 
-            // closeButton
-            // 
-            this.closeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(94)))), ((int)(((byte)(107)))));
-            this.closeButton.FlatAppearance.BorderSize = 0;
-            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.Location = new System.Drawing.Point(927, 11);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(24, 23);
-            this.closeButton.TabIndex = 0;
-            this.closeButton.Text = "X";
-            this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // buttonPanel
             // 
@@ -305,6 +275,36 @@
             this.panel2.Size = new System.Drawing.Size(166, 463);
             this.panel2.TabIndex = 11;
             // 
+            // minimizeButton
+            // 
+            this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.minimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.minimizeButton.FlatAppearance.BorderSize = 0;
+            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeButton.Location = new System.Drawing.Point(925, 11);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.Size = new System.Drawing.Size(22, 22);
+            this.minimizeButton.TabIndex = 12;
+            this.minimizeButton.UseVisualStyleBackColor = false;
+            this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            this.minimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButton_Enter);
+            this.minimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_Leave);
+            // 
+            // closeButton
+            // 
+            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.closeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Location = new System.Drawing.Point(956, 11);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(22, 22);
+            this.closeButton.TabIndex = 13;
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.closeButton.MouseEnter += new System.EventHandler(this.CloseButton_Enter);
+            this.closeButton.MouseLeave += new System.EventHandler(this.CloseButton_Leave);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,8 +335,6 @@
         private System.Windows.Forms.Panel dragPanel;
         private System.Windows.Forms.Panel buttonPanel;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.Button minimizeButton;
         private System.Windows.Forms.FlowLayoutPanel resumeLayoutPanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -349,5 +347,7 @@
         private System.Windows.Forms.PictureBox editPicture;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
+        private RoundButton minimizeButton;
+        private RoundButton closeButton;
     }
 }

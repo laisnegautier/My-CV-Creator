@@ -20,6 +20,7 @@ namespace App
         public EditorPresenter Presenter { private get; set; }
         public FlowLayoutPanel ResumeEditor { get{ return resumeEditorPanel; } }
         public FlowLayoutPanel DefaultSectionPanel { get { return defaultSectionPanel; } }
+        public FlowLayoutPanel ElementPanel { get { return elementPanel; } }
        
         public EditorView()
         {
@@ -44,6 +45,43 @@ namespace App
             return dialogResult;
         }
 
+        #region fonctionalitiesButton
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            Close();
+            Application.Exit();
+        }
+
+        private void MinimizeButton_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        public void CloseButton_Enter(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.FromArgb(255, 112, 102);
+        }
+
+        public void CloseButton_Leave(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.FromArgb(100, 100, 100);
+        }
+
+        public void MinimizeButton_Enter(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.FromArgb(64, 94, 107);
+        }
+
+        public void MinimizeButton_Leave(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.FromArgb(100, 100, 100);
+        }
+        #endregion
+
         #region DragDrop
         public void OnDragDrop(object sender, DragEventArgs e)
         {
@@ -66,5 +104,6 @@ namespace App
         }
 
         #endregion
+        
     }
 }

@@ -14,5 +14,6 @@ namespace App.View
         Presenter.EditorPresenter Presenter { set; }
         FlowLayoutPanel ResumeEditor { get; }
         FlowLayoutPanel DefaultSectionPanel { get; }
+        FlowLayoutPanel ElementPanel { get; }
     }
 }
