@@ -38,6 +38,7 @@ namespace App.Presenter
             _currentResume = _view.CurrentResume;
         }
 
+        // A segmenter en rendu des containers et des elements
         public void RenderResume()
         {
             _view.ResumeEditor.Controls.Clear();
@@ -58,7 +59,7 @@ namespace App.Presenter
                         // Action de selection autorisée
                         cd.Click += SetCurrentSelectedContainer;
                         cd.ElementPanel.Click += SetCurrentSelectedContainer;
-
+                        cd.ContainerTitleLabel.DoubleClick += EditContainerTitle;
                         // Gestion des boutons
                         cd.FavButton.Click += SetContainerFav;
                         cd.UpButton.Click += MoveContainerUp;
@@ -77,6 +78,24 @@ namespace App.Presenter
         }
 
         #region Container Managers
+        public void EditContainerTitle(object sender, EventArgs e)
+        {
+            Label title = (Label)sender;
+            if (title.Parent is ContainerDrop)
+            {
+                _currentSelection = (ContainerDrop)title.Parent;
+                RenderResume();
+            }
+            Editor editor = new Editor();
+            editor.Disposed += (s, evt) =>
+            {
+                _currentSelection.ContainerTitleLabel.Text = editor.TextValue;
+                _currentSelection.Content.Name = editor.TextValue;
+                //_currentSelection.ContainerTitleLabel.Refresh();
+            };
+            editor.Show("Editer le text de votre Titre", title.Text);
+        }
+
         public void SetContainerFav(object sender, EventArgs e)
         {
             Button button = (Button)sender;

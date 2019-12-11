@@ -13,14 +13,16 @@ namespace App.Widgets
 {
     public partial class ContainerDrop : UserControl
     {
+        // Deporter ces sous-partie dans une Interface car à part entière de la vue
         public bool IsSelected { get; set; }
         public Domain.Container Content { get; set; }
-        public Control ElementPanel { get{ return elementPanel; } }
+        public Control ElementPanel { get { return elementPanel; } }
         public Button FavButton { get { return favButton; } }
         public Button UpButton { get { return upButton; } }
         public Button DownButton { get { return downButton; } }
         public Button CopyButton { get { return copyButton; } }
-        public Button DeleteButton { get { return deleteButton;  } }
+        public Button DeleteButton { get { return deleteButton; } }
+        public Label ContainerTitleLabel { get { return containerNameLabel; } }
 
         public ContainerDrop()
         {

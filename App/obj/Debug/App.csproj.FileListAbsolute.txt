@@ -45,3 +45,4 @@ C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.ResumeMiniature
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.Widgets.ContainerDrop.resources
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.Widgets.ContainerDragItem.resources
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.Widgets.CustomMessageBox.resources
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.Widgets.Editor.resources
