@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace App.Widgets
 {
-    public partial class Editor : Form
+    public partial class SmallTextEditor : Form
     {
         public string TextValue { get; set; }
         private string initValue;
         
-        public Editor()
+        public SmallTextEditor()
         {
             InitializeComponent();
             Paint += Editor_Paint;

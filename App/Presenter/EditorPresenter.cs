@@ -60,6 +60,7 @@ namespace App.Presenter
                         cd.Click += SetCurrentSelectedContainer;
                         cd.ElementPanel.Click += SetCurrentSelectedContainer;
                         cd.ContainerTitleLabel.DoubleClick += EditContainerTitle;
+                        
                         // Gestion des boutons
                         cd.FavButton.Click += SetContainerFav;
                         cd.UpButton.Click += MoveContainerUp;
@@ -86,7 +87,7 @@ namespace App.Presenter
                 _currentSelection = (ContainerDrop)title.Parent;
                 RenderResume();
             }
-            Editor editor = new Editor();
+            SmallTextEditor editor = new SmallTextEditor();
             editor.Disposed += (s, evt) =>
             {
                 _currentSelection.ContainerTitleLabel.Text = editor.TextValue;

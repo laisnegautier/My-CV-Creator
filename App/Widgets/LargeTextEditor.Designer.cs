@@ -1,6 +1,6 @@
 ﻿namespace App.Widgets
 {
-    partial class Editor
+    partial class LargeTextEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Editor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LargeTextEditor));
             this.headPanel = new System.Windows.Forms.Panel();
             this.closeButton = new App.RoundButton();
             this.leftHeadPanel = new System.Windows.Forms.Panel();

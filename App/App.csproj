@@ -85,11 +85,17 @@
     <Compile Include="Widgets\CustomMessageBox.Designer.cs">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\Editor.cs">
+    <Compile Include="Widgets\SmallTextEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Widgets\Editor.Designer.cs">
-      <DependentUpon>Editor.cs</DependentUpon>
+    <Compile Include="Widgets\SmallTextEditor.Designer.cs">
+      <DependentUpon>SmallTextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\LargeTextEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Widgets\LargeTextEditor.Designer.cs">
+      <DependentUpon>LargeTextEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Widgets\FlatVScroll.cs">
       <SubType>Component</SubType>
@@ -127,8 +133,11 @@
     <EmbeddedResource Include="Widgets\CustomMessageBox.resx">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Widgets\Editor.resx">
-      <DependentUpon>Editor.cs</DependentUpon>
+    <EmbeddedResource Include="Widgets\SmallTextEditor.resx">
+      <DependentUpon>SmallTextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Widgets\LargeTextEditor.resx">
+      <DependentUpon>LargeTextEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Widgets\ResumeMiniaturePic.resx">
       <DependentUpon>ResumeMiniaturePic.cs</DependentUpon>
