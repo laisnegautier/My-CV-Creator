@@ -14,6 +14,8 @@ namespace App.Widgets
     public partial class ParagraphDrop : UserControl
     {
         private Paragraph _paragraph;
+
+        public Panel ControlPanel { get { return controlPanel; } }
         public Label ParagraphText { get { return paragraphText; } }
 
         public string TextValue

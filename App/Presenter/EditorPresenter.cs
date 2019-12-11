@@ -92,7 +92,7 @@ namespace App.Presenter
                 cd.ElementPanel.Controls.Add(pd);
                 pd.Left = cd.ElementPanel.Left;
                 pd.Width = cd.ElementPanel.Width - (pd.Margin.Left + pd.Margin.Right);
-                //pd.ParagraphText.Width = pd.Width;
+                pd.ParagraphText.Width = pd.Width - pd.ControlPanel.Width - (pd.ParagraphText.Margin.Left + pd.ParagraphText.Margin.Right);
                 pd.Click += SetCurrentSelectedContainer;
                 pd.ParagraphText.Click += SetCurrentSelectedContainer;
                 pd.Click += SetCurrentSelectedElement;
