@@ -53,6 +53,8 @@
             this.elementPanel.Name = "elementPanel";
             this.elementPanel.Size = new System.Drawing.Size(482, 190);
             this.elementPanel.TabIndex = 0;
+            this.elementPanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnDragEnter);
+            this.elementPanel.DragOver += new System.Windows.Forms.DragEventHandler(this.OnDragOver);
             // 
             // containerNameLabel
             // 
