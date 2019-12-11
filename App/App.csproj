@@ -85,31 +85,37 @@
     <Compile Include="Widgets\ContainerDrop.Designer.cs">
       <DependentUpon>ContainerDrop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\OkCustomMessageBox.cs">
+    <Compile Include="View\OkCustomMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Widgets\OkCustomMessageBox.Designer.cs">
+    <Compile Include="View\OkCustomMessageBox.Designer.cs">
       <DependentUpon>OkCustomMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\CustomMessageBox.cs">
+    <Compile Include="View\CustomMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Widgets\CustomMessageBox.Designer.cs">
+    <Compile Include="View\CustomMessageBox.Designer.cs">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\SmallTextEditor.cs">
+    <Compile Include="Widgets\ParagraphDrop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\ParagraphDrop.Designer.cs">
+      <DependentUpon>ParagraphDrop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SmallTextEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Widgets\SmallTextEditor.Designer.cs">
+    <Compile Include="View\SmallTextEditor.Designer.cs">
       <DependentUpon>SmallTextEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\LargeTextEditor.cs">
+    <Compile Include="View\LargeTextEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Widgets\LargeTextEditor.Designer.cs">
+    <Compile Include="View\LargeTextEditor.Designer.cs">
       <DependentUpon>LargeTextEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\FlatVScroll.cs">
+    <Compile Include="View\FlatVScroll.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Widgets\RoundButton.cs">
@@ -145,17 +151,20 @@
     <EmbeddedResource Include="Widgets\ContainerDrop.resx">
       <DependentUpon>ContainerDrop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Widgets\OkCustomMessageBox.resx">
+    <EmbeddedResource Include="View\OkCustomMessageBox.resx">
       <DependentUpon>OkCustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Widgets\CustomMessageBox.resx">
+    <EmbeddedResource Include="View\CustomMessageBox.resx">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Widgets\SmallTextEditor.resx">
+    <EmbeddedResource Include="View\SmallTextEditor.resx">
       <DependentUpon>SmallTextEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Widgets\LargeTextEditor.resx">
+    <EmbeddedResource Include="View\LargeTextEditor.resx">
       <DependentUpon>LargeTextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Widgets\ParagraphDrop.resx">
+      <DependentUpon>ParagraphDrop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Widgets\ResumeMiniaturePic.resx">
       <DependentUpon>ResumeMiniaturePic.cs</DependentUpon>

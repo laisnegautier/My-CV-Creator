@@ -51,6 +51,7 @@
             this.elementPanel.BackColor = System.Drawing.Color.Transparent;
             this.elementPanel.Location = new System.Drawing.Point(36, 28);
             this.elementPanel.Name = "elementPanel";
+            this.elementPanel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.elementPanel.Size = new System.Drawing.Size(482, 190);
             this.elementPanel.TabIndex = 0;
             this.elementPanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnDragEnter);
@@ -68,13 +69,13 @@
             // 
             // controlPanel
             // 
+            this.controlPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.controlPanel.BackColor = System.Drawing.Color.Gainsboro;
             this.controlPanel.Controls.Add(this.copyButton);
             this.controlPanel.Controls.Add(this.upButton);
             this.controlPanel.Controls.Add(this.favButton);
             this.controlPanel.Controls.Add(this.deleteButton);
             this.controlPanel.Controls.Add(this.downButton);
-            this.controlPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.controlPanel.Location = new System.Drawing.Point(537, 0);
             this.controlPanel.Name = "controlPanel";
             this.controlPanel.Size = new System.Drawing.Size(71, 230);

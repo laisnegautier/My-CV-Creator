@@ -26,7 +26,7 @@ namespace App
             int count = 0;
             foreach(Domain.Container container in resume.Containers)
             {
-                count += container.Elements.Count;
+                if(container.Elements != null) count += container.Elements.Count;
             }
             elementLabel.Text += count;
             Paint += DropShadow;

@@ -71,14 +71,45 @@ namespace App.Presenter
                         cd.ElementPanel.DragDrop += DealDragDrop;
                         //cd.UpButton.C
 
+                        int _containerHeight = 0;
                         if (c.Elements != null)
                             foreach(IElement e in c.Elements)
                             {
-
+                                int size = RenderElement(e, c, cd);
+                                _containerHeight += size;
                             }
+                        cd.Height += _containerHeight;
                         _view.ResumeEditor.Refresh();
                     }
         }
+
+        public int RenderElement(IElement e, Container c, ContainerDrop cd)
+        {
+            if(e is Paragraph)
+            {
+                Paragraph p = (Paragraph)e;
+                ParagraphDrop pd = new ParagraphDrop(p);
+                cd.ElementPanel.Controls.Add(pd);
+                pd.Left = cd.ElementPanel.Left;
+                pd.Width = cd.ElementPanel.Width - (pd.Margin.Left + pd.Margin.Right);
+                //pd.ParagraphText.Width = pd.Width;
+                pd.Click += SetCurrentSelectedContainer;
+                pd.ParagraphText.Click += SetCurrentSelectedContainer;
+                pd.Click += SetCurrentSelectedElement;
+                pd.ParagraphText.Click += SetCurrentSelectedElement;
+                return pd.Height;
+            }
+            // Cpt spécifique pour chaque type d'element possible du CV
+
+            return 0;
+        }
+
+        #region Element Managers
+        public void SetCurrentSelectedElement(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
 
         #region Container Managers
         public void EditContainerTitle(object sender, EventArgs e)
@@ -143,6 +174,12 @@ namespace App.Presenter
 
         public void SetCurrentSelectedContainer(object sender, EventArgs e)
         {
+            /*ContainerDrop cd;
+            object obj = sender;
+            while(obj is ContainerDrop != true)
+            {
+            }*/
+
             try{
                 ContainerDrop active = (ContainerDrop) sender;
                 ContainerDrop lastSelection = CurrentSelection;
@@ -155,13 +192,28 @@ namespace App.Presenter
                 try
                 {
                     FlowLayoutPanel active = (FlowLayoutPanel)sender;
+                    // Ajouter le rafrais=chissement de l'ancienne section dans le setter
                     ContainerDrop lastSelection = CurrentSelection;
                     CurrentSelection = (ContainerDrop)active.Parent;
 
                     if (lastSelection != null) lastSelection.Refresh();
                     CurrentSelection.Refresh();
                 }
-                catch { }
+                catch (InvalidCastException ){
+                    if(sender is Label)
+                    {
+                        sender = ((Label)sender).Parent;
+                        if (sender is ParagraphDrop)
+                        {
+                            ParagraphDrop pd = (ParagraphDrop)sender;
+                            ContainerDrop lastSelection = CurrentSelection;
+                            CurrentSelection = (ContainerDrop)pd.Parent.Parent;
+
+                            if (lastSelection != null) lastSelection.Refresh();
+                            CurrentSelection.Refresh();
+                        }
+                    }
+                }
             }
             // RenderResume();
         }
@@ -248,12 +300,24 @@ namespace App.Presenter
 
         public void DealDragDropElement(IElement element ,ContainerDrop targetContainer)
         {
-
+            _currentSelection = targetContainer;
+            // Gestion de l'ajout d'un nouveau paragraph à un CV
             if(element is Paragraph)
             {
-                targetContainer.ElementPanel.Controls.Add(new Label() { Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit." });
+                Paragraph active = (Paragraph)element;
+                active.Content = "Lorem ipsum dolor sit amet, cons ectetur adipiscing elit.Sed non risus." +
+                                  "Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies" +
+                                  "sed, dolor.Cras elementum ultrices diam. Maecenas ligula massa, varius a," +
+                                  "semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie," +
+                                  "enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.";
+                //ParagraphDrop pd = new ParagraphDrop((Paragraph)element);
+                //if (pd.Content.Content == "" || pd.Content.Content == null) pd.TextValue = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.";
+                // Ajout graphique
+                //targetContainer.ElementPanel.Controls.Add(pd);
+                //pd.Width = ((ContainerDrop)pd.Parent).ElementPanel.Width;
+                // Ajout dans le CV
                 targetContainer.Content.Elements.Add(element);
-                targetContainer.Refresh();
+                RenderResume();
             }
 
 

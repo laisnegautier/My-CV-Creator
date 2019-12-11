@@ -49,3 +49,4 @@ C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.Widgets.LargeTe
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.Widgets.SmallTextEditor.resources
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.Widgets.OkCustomMessageBox.resources
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.Widgets.ElementDragItem.resources
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.Widgets.ParagraphDrop.resources

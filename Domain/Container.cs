@@ -30,7 +30,10 @@ namespace Domain
         /// <summary>
         /// Constructeur sans paramètre nécesessaire pour NHibernate
         /// </summary>
-        public Container() { }
+        public Container()
+        {
+            Elements = new List<IElement>();
+        }
 
         #endregion
 

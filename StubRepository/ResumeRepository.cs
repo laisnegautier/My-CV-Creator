@@ -33,10 +33,10 @@ namespace StubRepository
             elem1.Add(elTest1); elem2.Add(elTest1); elem2.Add(elTest2);
             Container container1 = new Container();
 
-            container1.Elements = elem1;
-            container1.Elements.Add(elTest1);
+            //container1.Elements = elem1;
+            //container1.Elements.Add(elTest1);
             Container container2 = new Container();
-            container2.Elements = elem1;
+            //container2.Elements = elem1;
             List<Container> cont1 = new List<Container>() { container1, container2 };
             List<Container> cont2 = new List<Container>() { container1, container1, container1 };
             List<Resume> result = new List<Resume>();
