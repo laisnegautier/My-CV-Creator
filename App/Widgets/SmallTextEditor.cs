@@ -80,5 +80,14 @@ namespace App.Widgets
                 Dispose();
             }
         }
+
+        private void editBox_TextChanged(object sender, EventArgs e)
+        {
+            if(((TextBox)sender).Text.Length == ((TextBox)sender).MaxLength)
+            {
+                OkCustomMessageBox okBox = new OkCustomMessageBox();
+                okBox.Show("Attention, vous dépassez la taille maximale de caractère pour un titre de section", "Alert");
+            }
+        }
     }
 }

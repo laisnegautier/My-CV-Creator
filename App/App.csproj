@@ -67,6 +67,12 @@
     <Compile Include="Presenter\EditorPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
     <Compile Include="View\IEditorView.cs" />
+    <Compile Include="Widgets\ElementDragItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\ElementDragItem.Designer.cs">
+      <DependentUpon>ElementDragItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Widgets\ContainerDragItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="Widgets\ContainerDrop.Designer.cs">
       <DependentUpon>ContainerDrop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\OkCustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Widgets\OkCustomMessageBox.Designer.cs">
+      <DependentUpon>OkCustomMessageBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Widgets\CustomMessageBox.cs">
       <SubType>Form</SubType>
@@ -124,11 +136,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Widgets\ElementDragItem.resx">
+      <DependentUpon>ElementDragItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Widgets\ContainerDragItem.resx">
       <DependentUpon>ContainerDragItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Widgets\ContainerDrop.resx">
       <DependentUpon>ContainerDrop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Widgets\OkCustomMessageBox.resx">
+      <DependentUpon>OkCustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Widgets\CustomMessageBox.resx">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>

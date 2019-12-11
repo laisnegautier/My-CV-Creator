@@ -47,3 +47,5 @@ C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.Widgets.Contain
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.Widgets.CustomMessageBox.resources
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.Widgets.LargeTextEditor.resources
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.Widgets.SmallTextEditor.resources
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.Widgets.OkCustomMessageBox.resources
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.Widgets.ElementDragItem.resources

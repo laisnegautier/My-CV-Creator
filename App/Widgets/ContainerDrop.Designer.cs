@@ -33,17 +33,18 @@
             this.elementPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.containerNameLabel = new System.Windows.Forms.Label();
             this.controlPanel = new System.Windows.Forms.Panel();
+            this.copyButton = new System.Windows.Forms.Button();
+            this.upButton = new System.Windows.Forms.Button();
             this.favButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.downButton = new System.Windows.Forms.Button();
             this.addTip = new System.Windows.Forms.ToolTip(this.components);
-            this.upButton = new System.Windows.Forms.Button();
-            this.copyButton = new System.Windows.Forms.Button();
             this.controlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // elementPanel
             // 
+            this.elementPanel.AllowDrop = true;
             this.elementPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -76,6 +77,31 @@
             this.controlPanel.Name = "controlPanel";
             this.controlPanel.Size = new System.Drawing.Size(71, 230);
             this.controlPanel.TabIndex = 2;
+            // 
+            // copyButton
+            // 
+            this.copyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("copyButton.BackgroundImage")));
+            this.copyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.copyButton.FlatAppearance.BorderSize = 0;
+            this.copyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.copyButton.Location = new System.Drawing.Point(18, 185);
+            this.copyButton.Name = "copyButton";
+            this.copyButton.Size = new System.Drawing.Size(34, 33);
+            this.copyButton.TabIndex = 5;
+            this.copyButton.UseVisualStyleBackColor = true;
+            // 
+            // upButton
+            // 
+            this.upButton.BackColor = System.Drawing.Color.Transparent;
+            this.upButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("upButton.BackgroundImage")));
+            this.upButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.upButton.FlatAppearance.BorderSize = 0;
+            this.upButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.upButton.Location = new System.Drawing.Point(18, 52);
+            this.upButton.Name = "upButton";
+            this.upButton.Size = new System.Drawing.Size(34, 34);
+            this.upButton.TabIndex = 4;
+            this.upButton.UseVisualStyleBackColor = false;
             // 
             // favButton
             // 
@@ -121,31 +147,6 @@
             this.addTip.ForeColor = System.Drawing.Color.Black;
             this.addTip.InitialDelay = 100;
             this.addTip.ReshowDelay = 100;
-            // 
-            // upButton
-            // 
-            this.upButton.BackColor = System.Drawing.Color.Transparent;
-            this.upButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("upButton.BackgroundImage")));
-            this.upButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.upButton.FlatAppearance.BorderSize = 0;
-            this.upButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.upButton.Location = new System.Drawing.Point(18, 52);
-            this.upButton.Name = "upButton";
-            this.upButton.Size = new System.Drawing.Size(34, 34);
-            this.upButton.TabIndex = 4;
-            this.upButton.UseVisualStyleBackColor = false;
-            // 
-            // copyButton
-            // 
-            this.copyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("copyButton.BackgroundImage")));
-            this.copyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.copyButton.FlatAppearance.BorderSize = 0;
-            this.copyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.copyButton.Location = new System.Drawing.Point(18, 185);
-            this.copyButton.Name = "copyButton";
-            this.copyButton.Size = new System.Drawing.Size(34, 33);
-            this.copyButton.TabIndex = 5;
-            this.copyButton.UseVisualStyleBackColor = true;
             // 
             // ContainerDrop
             // 

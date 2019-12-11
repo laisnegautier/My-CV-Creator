@@ -147,5 +147,23 @@ namespace App.Widgets
            int nHeightEllipse // width of ellipse
           );
         #endregion
+
+        #region DragDrop
+        public void OnDragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        public void OnDragLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        public void OnDragOver(object sender, DragEventArgs e)
+        {
+            // Ajouter une couleur en paramètres à utiliser pour dessiner les bordures en fonction des états
+            Cursor.Current = Cursors.Hand;
+        }
+        #endregion
     }
 }

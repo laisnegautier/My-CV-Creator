@@ -67,6 +67,8 @@ namespace App.Presenter
                         cd.DownButton.Click += MoveContainerDown;
                         cd.DeleteButton.Click += DeleteContainer;
                         cd.CopyButton.Click += CopyContainer;
+
+                        cd.ElementPanel.DragDrop += DealDragDrop;
                         //cd.UpButton.C
 
                         if (c.Elements != null)
@@ -189,8 +191,19 @@ namespace App.Presenter
         public void SetUpView()
         {
             List<Container> basicContainers = new List<Container>();
+            List<IElement> basicElements = new List<IElement>();
             Container empty = new Container() { Name = "Empty" };
+            IElement paragraph = new Paragraph();
+            IElement title1 = new H1();
+            IElement title2 = new H2();
+
             basicContainers.Add(empty);
+            basicElements.Add(paragraph);
+            basicElements.Add(title1);
+            basicElements.Add(title2);
+
+            List<string> elemNames = new List<string>() { "Paragraph", "Title 1", "Title 2" };
+            List<string> elemDesc = new List<string>() { " Content a text paragraph ", " Big size title ", " Smaller title " };
 
             // Adding the defaults containers
             foreach(Container c in basicContainers)
@@ -203,6 +216,13 @@ namespace App.Presenter
             // Adding the favorites containers
 
             // Adding the defaults elements
+            for (int i = 0; i < basicElements.Count; i++)
+            {
+                ElementDragItem DraggableElem = new ElementDragItem(basicElements[i], elemNames[i], elemDesc[i]);
+                _view.DefaultElementPanel.Controls.Add(DraggableElem);
+                DraggableElem.Width = _view.DefaultElementPanel.Width - 20;
+                DraggableElem.Left = _view.DefaultSectionPanel.Left + 10;
+            }
         }
 
         public void DealDragDrop(object sender, DragEventArgs e)
@@ -216,8 +236,19 @@ namespace App.Presenter
             }
             catch (Exception exp)
             {
-                Console.WriteLine(exp.Message);
+                try
+                {
+                    IElement _element = (IElement)e.Data.GetData(e.Data.GetFormats()[0]);
+                    _element = _element.Copy();
+                    DealDragDropElement(_element, (ContainerDrop)((FlowLayoutPanel)sender).Parent );
+                }
+                catch( Exception exception) { }
             }
+        }
+
+        public void DealDragDropElement(IElement element ,ContainerDrop targetContainer)
+        {
+
         }
     }
 }

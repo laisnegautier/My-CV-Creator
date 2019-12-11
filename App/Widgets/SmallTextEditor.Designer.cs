@@ -133,24 +133,26 @@
             // 
             this.editBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.editBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.editBox.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBox.ForeColor = System.Drawing.Color.White;
-            this.editBox.Location = new System.Drawing.Point(43, 81);
+            this.editBox.Location = new System.Drawing.Point(43, 97);
+            this.editBox.MaxLength = 30;
             this.editBox.Name = "editBox";
-            this.editBox.Size = new System.Drawing.Size(470, 30);
+            this.editBox.Size = new System.Drawing.Size(470, 27);
             this.editBox.TabIndex = 9;
+            this.editBox.TextChanged += new System.EventHandler(this.editBox_TextChanged);
             // 
             // descritpionLabel
             // 
-            this.descritpionLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descritpionLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descritpionLabel.ForeColor = System.Drawing.Color.White;
-            this.descritpionLabel.Location = new System.Drawing.Point(39, 54);
+            this.descritpionLabel.Location = new System.Drawing.Point(39, 57);
             this.descritpionLabel.Name = "descritpionLabel";
-            this.descritpionLabel.Size = new System.Drawing.Size(579, 24);
+            this.descritpionLabel.Size = new System.Drawing.Size(474, 24);
             this.descritpionLabel.TabIndex = 10;
             this.descritpionLabel.Text = "Help description";
             // 
-            // Editor
+            // SmallTextEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -162,7 +164,7 @@
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.editButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Editor";
+            this.Name = "SmallTextEditor";
             this.Text = "Editor";
             this.headPanel.ResumeLayout(false);
             this.leftHeadPanel.ResumeLayout(false);

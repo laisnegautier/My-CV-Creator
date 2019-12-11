@@ -39,7 +39,7 @@
             this.favSectionPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.defaultSectionPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.rightPanel = new System.Windows.Forms.Panel();
-            this.elementPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.defaultElementPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.resumeEditorPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.headerPanelLogo.SuspendLayout();
             this.headerPanel.SuspendLayout();
@@ -165,23 +165,23 @@
             // rightPanel
             // 
             this.rightPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.rightPanel.Controls.Add(this.elementPanel);
+            this.rightPanel.Controls.Add(this.defaultElementPanel);
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.rightPanel.Location = new System.Drawing.Point(815, 45);
             this.rightPanel.Name = "rightPanel";
             this.rightPanel.Size = new System.Drawing.Size(337, 579);
             this.rightPanel.TabIndex = 12;
             // 
-            // elementPanel
+            // defaultElementPanel
             // 
-            this.elementPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.defaultElementPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.elementPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.elementPanel.Location = new System.Drawing.Point(3, 7);
-            this.elementPanel.Name = "elementPanel";
-            this.elementPanel.Size = new System.Drawing.Size(331, 560);
-            this.elementPanel.TabIndex = 0;
+            this.defaultElementPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.defaultElementPanel.Location = new System.Drawing.Point(3, 7);
+            this.defaultElementPanel.Name = "defaultElementPanel";
+            this.defaultElementPanel.Size = new System.Drawing.Size(331, 560);
+            this.defaultElementPanel.TabIndex = 0;
             // 
             // resumeEditorPanel
             // 
@@ -233,7 +233,7 @@
         private System.Windows.Forms.Panel rightPanel;
         private System.Windows.Forms.FlowLayoutPanel favSectionPanel;
         private System.Windows.Forms.FlowLayoutPanel defaultSectionPanel;
-        private System.Windows.Forms.FlowLayoutPanel elementPanel;
+        private System.Windows.Forms.FlowLayoutPanel defaultElementPanel;
         private System.Windows.Forms.FlowLayoutPanel resumeEditorPanel;
         private RoundButton closeButton;
         private RoundButton minimizeButton;

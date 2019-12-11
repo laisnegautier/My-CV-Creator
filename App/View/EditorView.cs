@@ -20,7 +20,7 @@ namespace App
         public EditorPresenter Presenter { private get; set; }
         public FlowLayoutPanel ResumeEditor { get{ return resumeEditorPanel; } }
         public FlowLayoutPanel DefaultSectionPanel { get { return defaultSectionPanel; } }
-        public FlowLayoutPanel ElementPanel { get { return elementPanel; } }
+        public FlowLayoutPanel DefaultElementPanel { get { return defaultElementPanel; } }
        
         public EditorView()
         {

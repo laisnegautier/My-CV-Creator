@@ -66,7 +66,7 @@ namespace App.Widgets
                 Dispose();
             }
         }
-
+        
         private void CloseButton_Click(object sender, EventArgs e)
         {
             if (editBox.Text != null && editBox.Text != "" && editBox.Text != initValue)
