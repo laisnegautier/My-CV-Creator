@@ -17,6 +17,7 @@ namespace App.Widgets
 
         public Panel ControlPanel { get { return controlPanel; } }
         public Label ParagraphText { get { return paragraphText; } }
+        public bool IsSelected { get; set; }
 
         public string TextValue
         {
@@ -45,7 +46,23 @@ namespace App.Widgets
         {
             InitializeComponent();
             Content = p;
+            //IsSelected = false;
             paragraphText.TextAlign = ContentAlignment.MiddleCenter;
+        }
+
+        public void ParagraphDrop_OnPaint(object sender, PaintEventArgs e)
+        {
+            // Displaying the container control panel
+            if (IsSelected) controlPanel.Show();
+            else controlPanel.Hide();
+            // Painting the border
+            ParagraphDrop pd = (ParagraphDrop)sender;
+            if (IsSelected) ControlPaint.DrawBorder(e.Graphics, pd.ClientRectangle,
+                                                     Color.FromArgb(200, 200, 200), 3, ButtonBorderStyle.Dashed,
+                                                     Color.FromArgb(200, 200, 200), 3, ButtonBorderStyle.Dashed,
+                                                     Color.FromArgb(200, 200, 200), 3, ButtonBorderStyle.Dashed,
+                                                     Color.FromArgb(200, 200, 200), 3, ButtonBorderStyle.Dashed);
+            else ControlPaint.DrawBorder(e.Graphics, pd.ClientRectangle, Color.FromArgb(220, 220, 220), ButtonBorderStyle.None);
         }
     }
 }
