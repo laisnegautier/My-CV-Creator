@@ -76,6 +76,18 @@ namespace Domain
             return copy;
         }
 
+        public virtual string StylingCSS()
+        {
+            string style = "";
+            style += (Italic ? "font-style: italic;" : "");
+            style += (Bold ? "font-weight: 700;" : "");
+            style += "font-size: " + Size + "px";
+            style += "color: " + ForegroundColor;
+            style += "background-color: " + BackgroundColor;
+
+            return style;
+        }
+
         #endregion
     }
 }

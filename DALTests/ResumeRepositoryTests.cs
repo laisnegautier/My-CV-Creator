@@ -64,23 +64,20 @@ namespace DAL.Tests
             formations.Elements.Add(bac);
 
 
-            Paragraph langues = new Paragraph("Langues", competences);
-            langues.Bold = true;
+            H2 langues = new H2("Langues", competences);
             Paragraph langue1 = new Paragraph("Anglais - Courant (TOEIC : 400/900 en 2019)", competences);
             Paragraph langue2 = new Paragraph("Occitan - Débutant", competences);
             competences.Elements.Add(langues);
             competences.Elements.Add(langue1);
             competences.Elements.Add(langue2);
-            Paragraph informatique = new Paragraph("Informatique", competences);
-            informatique.Bold = true;
+            H2 informatique = new H2("Informatique", competences);
             Paragraph outilsInformatique = new Paragraph("Cubase, Dorico, Visual Studio 1995", competences);
             competences.Elements.Add(informatique);
             competences.Elements.Add(outilsInformatique);
 
 
             Date stage2ADate = new Date(DateTime.Now, experiences);
-            Paragraph stage2ATitre = new Paragraph("Stage de recherche en génie logiciel - ENSC, Talence", experiences);
-            stage2ATitre.Bold = true;
+            H2 stage2ATitre = new H2("Stage de recherche en génie logiciel - ENSC, Talence", experiences);
             Paragraph stage2AFonction = new Paragraph("Stagiaire de qualité", experiences);
             stage2AFonction.Italic = true;
             Paragraph stage2ADescription = new Paragraph("Description du stage de 2A etc...", experiences);
@@ -90,8 +87,7 @@ namespace DAL.Tests
             experiences.Elements.Add(stage2ADescription);
 
             Date stage1ADate = new Date(DateTime.Now, experiences);
-            Paragraph stage1ATitre = new Paragraph("Stage de recherche en bases de données - ENSC, Talence", experiences);
-            stage1ATitre.Bold = true;
+            H2 stage1ATitre = new H2("Stage de recherche en bases de données - ENSC, Talence", experiences);
             Paragraph stage1AFonction = new Paragraph("Petit stagiaire", experiences);
             stage1AFonction.Italic = true;
             Paragraph stage1ADescription = new Paragraph("Description du stage de 1A etc...", experiences);
@@ -103,8 +99,7 @@ namespace DAL.Tests
             Line separateurExp = new Line(experiences);
             experiences.Elements.Add(separateurExp);
 
-            Paragraph autresExperiences = new Paragraph("Autres expériences", experiences);
-            autresExperiences.Bold = true;
+            H2 autresExperiences = new H2("Autres expériences", experiences);
             Date aE1Date = new Date(DateTime.Now, experiences);
             Paragraph aE1 = new Paragraph("Chanteur d'opéra", experiences);
             experiences.Elements.Add(autresExperiences);
@@ -112,15 +107,13 @@ namespace DAL.Tests
             experiences.Elements.Add(aE1);
 
 
-            Paragraph musique = new Paragraph("Musique", interets);
-            musique.Bold = true;
+            H2 musique = new H2("Musique", interets);
             Paragraph piano = new Paragraph("Piano depuis 10 ans", interets);
             Paragraph guitare = new Paragraph("Guitare depuis la naissance", interets);
             interets.Elements.Add(musique);
             interets.Elements.Add(piano);
             interets.Elements.Add(guitare);
-            Paragraph sport = new Paragraph("Sport", interets);
-            sport.Bold = true;
+            H2 sport = new H2("Sport", interets);
             Paragraph marche = new Paragraph("Marche depuis la naissance", interets);
             Paragraph etirement = new Paragraph("S'étire depuis quelques temps", interets);
             interets.Elements.Add(sport);

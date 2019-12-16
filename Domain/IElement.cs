@@ -12,5 +12,6 @@ namespace Domain
         Container Container { get; set; }
 
         IElement Copy();
+        string StylingCSS();
     }
 }

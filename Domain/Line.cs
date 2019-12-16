@@ -56,6 +56,14 @@ namespace Domain
             return copy;
         }
 
+        public virtual string StylingCSS()
+        {
+            string style = "";
+            style += "border-color: " + Color;
+
+            return style;
+        }
+
         #endregion
     }
 }
