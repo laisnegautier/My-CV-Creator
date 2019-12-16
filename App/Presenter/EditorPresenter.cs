@@ -15,18 +15,35 @@ namespace App.Presenter
         #region Attributes
         private IResumeRepository _resumeRepo;
         private EditorView _view;
-        private ContainerDrop _currentSelection;
         private Resume _currentResume;
+        // On ne peut selectionner qu'un element d'interface à la fois
         private object _currentElementSelected;
+
         #endregion
 
-        private ContainerDrop CurrentSelection
+        private object CurrentSelection
         {
-            get { return _currentSelection; }
+            get { return _currentElementSelected; }
             set {
-                if(_currentSelection != null) _currentSelection.IsSelected = false;
-                _currentSelection = value;
-                _currentSelection.IsSelected = true;
+                if (_currentElementSelected != null)
+                {
+                    if(_currentElementSelected is ContainerDrop)
+                    {
+                        ContainerDrop item = (ContainerDrop)_currentElementSelected;
+                        item.IsSelected = false;
+                        item.Refresh();
+                    }
+                    if(_currentElementSelected is TextDrop)
+                    {
+                        TextDrop item = (TextDrop)_currentElementSelected;
+                        item.IsSelected = false;
+                        item.Refresh();
+                    }
+                }
+                if (value is ContainerDrop) ((ContainerDrop)value).IsSelected = true;
+                else if (value is ContainerDrop) ((ContainerDrop)value).IsSelected = true;
+                _currentElementSelected = value;
+                ((Control)_currentElementSelected).Refresh();
             }
         }
 
@@ -48,12 +65,16 @@ namespace App.Presenter
                     foreach (Container c in _currentResume.Containers)
                     {
                         ContainerDrop cd = new ContainerDrop(c);
-                        if (_currentSelection != null && c == _currentSelection.Content)
-                        {
-                            cd.IsSelected = true;
-                            _currentSelection = cd;
-                        }
+                        // Si la section est selectionnée on la laisse seléctionnée
+                        if (CurrentSelection != null && CurrentSelection is ContainerDrop)
+                            if(((ContainerDrop)CurrentSelection).Content == c)
+                            {
+                                cd.IsSelected = true;
+                                CurrentSelection = cd;
+                            }
+                        // Gestion pour la première section
                         if (_currentResume.Containers.IndexOf(c) == 0) cd.UpButton.Hide();
+                        // Gestion pour la dernière section
                         if (_currentResume.Containers.IndexOf(c) == _currentResume.Containers.Count - 1) cd.DownButton.Hide();
                         _view.ResumeEditor.Controls.Add(cd);
 
@@ -75,8 +96,8 @@ namespace App.Presenter
         {
             cd.Width = _view.ResumeEditor.Width - 10;
             // Action de selection autorisée
-            cd.Click += SetCurrentSelectedContainer;
-            cd.ElementPanel.Click += SetCurrentSelectedContainer;
+            cd.Click += (s,e) => { /*cd.IsSelected = !cd.IsSelected;*/ CurrentSelection = cd; };
+            cd.ElementPanel.Click += (s,e) => { /*cd.IsSelected = !cd.IsSelected;*/ CurrentSelection = cd; };
             cd.ContainerTitleLabel.DoubleClick += EditContainerTitle;
 
             // Gestion des boutons
@@ -91,28 +112,48 @@ namespace App.Presenter
 
         public int RenderElement(IElement e, Container c, ContainerDrop cd)
         {
-            if(e is Paragraph)
+            TextDrop td = null;
+            int height = 0;
+            if (e is Paragraph)
             {
                 Paragraph p = (Paragraph)e;
-                TextDrop td = new TextDrop(p);
-                return RenderParagraph(td, cd);
+                td = new TextDrop(p);
+                height = RenderParagraph(td, cd);
             }
-            else if(e is H1)
+            else if (e is H1)
             {
                 H1 h1 = (H1)e;
-                TextDrop td = new TextDrop(h1);
-                return RenderTitle(td, cd);
+                td = new TextDrop(h1);
+                height = RenderTitle(td, cd);
             }
             else if (e is H2)
             {
                 H2 h2 = (H2)e;
-                TextDrop td = new TextDrop(h2);
-                return RenderTitle(td, cd);
+                td = new TextDrop(h2);
+                height = RenderTitle(td, cd);
             }
             // Cpt
             // Cpt spécifique pour chaque type d'element possible du CV
-
-            return 0;
+            if (td != null)
+            {
+                td.Click += (s, evt) =>
+                {
+                    td.IsSelected = !td.IsSelected;
+                    //td.Refresh();
+                    CurrentSelection = td;
+                };
+                td.EditableText.Click += (s, evt) =>
+                {
+                    td.IsSelected = !td.IsSelected;
+                    //td.Refresh();
+                    CurrentSelection = td;
+                };
+                // Gestion des boutons
+                td.UpButton.Click += MoveElementUp;
+                /*td.DownButton.Click += MoveElementDown;
+                td.DeleteButton.Click += DeleteElement;*/
+            }
+            return height;
         }
         #endregion
 
@@ -127,9 +168,7 @@ namespace App.Presenter
             td.EditableText.Top = 0;
 
             td.ParentContainer = cd;
-
-            td.Click += SetCurrentSelectedElement;
-            td.EditableText.Click += SetCurrentSelectedElement;
+            
             return td.Height;
         }
 
@@ -142,34 +181,27 @@ namespace App.Presenter
             td.Height = 100;
             td.EditableText.Top = 0;
             td.ParentContainer = cd;
-
-            td.Click += SetCurrentSelectedElement;
-            td.EditableText.Click += SetCurrentSelectedElement;
+            
             return td.Height;
         }
         #endregion
 
         #region Element Managers
-        public void SetCurrentSelectedElement(object sender, EventArgs e)
+        public void MoveElementUp(object sender, EventArgs e)
         {
-            UnsetLastSelectedElement();
-            if(sender is TextDrop)
+            bool moved = false;
+            TextDrop textDrop = (TextDrop)((Button)sender).Parent.Parent;
+            IElement element = textDrop.Content;
+            Container container = element.Container;
+            // a simplifier
+            int pos = _currentResume.Containers[_currentResume.Containers.IndexOf(container)].Elements.IndexOf(element);
+            if (pos != 0)
             {
-                TextDrop pd = (TextDrop)sender;
-                pd.IsSelected = true;
-                pd.Refresh();
-                SetCurrentSelectedContainer(pd.ParentContainer, e);
+                _currentResume.Containers[_currentResume.Containers.IndexOf(container)].Elements.RemoveAt(pos);
+                _currentResume.Containers[_currentResume.Containers.IndexOf(container)].Elements.Insert(pos - 1, element);
+                moved = true;
             }
-
-            _currentElementSelected = sender;
-        }
-
-        public void UnsetLastSelectedElement()
-        {
-            if(_currentElementSelected != null)
-            {
-                if (_currentElementSelected is TextDrop) ((TextDrop)_currentElementSelected).IsSelected = false;
-            }
+            if (moved) RenderResume();
         }
         #endregion
 
@@ -179,17 +211,17 @@ namespace App.Presenter
             Label title = (Label)sender;
             if (title.Parent is ContainerDrop)
             {
-                _currentSelection = (ContainerDrop)title.Parent;
+                CurrentSelection = (ContainerDrop)title.Parent;
                 RenderResume();
             }
             SmallTextEditor editor = new SmallTextEditor();
             editor.Disposed += (s, evt) =>
             {
-                _currentSelection.ContainerTitleLabel.Text = editor.TextValue;
-                _currentSelection.Content.Name = editor.TextValue;
+                ((ContainerDrop)CurrentSelection).ContainerTitleLabel.Text = editor.TextValue;
+                ((ContainerDrop)CurrentSelection).Content.Name = editor.TextValue;
                 //_currentSelection.ContainerTitleLabel.Refresh();
             };
-            editor.Show("Editer le text de votre Titre", title.Text);
+            editor.Show(title.Text, "Edit your title here");
         }
 
         public void SetContainerFav(object sender, EventArgs e)
@@ -235,12 +267,12 @@ namespace App.Presenter
         }
 
         // Fonction à ré-écrire
-        public void SetCurrentSelectedContainer(object sender, EventArgs e)
+        /*public void SetCurrentSelectedContainer(object sender, EventArgs e)
         {
             // Si on click su la déjà selctionée on fait rien
             try{
                 ContainerDrop active = (ContainerDrop) sender;
-                ContainerDrop lastSelection = CurrentSelection;
+                ContainerDrop lastSelection = (ContainerDrop)CurrentSelection;
                 CurrentSelection = active;
                 //CurrentSelection.ElementPanel.Refresh();
                 if(lastSelection != null) lastSelection.Refresh();
@@ -276,7 +308,7 @@ namespace App.Presenter
             // Si le selceted ne contiens pas l'element on desactive l'element
             //if () UnsetLastSelectedElement();
             // RenderResume();
-        }
+        }*/
 
         public void DeleteContainer(object sender, EventArgs e)
         {
@@ -362,7 +394,7 @@ namespace App.Presenter
         // Fonction à segmenter
         public void DealDragDropElement(IElement element ,ContainerDrop targetContainer)
         {
-            _currentSelection = targetContainer;
+            CurrentSelection = targetContainer;
             // Gestion de l'ajout d'un nouveau paragraph à un CV
             if(element is Paragraph)
             {

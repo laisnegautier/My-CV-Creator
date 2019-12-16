@@ -31,7 +31,7 @@ namespace App.Widgets
                     _element = p;
                     TextValue = p.Content;
                 }
-                else if(value is H1)
+                else if (value is H1)
                 {
                     H1 h = (H1)value;
                     _element = h;
@@ -47,6 +47,7 @@ namespace App.Widgets
         }
         public Button UpButton { get { return upButton; } }
         public Button DownButton { get { return downButton; } }
+        public Button DeleteButton { get { return deleteButton; } }
         public Button RenderButton { get { return null; } } // Ajouter le render button
         #endregion
 
@@ -70,6 +71,8 @@ namespace App.Widgets
         public TextDrop()
         {
             InitializeComponent();
+            Paint += ElementView_OnPaint;
+            InitializeButton();
         }
 
         public TextDrop(Paragraph p) : this()
@@ -78,7 +81,6 @@ namespace App.Widgets
             Content = p;
             //IsSelected = false;
             editableText.TextAlign = ContentAlignment.MiddleCenter;
-            Paint += ElementView_OnPaint;
         }
 
         public TextDrop(H1 title) : this()
@@ -94,7 +96,7 @@ namespace App.Widgets
             editableText.Font = new Font("Arial", 20);
             editableText.TextAlign = ContentAlignment.MiddleLeft;
         }
-
+        
         public void ElementView_OnPaint(object sender, PaintEventArgs e)
         {
             // Displaying the container control panel
@@ -108,6 +110,43 @@ namespace App.Widgets
                                                      Color.FromArgb(200, 200, 200), 3, ButtonBorderStyle.Dashed,
                                                      Color.FromArgb(200, 200, 200), 3, ButtonBorderStyle.Dashed);
             else ControlPaint.DrawBorder(e.Graphics, pd.ClientRectangle, Color.FromArgb(220, 220, 220), ButtonBorderStyle.None);
+        }
+
+        public void InitializeButton()
+        {
+            // Créer une fonction générique
+            #region UpButton
+            upButton.FlatAppearance.MouseOverBackColor = upButton.BackColor;
+            upButton.BackColorChanged += (s, e) =>
+            {
+                upButton.FlatAppearance.MouseOverBackColor = upButton.BackColor;
+                upButton.FlatAppearance.MouseDownBackColor = upButton.BackColor;
+            };
+            upButton.MouseEnter += (s, e) => { upButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\upHover.png"); };
+            upButton.MouseLeave += (s, e) => { upButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\up.png"); };
+            #endregion
+
+            #region DownButton
+            DownButton.FlatAppearance.MouseOverBackColor = DownButton.BackColor;
+            DownButton.BackColorChanged += (s, e) =>
+            {
+                DownButton.FlatAppearance.MouseOverBackColor = DownButton.BackColor;
+                DownButton.FlatAppearance.MouseDownBackColor = DownButton.BackColor;
+            };
+            DownButton.MouseEnter += (s, e) => { DownButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\downHover.png"); };
+            DownButton.MouseLeave += (s, e) => { DownButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\down.png"); };
+            #endregion
+
+            #region DeleteButton
+            DeleteButton.FlatAppearance.MouseOverBackColor = DeleteButton.BackColor;
+            DeleteButton.BackColorChanged += (s, e) =>
+            {
+                DeleteButton.FlatAppearance.MouseOverBackColor = DeleteButton.BackColor;
+                DeleteButton.FlatAppearance.MouseDownBackColor = DeleteButton.BackColor;
+            };
+            DeleteButton.MouseEnter += (s, e) => { DeleteButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\deleteHover.png"); };
+            DeleteButton.MouseLeave += (s, e) => { DeleteButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\delete.png"); };
+            #endregion
         }
     }
 }
