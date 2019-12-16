@@ -7,6 +7,9 @@ namespace Domain
 {
     public class H1 : IText
     {
+        /// <summary>
+        /// H2 is similar to a title (Name at the beginning of the resume for example)
+        /// </summary>
         #region Properties
         public virtual int Id { get; set; }
         public virtual Container Container { get; set; }
@@ -19,18 +22,28 @@ namespace Domain
         public virtual int Size { get; set; }
         public virtual string ForegroundColor { get; set; }
         public virtual string BackgroundColor { get; set; }
-        
+
         #endregion
 
 
         #region Constructors
 
         /// <summary>
-        /// Constructeur sans paramètre nécesessaire pour NHibernate
+        /// Empty parameter constructor needed by NHibernate
         /// </summary>
         public H1()
         {
             VisibilityParser = true;
+            Size = 24;
+            Content = "";
+            ForegroundColor = "";
+            BackgroundColor = "";
+        }
+
+        public H1(string content, Container container) : this()
+        {
+            Content = content;
+            Container = container;
         }
 
         #endregion

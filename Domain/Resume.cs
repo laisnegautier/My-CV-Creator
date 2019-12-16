@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Domain
 {
+    /// <summary>
+    /// Main object of the project. A resume is used to describe the professionnal life events of someone
+    /// </summary>
     public class Resume
     {
         #region Properties
@@ -24,11 +27,14 @@ namespace Domain
         #region Constructors
 
         /// <summary>
-        /// Constructeur sans paramètre nécesessaire pour NHibernate
+        /// Empty parameter constructor needed by NHibernate
         /// </summary>
-        public Resume() { }
+        public Resume() 
+        {
+            Containers = new List<Container>();
+        }
 
-        public Resume(string title)
+        public Resume(string title) : this()
         {
             Title = title;
         }
@@ -37,14 +43,9 @@ namespace Domain
 
 
         #region Methods
-
-        public override string ToString()
-        {
-            throw new System.NotImplementedException();
-        }
-
+        
         /// <summary>
-        /// Create a copy of the resume
+        /// Create a copy of the resume by copying some of its properties (what is copied depends on Container and IElement classes)
         /// </summary>
         /// <returns></returns>
         public virtual Resume Copy()
@@ -57,8 +58,9 @@ namespace Domain
             copy.Creation = Creation;
             copy.LastUpdate = LastUpdate;
 
-            foreach (Container c in Containers)
-                copy.Containers.Add(c.Copy());
+            if (Containers.Count > 0)
+                foreach (Container c in Containers)
+                    copy.Containers.Add(c.Copy());
 
             return copy;
         }

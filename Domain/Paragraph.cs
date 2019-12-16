@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Domain
 {
+    /// <summary>
+    /// A paragraph is used to write a single event in the resume
+    /// </summary>
     public class Paragraph : IText
     {
         #region Properties
@@ -19,19 +22,28 @@ namespace Domain
         public virtual int Size { get; set; }
         public virtual string ForegroundColor { get; set; }
         public virtual string BackgroundColor { get; set; }
-        
+
         #endregion
 
 
         #region Constructors
 
         /// <summary>
-        /// Constructeur sans paramètre nécesessaire pour NHibernate
+        /// Empty parameter constructor needed by NHibernate
         /// </summary>
-        public Paragraph() {
+        public Paragraph() 
+        {
             VisibilityParser = true;
+            Size = 12;
+            Content = "";
             ForegroundColor = "";
             BackgroundColor = "";
+        }
+
+        public Paragraph(string content, Container container) : this()
+        {
+            Content = content;
+            Container = container;
         }
 
         #endregion
@@ -44,6 +56,10 @@ namespace Domain
             return Content;
         }
 
+        /// <summary>
+        /// Create a copy of the object with the same properties but Id - NHibernate handles it properly and VisibilityParser which is true
+        /// </summary>
+        /// <returns></returns>
         public virtual IElement Copy()
         {
             Paragraph copy = new Paragraph();

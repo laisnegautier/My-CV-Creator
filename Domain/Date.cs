@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Domain
 {
+    /// <summary>
+    /// A date is used to describe when an event occured (generally written before a Paragraph)
+    /// </summary>
     public class Date : IText
     {
         #region Properties
@@ -26,11 +29,22 @@ namespace Domain
         #region Constructors
 
         /// <summary>
-        /// Constructeur sans paramètre nécesessaire pour NHibernate
+        /// Empty parameter constructor needed by NHibernate
         /// </summary>
         public Date()
         {
             VisibilityParser = true;
+            Size = 14;
+            Bold = true;
+            Content = DateTime.Now;
+            ForegroundColor = "";
+            BackgroundColor = "";
+        }
+
+        public Date(DateTime content, Container container) : this()
+        {
+            Content = content;
+            Container = container;
         }
 
         #endregion
@@ -43,6 +57,10 @@ namespace Domain
             return Content.ToString();
         }
 
+        /// <summary>
+        /// Create a copy of the object with the same properties but Id - NHibernate handles it properly and VisibilityParser which is true
+        /// </summary>
+        /// <returns></returns>
         public virtual IElement Copy()
         {
             Date copy = new Date();

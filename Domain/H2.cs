@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Domain
 {
+    /// <summary>
+    /// H2 is similar to a subtitle (catchphrase, important element...)
+    /// </summary>
     public class H2 : IText
     {
         #region Properties
@@ -26,11 +29,22 @@ namespace Domain
         #region Constructors
 
         /// <summary>
-        /// Constructeur sans paramètre nécesessaire pour NHibernate
+        /// Empty parameter constructor needed by NHibernate
         /// </summary>
         public H2()
         {
             VisibilityParser = true;
+            Size = 18;
+            Italic = true;
+            Content = "";
+            ForegroundColor = "";
+            BackgroundColor = "";
+        }
+
+        public H2(string content, Container container) : this()
+        {
+            Content = content;
+            Container = container;
         }
 
         #endregion

@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Domain
 {
+    /// <summary>
+    /// A resume is composed of containers. A container is used to categorize the elements within.
+    /// </summary>
     public class Container
     {
         #region Properties
@@ -29,11 +32,21 @@ namespace Domain
         #region Constructors
 
         /// <summary>
-        /// Constructeur sans paramètre nécesessaire pour NHibernate
+        /// Empty parameter constructor needed by NHibernate
         /// </summary>
         public Container() 
         {
             VisibilityParser = true;
+            FavoriteName = "";
+            BackgroundColor = "";
+            BorderColor = "";
+            Elements = new List<IElement>();
+        }
+
+        public Container(string name, Resume resume) : this()
+        {
+            Name = name;
+            Resume = resume;
         }
 
         #endregion
@@ -41,11 +54,32 @@ namespace Domain
 
         #region Methods
 
+        /// <summary>
+        /// Used for testing : discribe the properties of the container and all the elements in it
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            string content = "";
+
+            content += "#--------- PROPERTIES --------# ";
+            content += "Id: " + Id + "\n Name: " + Name + "\n Favorite:" ;
+            content += Favorite ? "True" : "False";
+            content += "\n Favorite name: " + FavoriteName + "\n Visibility for parser: ";
+            content += VisibilityParser ? "True" : "False";
+            content += "\n Background color: " + BackgroundColor + "\n Border color: " + BorderColor;
+
+            if (Elements.Count > 0)
+                foreach (IElement e in Elements)
+                    content += "\t Element " + e.GetType().ToString() + ": " + e.ToString() + "\n";
+
+            return content;
         }
 
+        /// <summary>
+        /// Create a copy of the object with the same properties but Id - NHibernate handles it properly and VisibilityParser which is true
+        /// </summary>
+        /// <returns></returns>
         public virtual Container Copy()
         {
             Container copy = new Container();
@@ -57,8 +91,9 @@ namespace Domain
             copy.BorderColor = BorderColor;
             copy.Resume = Resume;
 
-            foreach (IElement e in Elements)
-                copy.Elements.Add(e.Copy());
+            if (Elements.Count > 0)
+                foreach (IElement e in Elements)
+                    copy.Elements.Add(e.Copy());
 
             return copy;
         }
