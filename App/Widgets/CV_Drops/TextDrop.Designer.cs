@@ -1,6 +1,6 @@
 ﻿namespace App.Widgets
 {
-    partial class ParagraphDrop
+    partial class TextDrop
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParagraphDrop));
-            this.paragraphText = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TextDrop));
+            this.editableText = new System.Windows.Forms.Label();
             this.controlPanel = new System.Windows.Forms.Panel();
             this.upButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
@@ -37,14 +37,15 @@
             this.controlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // paragraphText
+            // editableText
             // 
-            this.paragraphText.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paragraphText.Location = new System.Drawing.Point(5, 23);
-            this.paragraphText.Margin = new System.Windows.Forms.Padding(5);
-            this.paragraphText.Name = "paragraphText";
-            this.paragraphText.Size = new System.Drawing.Size(596, 118);
-            this.paragraphText.TabIndex = 0;
+            this.editableText.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editableText.Location = new System.Drawing.Point(5, 5);
+            this.editableText.Margin = new System.Windows.Forms.Padding(5, 2, 5, 0);
+            this.editableText.Name = "editableText";
+            this.editableText.Size = new System.Drawing.Size(596, 132);
+            this.editableText.TabIndex = 0;
+            this.editableText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // controlPanel
             // 
@@ -95,16 +96,16 @@
             this.downButton.TabIndex = 1;
             this.downButton.UseVisualStyleBackColor = true;
             // 
-            // ParagraphDrop
+            // TextDrop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.controlPanel);
-            this.Controls.Add(this.paragraphText);
+            this.Controls.Add(this.editableText);
             this.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(10);
-            this.Name = "ParagraphDrop";
-            this.Size = new System.Drawing.Size(649, 171);
+            this.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.Name = "TextDrop";
+            this.Size = new System.Drawing.Size(649, 147);
             this.controlPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -112,7 +113,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label paragraphText;
+        private System.Windows.Forms.Label editableText;
         private System.Windows.Forms.Panel controlPanel;
         private System.Windows.Forms.Button upButton;
         private System.Windows.Forms.Button deleteButton;

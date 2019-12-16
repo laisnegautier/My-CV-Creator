@@ -17,6 +17,7 @@ namespace App.Presenter
         private EditorView _view;
         private ContainerDrop _currentSelection;
         private Resume _currentResume;
+        private object _currentElementSelected;
         #endregion
 
         private ContainerDrop CurrentSelection
@@ -28,7 +29,6 @@ namespace App.Presenter
                 _currentSelection.IsSelected = true;
             }
         }
-        
 
         public EditorPresenter(IResumeRepository resumeRepo, EditorView editForm)
         {
@@ -39,6 +39,7 @@ namespace App.Presenter
         }
 
         // A segmenter en rendu des containers et des elements
+        #region MainRenderers
         public void RenderResume()
         {
             _view.ResumeEditor.Controls.Clear();
@@ -53,23 +54,10 @@ namespace App.Presenter
                             _currentSelection = cd;
                         }
                         if (_currentResume.Containers.IndexOf(c) == 0) cd.UpButton.Hide();
-                        else if (_currentResume.Containers.IndexOf(c) == _currentResume.Containers.Count - 1) cd.DownButton.Hide();
+                        if (_currentResume.Containers.IndexOf(c) == _currentResume.Containers.Count - 1) cd.DownButton.Hide();
                         _view.ResumeEditor.Controls.Add(cd);
-                        cd.Width = _view.ResumeEditor.Width - 10;
-                        // Action de selection autorisée
-                        cd.Click += SetCurrentSelectedContainer;
-                        cd.ElementPanel.Click += SetCurrentSelectedContainer;
-                        cd.ContainerTitleLabel.DoubleClick += EditContainerTitle;
-                        
-                        // Gestion des boutons
-                        cd.FavButton.Click += SetContainerFav;
-                        cd.UpButton.Click += MoveContainerUp;
-                        cd.DownButton.Click += MoveContainerDown;
-                        cd.DeleteButton.Click += DeleteContainer;
-                        cd.CopyButton.Click += CopyContainer;
 
-                        cd.ElementPanel.DragDrop += DealDragDrop;
-                        //cd.UpButton.C
+                        RenderContainer(cd);
 
                         int _containerHeight = 0;
                         if (c.Elements != null)
@@ -83,31 +71,105 @@ namespace App.Presenter
                     }
         }
 
+        public void RenderContainer(ContainerDrop cd)
+        {
+            cd.Width = _view.ResumeEditor.Width - 10;
+            // Action de selection autorisée
+            cd.Click += SetCurrentSelectedContainer;
+            cd.ElementPanel.Click += SetCurrentSelectedContainer;
+            cd.ContainerTitleLabel.DoubleClick += EditContainerTitle;
+
+            // Gestion des boutons
+            cd.FavButton.Click += SetContainerFav;
+            cd.UpButton.Click += MoveContainerUp;
+            cd.DownButton.Click += MoveContainerDown;
+            cd.DeleteButton.Click += DeleteContainer;
+            cd.CopyButton.Click += CopyContainer;
+
+            cd.ElementPanel.DragDrop += DealDragDrop;
+        }
+
         public int RenderElement(IElement e, Container c, ContainerDrop cd)
         {
             if(e is Paragraph)
             {
                 Paragraph p = (Paragraph)e;
-                ParagraphDrop pd = new ParagraphDrop(p);
-                cd.ElementPanel.Controls.Add(pd);
-                pd.Left = cd.ElementPanel.Left;
-                pd.Width = cd.ElementPanel.Width - (pd.Margin.Left + pd.Margin.Right);
-                pd.ParagraphText.Width = pd.Width - pd.ControlPanel.Width - (pd.ParagraphText.Margin.Left + pd.ParagraphText.Margin.Right);
-                pd.Click += SetCurrentSelectedContainer;
-                pd.ParagraphText.Click += SetCurrentSelectedContainer;
-                pd.Click += SetCurrentSelectedElement;
-                pd.ParagraphText.Click += SetCurrentSelectedElement;
-                return pd.Height;
+                TextDrop td = new TextDrop(p);
+                return RenderParagraph(td, cd);
             }
+            else if(e is H1)
+            {
+                H1 h1 = (H1)e;
+                TextDrop td = new TextDrop(h1);
+                return RenderTitle(td, cd);
+            }
+            else if (e is H2)
+            {
+                H2 h2 = (H2)e;
+                TextDrop td = new TextDrop(h2);
+                return RenderTitle(td, cd);
+            }
+            // Cpt
             // Cpt spécifique pour chaque type d'element possible du CV
 
             return 0;
         }
+        #endregion
+
+        #region ElementsRenderers
+        public int RenderParagraph(TextDrop td, ContainerDrop cd)
+        {
+            cd.ElementPanel.Controls.Add(td);
+            td.Left = cd.ElementPanel.Left;
+            // Centrer le composant
+            td.Width = cd.ElementPanel.Width - (td.Margin.Left + td.Margin.Right);
+            td.EditableText.Width = td.Width - td.ControlPanel.Width - (td.EditableText.Margin.Left + td.EditableText.Margin.Right);
+            td.EditableText.Top = 0;
+
+            td.ParentContainer = cd;
+
+            td.Click += SetCurrentSelectedElement;
+            td.EditableText.Click += SetCurrentSelectedElement;
+            return td.Height;
+        }
+
+        public int RenderTitle(TextDrop td, ContainerDrop cd)
+        {
+            cd.ElementPanel.Controls.Add(td);
+            td.Left = cd.ElementPanel.Left + 10;
+            td.Width = cd.ElementPanel.Width - (td.Margin.Left + td.Margin.Right);
+            td.EditableText.Width = td.Width - td.ControlPanel.Width - (td.EditableText.Margin.Left + td.EditableText.Margin.Right);
+            td.Height = 100;
+            td.EditableText.Top = 0;
+            td.ParentContainer = cd;
+
+            td.Click += SetCurrentSelectedElement;
+            td.EditableText.Click += SetCurrentSelectedElement;
+            return td.Height;
+        }
+        #endregion
 
         #region Element Managers
         public void SetCurrentSelectedElement(object sender, EventArgs e)
         {
+            UnsetLastSelectedElement();
+            if(sender is TextDrop)
+            {
+                TextDrop pd = (TextDrop)sender;
+                pd.IsSelected = true;
+                pd.Refresh();
+                SetCurrentSelectedContainer(pd.ParentContainer, e);
+            }
 
+            _currentElementSelected = sender;
+        }
+
+        public void UnsetLastSelectedElement()
+        {
+            if(_currentElementSelected != null)
+            {
+                if (_currentElementSelected is TextDrop) ((TextDrop)_currentElementSelected).IsSelected = false;
+            }
         }
         #endregion
 
@@ -172,14 +234,10 @@ namespace App.Presenter
             if(moved) RenderResume();
         }
 
+        // Fonction à ré-écrire
         public void SetCurrentSelectedContainer(object sender, EventArgs e)
         {
-            /*ContainerDrop cd;
-            object obj = sender;
-            while(obj is ContainerDrop != true)
-            {
-            }*/
-
+            // Si on click su la déjà selctionée on fait rien
             try{
                 ContainerDrop active = (ContainerDrop) sender;
                 ContainerDrop lastSelection = CurrentSelection;
@@ -203,9 +261,9 @@ namespace App.Presenter
                     if(sender is Label)
                     {
                         sender = ((Label)sender).Parent;
-                        if (sender is ParagraphDrop)
+                        if (sender is TextDrop)
                         {
-                            ParagraphDrop pd = (ParagraphDrop)sender;
+                            TextDrop pd = (TextDrop)sender;
                             ContainerDrop lastSelection = CurrentSelection;
                             CurrentSelection = (ContainerDrop)pd.Parent.Parent;
 
@@ -215,6 +273,8 @@ namespace App.Presenter
                     }
                 }
             }
+            // Si le selceted ne contiens pas l'element on desactive l'element
+            //if () UnsetLastSelectedElement();
             // RenderResume();
         }
 
@@ -238,8 +298,8 @@ namespace App.Presenter
             }
         }
         #endregion
-
-
+        
+        // Fonciton à segmenter
         public void SetUpView()
         {
             List<Container> basicContainers = new List<Container>();
@@ -277,6 +337,7 @@ namespace App.Presenter
             }
         }
 
+        // Fonction à ré-écrire
         public void DealDragDrop(object sender, DragEventArgs e)
         {
             try
@@ -298,6 +359,7 @@ namespace App.Presenter
             }
         }
 
+        // Fonction à segmenter
         public void DealDragDropElement(IElement element ,ContainerDrop targetContainer)
         {
             _currentSelection = targetContainer;
@@ -319,8 +381,20 @@ namespace App.Presenter
                 targetContainer.Content.Elements.Add(element);
                 RenderResume();
             }
-
-
+            if(element is H1)
+            {
+                H1 active = (H1)element;
+                active.Content = "- Titre 1 -";
+                targetContainer.Content.Elements.Add(element);
+                RenderResume();
+            }
+            if(element is H2)
+            {
+                H2 active = (H2)element;
+                active.Content = "- Titre 2 -";
+                targetContainer.Content.Elements.Add(element);
+                RenderResume();
+            }
         }
     }
 }

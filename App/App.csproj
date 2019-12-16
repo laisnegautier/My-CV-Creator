@@ -67,22 +67,22 @@
     <Compile Include="Presenter\EditorPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
     <Compile Include="View\IEditorView.cs" />
-    <Compile Include="Widgets\ElementDragItem.cs">
+    <Compile Include="Widgets\CV_Drags\ElementDragItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Widgets\ElementDragItem.Designer.cs">
+    <Compile Include="Widgets\CV_Drags\ElementDragItem.Designer.cs">
       <DependentUpon>ElementDragItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\ContainerDragItem.cs">
+    <Compile Include="Widgets\CV_Drags\ContainerDragItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Widgets\ContainerDragItem.Designer.cs">
+    <Compile Include="Widgets\CV_Drags\ContainerDragItem.Designer.cs">
       <DependentUpon>ContainerDragItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\ContainerDrop.cs">
+    <Compile Include="Widgets\CV_Drops\ContainerDrop.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Widgets\ContainerDrop.Designer.cs">
+    <Compile Include="Widgets\CV_Drops\ContainerDrop.Designer.cs">
       <DependentUpon>ContainerDrop.cs</DependentUpon>
     </Compile>
     <Compile Include="View\OkCustomMessageBox.cs">
@@ -97,11 +97,11 @@
     <Compile Include="View\CustomMessageBox.Designer.cs">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\ParagraphDrop.cs">
+    <Compile Include="Widgets\CV_Drops\TextDrop.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Widgets\ParagraphDrop.Designer.cs">
-      <DependentUpon>ParagraphDrop.cs</DependentUpon>
+    <Compile Include="Widgets\CV_Drops\TextDrop.Designer.cs">
+      <DependentUpon>TextDrop.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SmallTextEditor.cs">
       <SubType>Form</SubType>
@@ -142,13 +142,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Widgets\ElementDragItem.resx">
+    <EmbeddedResource Include="Widgets\CV_Drags\ElementDragItem.resx">
       <DependentUpon>ElementDragItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Widgets\ContainerDragItem.resx">
+    <EmbeddedResource Include="Widgets\CV_Drags\ContainerDragItem.resx">
       <DependentUpon>ContainerDragItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Widgets\ContainerDrop.resx">
+    <EmbeddedResource Include="Widgets\CV_Drops\ContainerDrop.resx">
       <DependentUpon>ContainerDrop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\OkCustomMessageBox.resx">
@@ -163,8 +163,8 @@
     <EmbeddedResource Include="View\LargeTextEditor.resx">
       <DependentUpon>LargeTextEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Widgets\ParagraphDrop.resx">
-      <DependentUpon>ParagraphDrop.cs</DependentUpon>
+    <EmbeddedResource Include="Widgets\CV_Drops\TextDrop.resx">
+      <DependentUpon>TextDrop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Widgets\ResumeMiniaturePic.resx">
       <DependentUpon>ResumeMiniaturePic.cs</DependentUpon>

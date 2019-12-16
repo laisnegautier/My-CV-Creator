@@ -17,10 +17,6 @@ C:\Users\glaisne\Downloads\projet-gl-audrix_laisne\DAL\bin\Debug\Remotion.Linq.E
 C:\Users\glaisne\Downloads\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\glaisne\Downloads\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.dll
 C:\Users\glaisne\Downloads\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.pdb
-C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
-C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.dll
-C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.pdb
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\bin\Debug\MySql.Data.dll
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\bin\Debug\hibernate.cfg.xml
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\bin\Debug\DAL.dll
@@ -37,4 +33,8 @@ C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\bin\Debug\Iesi.Collections.xm
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\bin\Debug\NHibernate.xml
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\bin\Debug\Remotion.Linq.xml
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\bin\Debug\Remotion.Linq.EagerFetching.xml
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.dll
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.pdb
