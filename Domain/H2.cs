@@ -41,9 +41,13 @@ namespace Domain
             BackgroundColor = "";
         }
 
-        public H2(string content, Container container) : this()
+        public H2(string content) : this()
         {
             Content = content;
+        }
+
+        public H2(string content, Container container) : this(content)
+        {
             Container = container;
         }
 

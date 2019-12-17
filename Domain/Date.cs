@@ -41,9 +41,13 @@ namespace Domain
             BackgroundColor = "";
         }
 
-        public Date(DateTime content, Container container) : this()
+        public Date(DateTime content) : this()
         {
             Content = content;
+        }
+
+        public Date(DateTime content, Container container) : this(content)
+        {
             Container = container;
         }
 

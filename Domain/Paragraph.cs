@@ -40,9 +40,13 @@ namespace Domain
             BackgroundColor = "#ffffff";
         }
 
-        public Paragraph(string content, Container container) : this()
+        public Paragraph(string content) : this()
         {
             Content = content;
+        }
+
+        public Paragraph(string content, Container container) : this(content)
+        {
             Container = container;
         }
 
