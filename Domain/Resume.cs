@@ -64,27 +64,6 @@ namespace Domain
 
             return copy;
         }
-
-        /// <summary>
-        /// Create a copy of the resume
-        /// </summary>
-        /// <returns></returns>
-        public virtual Resume Copy()
-        {
-            Resume copy = new Resume();
-
-            copy.Title = Title;
-            copy.Save = Save;
-            copy.Favorite = Favorite;
-            copy.Creation = Creation;
-            copy.LastUpdate = LastUpdate;
-
-            foreach (Container c in Containers)
-                copy.Containers.Add(c.Copy());
-
-            return copy;
-        }
-
         #endregion
     }
 }

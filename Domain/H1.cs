@@ -29,7 +29,6 @@ namespace Domain
 
         /// Constructeur sans paramètre nécesessaire pour NHibernate
         /// </summary>
-        public H1() { }
         /// Empty parameter constructor needed by NHibernate
         /// </summary>
         public H1()

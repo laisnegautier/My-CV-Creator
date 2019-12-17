@@ -22,14 +22,6 @@ namespace Domain
         public virtual int Size { get; set; }
         public virtual string ForegroundColor { get; set; }
         public virtual string BackgroundColor { get; set; }
-
-        // Style properties
-        public virtual bool Italic { get; set; }
-        public virtual bool Bold { get; set; }
-        public virtual int Size { get; set; }
-        public virtual string ForegroundColor { get; set; }
-        public virtual string BackgroundColor { get; set; }
-        
         #endregion
 
 

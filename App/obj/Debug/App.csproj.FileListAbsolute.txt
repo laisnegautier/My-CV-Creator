@@ -50,3 +50,17 @@ C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\bin\Debug\Iesi.Collections.xm
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.csproj.CopyComplete
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.exe
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\obj\Debug\App.pdb
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\bin\Debug\itext.kernel.dll
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\bin\Debug\itext.layout.dll
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\bin\Debug\Common.Logging.Core.dll
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\bin\Debug\itext.io.dll
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\bin\Debug\Common.Logging.dll
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\bin\Debug\itext.kernel.xml
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\bin\Debug\itext.layout.xml
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\bin\Debug\Common.Logging.Core.pdb
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\bin\Debug\Common.Logging.Core.xml
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\bin\Debug\itext.io.xml
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\bin\Debug\Common.Logging.pdb
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\App\bin\Debug\Common.Logging.xml
