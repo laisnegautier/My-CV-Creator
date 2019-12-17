@@ -76,7 +76,8 @@ namespace DAL.Tests
             competences.Elements.Add(outilsInformatique);
 
 
-            Date stage2ADate = new Date(DateTime.Now, experiences);
+            Date stage2ADate = new Date(DateTime.Now);
+            stage2ADate.Container = experiences;
             H2 stage2ATitre = new H2("Stage de recherche en génie logiciel - ENSC, Talence", experiences);
             Paragraph stage2AFonction = new Paragraph("Stagiaire de qualité", experiences);
             stage2AFonction.Italic = true;

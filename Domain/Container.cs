@@ -43,7 +43,12 @@ namespace Domain
             Elements = new List<IElement>();
         }
 
-        public Container(string name, Resume resume) : this()
+        public Container(string name) : this()
+        {
+            Name = name;
+        }
+
+        public Container(string name, Resume resume) : this(name)
         {
             Name = name;
             Resume = resume;

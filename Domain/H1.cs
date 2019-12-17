@@ -40,9 +40,13 @@ namespace Domain
             BackgroundColor = "";
         }
 
-        public H1(string content, Container container) : this()
+        public H1(string content) : this()
         {
             Content = content;
+        }
+        
+        public H1(string content, Container container) : this(content)
+        {
             Container = container;
         }
         #endregion
