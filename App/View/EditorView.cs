@@ -39,6 +39,12 @@ namespace App
             return dialogResult;
         }
 
+        public DialogResult ConfirmDeleteElement(string title)
+        {
+            DialogResult dialogResult = MessageBox.Show("Voulez vous supprimer cet element ?", title, MessageBoxButtons.YesNo);
+            return dialogResult;
+        }
+
         public DialogResult ConfirmCopyContainer(string title)
         {
             DialogResult dialogResult = MessageBox.Show("Voulez vous copier cette section ?", title, MessageBoxButtons.YesNo);

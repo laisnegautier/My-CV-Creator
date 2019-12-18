@@ -150,8 +150,8 @@ namespace App.Presenter
                 };
                 // Gestion des boutons
                 td.UpButton.Click += MoveElementUp;
-                /*td.DownButton.Click += MoveElementDown;
-                td.DeleteButton.Click += DeleteElement;*/
+                td.DownButton.Click += MoveElementDown;
+                td.DeleteButton.Click += DeleteElement;
             }
             return height;
         }
@@ -202,6 +202,38 @@ namespace App.Presenter
                 moved = true;
             }
             if (moved) RenderResume();
+        }
+
+        public void MoveElementDown(object sender, EventArgs e)
+        {
+            bool moved = false;
+            TextDrop textDrop = (TextDrop)((Button)sender).Parent.Parent;
+            IElement element = textDrop.Content;
+            Container container = element.Container;
+            // a simplifier
+            int pos = _currentResume.Containers[_currentResume.Containers.IndexOf(container)].Elements.IndexOf(element);
+            if (pos != _currentResume.Containers[_currentResume.Containers.IndexOf(container)].Elements.Count-1)
+            {
+                _currentResume.Containers[_currentResume.Containers.IndexOf(container)].Elements.RemoveAt(pos);
+                _currentResume.Containers[_currentResume.Containers.IndexOf(container)].Elements.Insert(pos + 1, element);
+                moved = true;
+            }
+            if (moved) RenderResume();
+        }
+
+        public void DeleteElement(object sender, EventArgs e)
+        {
+            IElement textDrop = ((TextDrop)((Button)sender).Parent.Parent).Content;
+            Container c = ((TextDrop)((Button)sender).Parent.Parent).Content.Container;
+            string name = "";
+            if (textDrop is Paragraph) name = ((Paragraph)textDrop).Content;
+            else if (textDrop is H1) name = ((H1)textDrop).Content;
+            else name = ((H2)textDrop).Content;
+            if (_view.ConfirmDeleteElement(name) == DialogResult.Yes)
+            {
+                c.Elements.Remove(textDrop);
+                RenderResume();
+            }
         }
         #endregion
 
@@ -265,51 +297,7 @@ namespace App.Presenter
             }
             if(moved) RenderResume();
         }
-
-        // Fonction à ré-écrire
-        /*public void SetCurrentSelectedContainer(object sender, EventArgs e)
-        {
-            // Si on click su la déjà selctionée on fait rien
-            try{
-                ContainerDrop active = (ContainerDrop) sender;
-                ContainerDrop lastSelection = (ContainerDrop)CurrentSelection;
-                CurrentSelection = active;
-                //CurrentSelection.ElementPanel.Refresh();
-                if(lastSelection != null) lastSelection.Refresh();
-                CurrentSelection.Refresh();
-            }
-            catch ( InvalidCastException ){
-                try
-                {
-                    FlowLayoutPanel active = (FlowLayoutPanel)sender;
-                    // Ajouter le rafrais=chissement de l'ancienne section dans le setter
-                    ContainerDrop lastSelection = CurrentSelection;
-                    CurrentSelection = (ContainerDrop)active.Parent;
-
-                    if (lastSelection != null) lastSelection.Refresh();
-                    CurrentSelection.Refresh();
-                }
-                catch (InvalidCastException ){
-                    if(sender is Label)
-                    {
-                        sender = ((Label)sender).Parent;
-                        if (sender is TextDrop)
-                        {
-                            TextDrop pd = (TextDrop)sender;
-                            ContainerDrop lastSelection = CurrentSelection;
-                            CurrentSelection = (ContainerDrop)pd.Parent.Parent;
-
-                            if (lastSelection != null) lastSelection.Refresh();
-                            CurrentSelection.Refresh();
-                        }
-                    }
-                }
-            }
-            // Si le selceted ne contiens pas l'element on desactive l'element
-            //if () UnsetLastSelectedElement();
-            // RenderResume();
-        }*/
-
+        
         public void DeleteContainer(object sender, EventArgs e)
         {
             Container c = ((ContainerDrop)((Button)sender).Parent.Parent).Content;
@@ -411,6 +399,7 @@ namespace App.Presenter
                 //pd.Width = ((ContainerDrop)pd.Parent).ElementPanel.Width;
                 // Ajout dans le CV
                 targetContainer.Content.Elements.Add(element);
+                active.Container = targetContainer.Content;
                 RenderResume();
             }
             if(element is H1)
@@ -418,6 +407,7 @@ namespace App.Presenter
                 H1 active = (H1)element;
                 active.Content = "- Titre 1 -";
                 targetContainer.Content.Elements.Add(element);
+                active.Container = targetContainer.Content;
                 RenderResume();
             }
             if(element is H2)
@@ -425,6 +415,7 @@ namespace App.Presenter
                 H2 active = (H2)element;
                 active.Content = "- Titre 2 -";
                 targetContainer.Content.Elements.Add(element);
+                active.Container = targetContainer.Content;
                 RenderResume();
             }
         }
