@@ -87,6 +87,16 @@ namespace App.Presenter
 
         public void Copy()
         {
+            if(currentResume != null)
+            {
+                DialogResult result = _view.ConfirmCopy(currentResume.Resume.Title);
+                if(result == DialogResult.OK || result == DialogResult.Yes)
+                {
+                    Resume resume = _resumeRepository.Copy(currentResume.Resume);
+                    ResumesView.Add( new ResumeMiniaturePic(resume));
+                    _view.Resumes = ResumesView;
+                }
+            }
 
         }
     }

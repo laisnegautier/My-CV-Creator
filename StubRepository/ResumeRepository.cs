@@ -11,12 +11,13 @@ namespace StubRepository
     {
         public Resume Copy(Resume resume)
         {
-            throw new NotImplementedException();
+
+            return resume.Copy();
         }
 
         public void Create(Resume resume)
         {
-            throw new NotImplementedException();
+
         }
 
         public void Delete(Resume resume)

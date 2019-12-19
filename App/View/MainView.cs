@@ -217,6 +217,16 @@ namespace App
             return dialogResult;
         }
 
+        public DialogResult ConfirmCopy(string title)
+        {
+            DialogResult dialogResult = DialogResult.None;
+            CustomMessageBox confirmCopyMsgBox = new CustomMessageBox();
+            confirmCopyMsgBox.Disposed += (s, e) => { dialogResult = confirmCopyMsgBox.choice; };
+            confirmCopyMsgBox.Show("Are you sure you want to delete this resume ?", title);
+
+            return dialogResult;
+        }
+
         private void AddButton_Click(object sender, EventArgs e)
         {
             Presenter.AddNew();

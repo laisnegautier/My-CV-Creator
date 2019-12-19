@@ -43,6 +43,12 @@ namespace App.Widgets
                     _element = h;
                     TextValue = h.Content;
                 }
+                else if (value is Date)
+                {
+                    Date d = (Date)value;
+                    _element = d;
+                    TextValue = d.ToString();
+                }
             }
         }
         public Button UpButton { get { return upButton; } }
@@ -58,16 +64,18 @@ namespace App.Widgets
             set
             {
                 if (Content is Paragraph) ((Paragraph)Content).Content = value;
-                else if (Content is H1) ((H1)Content).Content = value; 
+                else if (Content is H1) ((H1)Content).Content = value;
                 else if (Content is H2) ((H2)Content).Content = value;
-                
+                else if (Content is Date) ((Date)Content).Content = Convert.ToDateTime(value);
+
                 editableText.AutoSize = true;
-                editableText.Text = value;
+                editableText.Text = value.ToString();
                 editableText.AutoSize = false;
                 Height = editableText.Height + 20;
             }
-        } 
-        
+        }
+
+        #region Construct
         public TextDrop()
         {
             InitializeComponent();
@@ -97,6 +105,14 @@ namespace App.Widgets
             editableText.TextAlign = ContentAlignment.MiddleLeft;
         }
         
+        public TextDrop(Date date) : this()
+        {
+            Content = date;
+            editableText.Font = new Font(editableText.Font, FontStyle.Bold);
+            editableText.TextAlign = ContentAlignment.MiddleLeft;
+        }
+        #endregion
+
         public void ElementView_OnPaint(object sender, PaintEventArgs e)
         {
             // Displaying the container control panel

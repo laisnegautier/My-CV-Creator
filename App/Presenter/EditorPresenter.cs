@@ -12,6 +12,7 @@ namespace App.Presenter
 {
     public class EditorPresenter
     {
+        enum Editable { ContTitle, H1, H2 };
         #region Attributes
         private IResumeRepository _resumeRepo;
         private EditorView _view;
@@ -64,6 +65,7 @@ namespace App.Presenter
                 if (_currentResume.Containers != null)
                     foreach (Container c in _currentResume.Containers)
                     {
+                        //=====================================================================================================
                         ContainerDrop cd = new ContainerDrop(c);
                         // Si la section est selectionnée on la laisse seléctionnée
                         if (CurrentSelection != null && CurrentSelection is ContainerDrop)
@@ -77,6 +79,8 @@ namespace App.Presenter
                         // Gestion pour la dernière section
                         if (_currentResume.Containers.IndexOf(c) == _currentResume.Containers.Count - 1) cd.DownButton.Hide();
                         _view.ResumeEditor.Controls.Add(cd);
+                        // A DEPORTER DANS RENDER CONTAINER
+                        //=====================================================================================================
 
                         RenderContainer(cd);
 
@@ -98,7 +102,7 @@ namespace App.Presenter
             // Action de selection autorisée
             cd.Click += (s,e) => { /*cd.IsSelected = !cd.IsSelected;*/ CurrentSelection = cd; };
             cd.ElementPanel.Click += (s,e) => { /*cd.IsSelected = !cd.IsSelected;*/ CurrentSelection = cd; };
-            cd.ContainerTitleLabel.DoubleClick += EditContainerTitle;
+            cd.ContainerTitleLabel.DoubleClick += EditShortText;
 
             // Gestion des boutons
             cd.FavButton.Click += SetContainerFav;
@@ -118,19 +122,29 @@ namespace App.Presenter
             {
                 Paragraph p = (Paragraph)e;
                 td = new TextDrop(p);
+                td.EditableText.DoubleClick += EditLongText;
                 height = RenderParagraph(td, cd);
             }
             else if (e is H1)
             {
                 H1 h1 = (H1)e;
                 td = new TextDrop(h1);
+                td.EditableText.DoubleClick += EditShortText;
                 height = RenderTitle(td, cd);
             }
             else if (e is H2)
             {
                 H2 h2 = (H2)e;
                 td = new TextDrop(h2);
+                td.EditableText.DoubleClick += EditShortText;
                 height = RenderTitle(td, cd);
+            }
+            else if(e is Date)
+            {
+                Date d = (Date)e;
+                td = new TextDrop(d);
+                td.EditableText.DoubleClick += EditDate;
+                height = RenderDate(td, cd);
             }
             // Cpt
             // Cpt spécifique pour chaque type d'element possible du CV
@@ -152,13 +166,14 @@ namespace App.Presenter
                 td.UpButton.Click += MoveElementUp;
                 td.DownButton.Click += MoveElementDown;
                 td.DeleteButton.Click += DeleteElement;
+                
             }
             return height;
         }
         #endregion
 
         #region ElementsRenderers
-        public int RenderParagraph(TextDrop td, ContainerDrop cd)
+        int RenderParagraph(TextDrop td, ContainerDrop cd)
         {
             cd.ElementPanel.Controls.Add(td);
             td.Left = cd.ElementPanel.Left;
@@ -172,7 +187,7 @@ namespace App.Presenter
             return td.Height;
         }
 
-        public int RenderTitle(TextDrop td, ContainerDrop cd)
+        int RenderTitle(TextDrop td, ContainerDrop cd)
         {
             cd.ElementPanel.Controls.Add(td);
             td.Left = cd.ElementPanel.Left + 10;
@@ -182,6 +197,19 @@ namespace App.Presenter
             td.EditableText.Top = 0;
             td.ParentContainer = cd;
             
+            return td.Height;
+        }
+
+        int RenderDate(TextDrop td, ContainerDrop cd)
+        {
+            cd.ElementPanel.Controls.Add(td);
+            td.Left = cd.ElementPanel.Left + 10;
+            td.Width = cd.ElementPanel.Width - (td.Margin.Left + td.Margin.Right);
+            td.EditableText.Width = td.Width - td.ControlPanel.Width - (td.EditableText.Margin.Left + td.EditableText.Margin.Right);
+            td.Height = 100;
+            td.EditableText.Top = 0;
+            td.ParentContainer = cd;
+
             return td.Height;
         }
         #endregion
@@ -224,11 +252,12 @@ namespace App.Presenter
         public void DeleteElement(object sender, EventArgs e)
         {
             IElement textDrop = ((TextDrop)((Button)sender).Parent.Parent).Content;
-            Container c = ((TextDrop)((Button)sender).Parent.Parent).Content.Container;
+            Container c = textDrop.Container;
             string name = "";
             if (textDrop is Paragraph) name = ((Paragraph)textDrop).Content;
             else if (textDrop is H1) name = ((H1)textDrop).Content;
-            else name = ((H2)textDrop).Content;
+            else if (textDrop is H2) name = ((H2)textDrop).Content;
+            else if (textDrop is Date) name = ((Date)textDrop).ToString();
             if (_view.ConfirmDeleteElement(name) == DialogResult.Yes)
             {
                 c.Elements.Remove(textDrop);
@@ -238,23 +267,7 @@ namespace App.Presenter
         #endregion
 
         #region Container Managers
-        public void EditContainerTitle(object sender, EventArgs e)
-        {
-            Label title = (Label)sender;
-            if (title.Parent is ContainerDrop)
-            {
-                CurrentSelection = (ContainerDrop)title.Parent;
-                RenderResume();
-            }
-            SmallTextEditor editor = new SmallTextEditor();
-            editor.Disposed += (s, evt) =>
-            {
-                ((ContainerDrop)CurrentSelection).ContainerTitleLabel.Text = editor.TextValue;
-                ((ContainerDrop)CurrentSelection).Content.Name = editor.TextValue;
-                //_currentSelection.ContainerTitleLabel.Refresh();
-            };
-            editor.Show(title.Text, "Edit your title here");
-        }
+       
 
         public void SetContainerFav(object sender, EventArgs e)
         {
@@ -325,17 +338,28 @@ namespace App.Presenter
             List<Container> basicContainers = new List<Container>();
             List<IElement> basicElements = new List<IElement>();
             Container empty = new Container() { Name = "Empty" };
+            Container carreer = new Container() { Name = "Carreer" };
+
+            IElement carreerDesc = new H2("My school", carreer);
+            IElement carrerrDate = new Date(default, carreer);
+            IElement carrerrParagraph = new Paragraph("What where you doing ?", carreer);
+            carreer.Elements.Add(carreerDesc);
+            carreer.Elements.Add(carrerrDate);
+            carreer.Elements.Add(carrerrDate);
+
             IElement paragraph = new Paragraph();
             IElement title1 = new H1();
             IElement title2 = new H2();
+            IElement date = new Date();
 
             basicContainers.Add(empty);
             basicElements.Add(paragraph);
             basicElements.Add(title1);
             basicElements.Add(title2);
+            basicElements.Add(date);
 
-            List<string> elemNames = new List<string>() { "Paragraph", "Title 1", "Title 2" };
-            List<string> elemDesc = new List<string>() { " Content a text paragraph ", " Big size title ", " Smaller title " };
+            List<string> elemNames = new List<string>() { "Paragraph", "Title 1", "Title 2", "Date" };
+            List<string> elemDesc = new List<string>() { " Content a text paragraph ", " Big size title ", " Smaller title ", "renseigne une date" };
 
             // Adding the defaults containers
             foreach(Container c in basicContainers)
@@ -418,6 +442,68 @@ namespace App.Presenter
                 active.Container = targetContainer.Content;
                 RenderResume();
             }
+            if(element is Date)
+            {
+                Date active = (Date)element;
+                active.Content = DateTime.Today;
+                targetContainer.Content.Elements.Add(element);
+                active.Container = targetContainer.Content;
+                RenderResume();
+            }
+        }
+
+        void EditShortText(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            CurrentSelection = label.Parent;
+            
+            SmallTextEditor editor = new SmallTextEditor();
+
+            editor.Disposed += (s, evt) =>
+            {
+                if(CurrentSelection is ContainerDrop)
+                {
+                    ((ContainerDrop)CurrentSelection).ContainerTitleLabel.Text = editor.TextValue;
+                    ((ContainerDrop)CurrentSelection).Content.Name = editor.TextValue;
+                }
+                else if (CurrentSelection is TextDrop)
+                {
+                    TextDrop td = (TextDrop)CurrentSelection;
+                    if (td.Content is H1)
+                    {
+                        ((TextDrop)CurrentSelection).EditableText.Text = editor.TextValue;
+                        ((H1)((TextDrop)CurrentSelection).Content).Content = editor.TextValue;
+                    }
+                    else if (td.Content is H2)
+                    {
+                        ((TextDrop)CurrentSelection).EditableText.Text = editor.TextValue;
+                        ((H2)((TextDrop)CurrentSelection).Content).Content = editor.TextValue;
+                    }
+                }
+                RenderResume();
+            };
+            editor.Show(label.Text, "Edit your title here");
+        }
+
+        void EditLongText(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            CurrentSelection = label.Parent;
+
+            LargeTextEditor editor = new LargeTextEditor();
+
+            editor.Disposed += (s, evt) =>
+            {
+                ((TextDrop)CurrentSelection).EditableText.Text = editor.TextValue;
+                ((Paragraph)((TextDrop)CurrentSelection).Content).Content = editor.TextValue;
+                RenderResume();
+            };
+            editor.Show(label.Text, "Edit your title here");
+        }
+
+        void EditDate(object sender, EventArgs e)
+        {
+
         }
     }
 }

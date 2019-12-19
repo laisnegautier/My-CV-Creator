@@ -53,6 +53,9 @@
             this.headPanel.Name = "headPanel";
             this.headPanel.Size = new System.Drawing.Size(549, 40);
             this.headPanel.TabIndex = 8;
+            this.headPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.headPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            this.headPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
             // 
             // closeButton
             // 
@@ -76,6 +79,9 @@
             this.leftHeadPanel.Name = "leftHeadPanel";
             this.leftHeadPanel.Size = new System.Drawing.Size(181, 40);
             this.leftHeadPanel.TabIndex = 4;
+            this.leftHeadPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.leftHeadPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            this.leftHeadPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
             // 
             // titleLabel
             // 
@@ -87,6 +93,9 @@
             this.titleLabel.Size = new System.Drawing.Size(86, 26);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Text Editor";
+            this.titleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.titleLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            this.titleLabel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
             // 
             // warningIcon
             // 
@@ -97,6 +106,9 @@
             this.warningIcon.Size = new System.Drawing.Size(25, 30);
             this.warningIcon.TabIndex = 9;
             this.warningIcon.TabStop = false;
+            this.warningIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.warningIcon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            this.warningIcon.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
             // 
             // cancelButton
             // 
@@ -166,6 +178,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SmallTextEditor";
             this.Text = "Editor";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
             this.headPanel.ResumeLayout(false);
             this.leftHeadPanel.ResumeLayout(false);
             this.leftHeadPanel.PerformLayout();

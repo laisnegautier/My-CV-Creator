@@ -54,7 +54,7 @@ namespace Domain
         #region Methods
         public override string ToString()
         {
-            return Content.ToString();
+            return Content.Day + "/" + Content.Month + "/" + Content.Year;
         }
 
         /// <summary>

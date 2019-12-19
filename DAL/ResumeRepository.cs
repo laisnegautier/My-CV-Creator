@@ -65,5 +65,12 @@ namespace DAL
             Session.Delete(resume);
             Session.Flush();
         }
+
+        public Resume Copy(Resume resume)
+        {
+            Resume copy = resume.Copy();
+            Save(copy);
+            return copy;
+        }
     }
 }

@@ -33,6 +33,7 @@ namespace App
             Presenter.SetUpView();
         }
 
+        #region ConfirmationSection
         public DialogResult ConfirmDeleteContainer(string title)
         {
             DialogResult dialogResult = MessageBox.Show("Voulez vous supprimer cette section ?", title, MessageBoxButtons.YesNo);
@@ -50,6 +51,7 @@ namespace App
             DialogResult dialogResult = MessageBox.Show("Voulez vous copier cette section ?", title, MessageBoxButtons.YesNo);
             return dialogResult;
         }
+        #endregion
 
         #region fonctionalitiesButton
         private void CloseButton_Click(object sender, EventArgs e)

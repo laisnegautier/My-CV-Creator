@@ -15,5 +15,6 @@ namespace App.View
         Presenter.MainPresenter Presenter { set; }
         DialogResult ConfirmDelete(string title);
         void Close();
+        DialogResult ConfirmCopy(string title);
     }
 }

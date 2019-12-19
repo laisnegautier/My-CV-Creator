@@ -12,9 +12,13 @@ namespace App.Widgets
 {
     public partial class SmallTextEditor : Form
     {
-        public string TextValue { get; set; }
         private string initValue;
+        private Point lastLocation;
+        private bool mouseDown;
+        private string startValue;
         
+        public string TextValue { get; set; }
+
         public SmallTextEditor()
         {
             InitializeComponent();
@@ -24,7 +28,7 @@ namespace App.Widgets
         public void Show(string value, string help)
         {
             editBox.Text = value;
-            initValue = value;
+            startValue = value;
             descritpionLabel.Text = help;
             ShowDialog();
         }
@@ -50,6 +54,30 @@ namespace App.Widgets
            int nWidthEllipse, // height of ellipse
            int nHeightEllipse // width of ellipse
           );
+        #endregion
+
+        #region Dragg
+        private void DragPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void DragPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void DragPanel_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
         #endregion
 
         private void CancelButton_Click(object sender, EventArgs e)

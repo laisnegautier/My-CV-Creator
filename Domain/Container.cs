@@ -88,7 +88,7 @@ namespace Domain
         public virtual Container Copy()
         {
             Container copy = new Container();
-
+            
             copy.Name = Name;
             copy.Favorite = Favorite;
             copy.FavoriteName = FavoriteName;
@@ -98,8 +98,11 @@ namespace Domain
 
             if (Elements != null)
                 foreach (IElement e in Elements)
-                    copy.Elements.Add(e.Copy());
-
+                {
+                    IElement elemCopy = e.Copy();
+                    elemCopy.Container = copy;
+                    copy.Elements.Add(elemCopy);
+                }
             return copy;
         }
 

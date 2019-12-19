@@ -53,6 +53,9 @@
             this.headPanel.Name = "headPanel";
             this.headPanel.Size = new System.Drawing.Size(659, 40);
             this.headPanel.TabIndex = 8;
+            this.headPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.headPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            this.headPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
             // 
             // closeButton
             // 
@@ -76,6 +79,9 @@
             this.leftHeadPanel.Name = "leftHeadPanel";
             this.leftHeadPanel.Size = new System.Drawing.Size(181, 40);
             this.leftHeadPanel.TabIndex = 4;
+            this.leftHeadPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.leftHeadPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            this.leftHeadPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
             // 
             // titleLabel
             // 
@@ -87,6 +93,9 @@
             this.titleLabel.Size = new System.Drawing.Size(86, 26);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Text Editor";
+            this.titleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.titleLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            this.titleLabel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
             // 
             // warningIcon
             // 
@@ -97,6 +106,9 @@
             this.warningIcon.Size = new System.Drawing.Size(25, 30);
             this.warningIcon.TabIndex = 9;
             this.warningIcon.TabStop = false;
+            this.warningIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.warningIcon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            this.warningIcon.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
             // 
             // cancelButton
             // 
@@ -133,6 +145,8 @@
             // 
             this.editBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.editBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.editBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBox.ForeColor = System.Drawing.Color.White;
             this.editBox.Location = new System.Drawing.Point(43, 81);
             this.editBox.Multiline = true;
             this.editBox.Name = "editBox";
@@ -149,7 +163,7 @@
             this.descritpionLabel.TabIndex = 10;
             this.descritpionLabel.Text = "Help description";
             // 
-            // Editor
+            // LargeTextEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -161,8 +175,11 @@
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.editButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Editor";
+            this.Name = "LargeTextEditor";
             this.Text = "Editor";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseUp);
             this.headPanel.ResumeLayout(false);
             this.leftHeadPanel.ResumeLayout(false);
             this.leftHeadPanel.PerformLayout();

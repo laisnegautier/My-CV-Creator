@@ -12,9 +12,12 @@ namespace App.Widgets
 {
     public partial class LargeTextEditor : Form
     {
-        public string TextValue { get; set; }
         private string initValue;
-        
+        private bool mouseDown;
+        private Point lastLocation;
+
+        public string TextValue { get; set; }
+
         public LargeTextEditor()
         {
             InitializeComponent();
@@ -52,6 +55,31 @@ namespace App.Widgets
           );
         #endregion
 
+        #region Dragg
+        private void DragPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void DragPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void DragPanel_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+        #endregion
+
+        #region Buttons
         private void CancelButton_Click(object sender, EventArgs e)
         {
             TextValue = initValue;
@@ -80,5 +108,6 @@ namespace App.Widgets
                 Dispose();
             }
         }
+        #endregion
     }
 }
