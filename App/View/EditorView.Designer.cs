@@ -32,8 +32,6 @@
             this.headerPanelLogo = new System.Windows.Forms.Panel();
             this.headerPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.minimizeButton = new App.RoundButton();
-            this.closeButton = new App.RoundButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.favSectionPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -41,9 +39,11 @@
             this.rightPanel = new System.Windows.Forms.Panel();
             this.defaultElementPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.resumeEditorPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.minimizeButton = new App.RoundButton();
+            this.closeButton = new App.RoundButton();
             this.headerPanelLogo.SuspendLayout();
             this.headerPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -65,6 +65,7 @@
             // 
             this.headerPanelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(89)))));
             this.headerPanelLogo.Controls.Add(this.logoLabel);
+            this.headerPanelLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.headerPanelLogo.Location = new System.Drawing.Point(0, 0);
             this.headerPanelLogo.Name = "headerPanelLogo";
             this.headerPanelLogo.Size = new System.Drawing.Size(337, 45);
@@ -75,7 +76,7 @@
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.headerPanel.Controls.Add(this.button3);
             this.headerPanel.Controls.Add(this.button2);
-            this.headerPanel.Controls.Add(this.button1);
+            this.headerPanel.Controls.Add(this.saveButton);
             this.headerPanel.Controls.Add(this.panel1);
             this.headerPanel.Controls.Add(this.headerPanelLogo);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -93,36 +94,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(129, 45);
             this.panel1.TabIndex = 16;
-            // 
-            // minimizeButton
-            // 
-            this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.minimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.minimizeButton.FlatAppearance.BorderSize = 0;
-            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeButton.Location = new System.Drawing.Point(60, 12);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(22, 22);
-            this.minimizeButton.TabIndex = 14;
-            this.minimizeButton.UseVisualStyleBackColor = false;
-            this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
-            this.minimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButton_Enter);
-            this.minimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_Leave);
-            // 
-            // closeButton
-            // 
-            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.closeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.closeButton.FlatAppearance.BorderSize = 0;
-            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Location = new System.Drawing.Point(91, 12);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(22, 22);
-            this.closeButton.TabIndex = 15;
-            this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
-            this.closeButton.MouseEnter += new System.EventHandler(this.CloseButton_Enter);
-            this.closeButton.MouseLeave += new System.EventHandler(this.CloseButton_Leave);
             // 
             // panel3
             // 
@@ -205,47 +176,86 @@
             this.resumeEditorPanel.DragOver += new System.Windows.Forms.DragEventHandler(this.OnDragOver);
             this.resumeEditorPanel.DragLeave += new System.EventHandler(this.OnDragLeave);
             // 
-            // button1
+            // saveButton
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(343, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 45);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "SAVE  ";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.saveButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.saveButton.FlatAppearance.BorderSize = 0;
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.ForeColor = System.Drawing.Color.White;
+            this.saveButton.Location = new System.Drawing.Point(337, 0);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(164, 45);
+            this.saveButton.TabIndex = 17;
+            this.saveButton.Text = "SAVE  ";
+            this.saveButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.saveButton.MouseLeave += new System.EventHandler(this.OnMouseLeave);
             // 
             // button2
             // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(513, 0);
+            this.button2.Location = new System.Drawing.Point(501, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(164, 45);
             this.button2.TabIndex = 18;
             this.button2.Text = "TO PDF   ";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.button2.MouseLeave += new System.EventHandler(this.OnMouseLeave);
             // 
             // button3
             // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(683, 1);
+            this.button3.Location = new System.Drawing.Point(665, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(164, 45);
             this.button3.TabIndex = 19;
             this.button3.Text = "TO HTML   ";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.button3.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
+            // minimizeButton
+            // 
+            this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.minimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.minimizeButton.FlatAppearance.BorderSize = 0;
+            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeButton.Location = new System.Drawing.Point(60, 12);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.Size = new System.Drawing.Size(22, 22);
+            this.minimizeButton.TabIndex = 14;
+            this.minimizeButton.UseVisualStyleBackColor = false;
+            this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            this.minimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButton_Enter);
+            this.minimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_Leave);
+            // 
+            // closeButton
+            // 
+            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.closeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Location = new System.Drawing.Point(91, 12);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(22, 22);
+            this.closeButton.TabIndex = 15;
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.closeButton.MouseEnter += new System.EventHandler(this.CloseButton_Enter);
+            this.closeButton.MouseLeave += new System.EventHandler(this.CloseButton_Leave);
             // 
             // EditorView
             // 
@@ -286,7 +296,7 @@
         private RoundButton closeButton;
         private RoundButton minimizeButton;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
     }
