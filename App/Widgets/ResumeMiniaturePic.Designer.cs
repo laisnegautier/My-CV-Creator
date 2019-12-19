@@ -42,6 +42,8 @@
             this.resumeTitle.Size = new System.Drawing.Size(96, 25);
             this.resumeTitle.TabIndex = 0;
             this.resumeTitle.Text = "CV_Titre";
+            this.resumeTitle.MouseEnter += new System.EventHandler(this.Pic_OnMouseEnter);
+            this.resumeTitle.MouseLeave += new System.EventHandler(this.Pic_OnMouseLeave);
             // 
             // containerLabel
             // 
@@ -51,6 +53,8 @@
             this.containerLabel.Size = new System.Drawing.Size(62, 13);
             this.containerLabel.TabIndex = 1;
             this.containerLabel.Text = "containers :";
+            this.containerLabel.MouseEnter += new System.EventHandler(this.Pic_OnMouseEnter);
+            this.containerLabel.MouseLeave += new System.EventHandler(this.Pic_OnMouseLeave);
             // 
             // elementLabel
             // 
@@ -60,6 +64,8 @@
             this.elementLabel.Size = new System.Drawing.Size(55, 13);
             this.elementLabel.TabIndex = 2;
             this.elementLabel.Text = "elements :";
+            this.elementLabel.MouseEnter += new System.EventHandler(this.Pic_OnMouseEnter);
+            this.elementLabel.MouseLeave += new System.EventHandler(this.Pic_OnMouseLeave);
             // 
             // ResumeMiniaturePic
             // 
