@@ -21,6 +21,7 @@ namespace App
         public FlowLayoutPanel ResumeEditor { get { return resumeEditorPanel; } }
         public FlowLayoutPanel DefaultSectionPanel { get { return defaultSectionPanel; } }
         public FlowLayoutPanel DefaultElementPanel { get { return defaultElementPanel; } }
+        public Label ResumeTitleLabel { get { return resumeTitleLabel; } }
 
         public EditorView()
         {
@@ -119,8 +120,7 @@ namespace App
             button.ForeColor = Color.Black;
             /*if (button == addButton) addPicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\addBlack.png");
             else if (button == editButton) editPicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\editBlack.png");
-            else if (button == deleteButton) deletePicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\deleteBlack.png");
-            else if (button == copyButton) copyPicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\copyBlack.png");*/
+            else if (button == deleteButton) deletePicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\deleteBlack.png");*/
         }
 
         private void UnsetFocus(Button button)
@@ -129,8 +129,7 @@ namespace App
             button.ForeColor = Color.White;
             /*if (button == addButton) addPicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\addWhite.png");
             else if (button == editButton) editPicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\editWhite.png");
-            else if (button == deleteButton) deletePicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\deleteWhite.png");
-            else if (button == copyButton) copyPicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\copyWhite.png");*/
+            else if (button == deleteButton) deletePicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\deleteWhite.png");*/
         }
 
         private void OnMouseEnter(object sender, EventArgs e)

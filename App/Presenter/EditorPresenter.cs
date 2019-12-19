@@ -336,6 +336,8 @@ namespace App.Presenter
         // Fonciton à segmenter
         public void SetUpView()
         {
+            _view.ResumeTitleLabel.Text = _currentResume.Title;
+
             List<Container> basicContainers = new List<Container>();
             List<IElement> basicElements = new List<IElement>();
             Container empty = new Container() { Name = "Empty" };
@@ -354,6 +356,7 @@ namespace App.Presenter
             IElement date = new Date();
 
             basicContainers.Add(empty);
+            basicContainers.Add(carreer);
             basicElements.Add(paragraph);
             basicElements.Add(title1);
             basicElements.Add(title2);

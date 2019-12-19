@@ -35,8 +35,6 @@
             this.ToPdfButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.minimizeButton = new App.RoundButton();
-            this.closeButton = new App.RoundButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.favSectionPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -44,6 +42,9 @@
             this.rightPanel = new System.Windows.Forms.Panel();
             this.defaultElementPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.resumeEditorPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.minimizeButton = new App.RoundButton();
+            this.closeButton = new App.RoundButton();
+            this.resumeTitleLabel = new System.Windows.Forms.Label();
             this.headerPanelLogo.SuspendLayout();
             this.headerPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -74,6 +75,7 @@
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.headerPanel.Controls.Add(this.resumeTitleLabel);
             this.headerPanel.Controls.Add(this.ToHtmlButton);
             this.headerPanel.Controls.Add(this.ToPdfButton);
             this.headerPanel.Controls.Add(this.saveButton);
@@ -149,36 +151,6 @@
             this.panel1.Size = new System.Drawing.Size(129, 45);
             this.panel1.TabIndex = 16;
             // 
-            // minimizeButton
-            // 
-            this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.minimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.minimizeButton.FlatAppearance.BorderSize = 0;
-            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeButton.Location = new System.Drawing.Point(60, 12);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(22, 22);
-            this.minimizeButton.TabIndex = 14;
-            this.minimizeButton.UseVisualStyleBackColor = false;
-            this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
-            this.minimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButton_Enter);
-            this.minimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_Leave);
-            // 
-            // closeButton
-            // 
-            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.closeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.closeButton.FlatAppearance.BorderSize = 0;
-            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Location = new System.Drawing.Point(91, 12);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(22, 22);
-            this.closeButton.TabIndex = 15;
-            this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
-            this.closeButton.MouseEnter += new System.EventHandler(this.CloseButton_Enter);
-            this.closeButton.MouseLeave += new System.EventHandler(this.CloseButton_Leave);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(89)))));
@@ -228,9 +200,9 @@
             this.rightPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.rightPanel.Controls.Add(this.defaultElementPanel);
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rightPanel.Location = new System.Drawing.Point(815, 45);
+            this.rightPanel.Location = new System.Drawing.Point(919, 45);
             this.rightPanel.Name = "rightPanel";
-            this.rightPanel.Size = new System.Drawing.Size(337, 579);
+            this.rightPanel.Size = new System.Drawing.Size(233, 579);
             this.rightPanel.TabIndex = 12;
             // 
             // defaultElementPanel
@@ -241,7 +213,7 @@
             this.defaultElementPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.defaultElementPanel.Location = new System.Drawing.Point(3, 7);
             this.defaultElementPanel.Name = "defaultElementPanel";
-            this.defaultElementPanel.Size = new System.Drawing.Size(331, 560);
+            this.defaultElementPanel.Size = new System.Drawing.Size(227, 560);
             this.defaultElementPanel.TabIndex = 0;
             // 
             // resumeEditorPanel
@@ -253,12 +225,53 @@
             this.resumeEditorPanel.AutoScroll = true;
             this.resumeEditorPanel.Location = new System.Drawing.Point(343, 52);
             this.resumeEditorPanel.Name = "resumeEditorPanel";
-            this.resumeEditorPanel.Size = new System.Drawing.Size(466, 535);
+            this.resumeEditorPanel.Size = new System.Drawing.Size(570, 535);
             this.resumeEditorPanel.TabIndex = 13;
             this.resumeEditorPanel.DragDrop += new System.Windows.Forms.DragEventHandler(this.OnDragDrop);
             this.resumeEditorPanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnDragEnter);
             this.resumeEditorPanel.DragOver += new System.Windows.Forms.DragEventHandler(this.OnDragOver);
             this.resumeEditorPanel.DragLeave += new System.EventHandler(this.OnDragLeave);
+            // 
+            // minimizeButton
+            // 
+            this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.minimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.minimizeButton.FlatAppearance.BorderSize = 0;
+            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeButton.Location = new System.Drawing.Point(60, 12);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.Size = new System.Drawing.Size(22, 22);
+            this.minimizeButton.TabIndex = 14;
+            this.minimizeButton.UseVisualStyleBackColor = false;
+            this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            this.minimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButton_Enter);
+            this.minimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_Leave);
+            // 
+            // closeButton
+            // 
+            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.closeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Location = new System.Drawing.Point(91, 12);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(22, 22);
+            this.closeButton.TabIndex = 15;
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.closeButton.MouseEnter += new System.EventHandler(this.CloseButton_Enter);
+            this.closeButton.MouseLeave += new System.EventHandler(this.CloseButton_Leave);
+            // 
+            // resumeTitleLabel
+            // 
+            this.resumeTitleLabel.AutoSize = true;
+            this.resumeTitleLabel.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resumeTitleLabel.ForeColor = System.Drawing.Color.White;
+            this.resumeTitleLabel.Location = new System.Drawing.Point(917, 10);
+            this.resumeTitleLabel.Name = "resumeTitleLabel";
+            this.resumeTitleLabel.Size = new System.Drawing.Size(42, 25);
+            this.resumeTitleLabel.TabIndex = 20;
+            this.resumeTitleLabel.Text = "Title";
             // 
             // EditorView
             // 
@@ -277,6 +290,7 @@
             this.headerPanelLogo.ResumeLayout(false);
             this.headerPanelLogo.PerformLayout();
             this.headerPanel.ResumeLayout(false);
+            this.headerPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.leftPanel.ResumeLayout(false);
             this.rightPanel.ResumeLayout(false);
@@ -302,6 +316,7 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button ToHtmlButton;
         private System.Windows.Forms.Button ToPdfButton;
+        private System.Windows.Forms.Label resumeTitleLabel;
     }
 }
 

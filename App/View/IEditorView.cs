@@ -15,5 +15,6 @@ namespace App.View
         FlowLayoutPanel ResumeEditor { get; }
         FlowLayoutPanel DefaultSectionPanel { get; }
         FlowLayoutPanel DefaultElementPanel { get; }
+        Label ResumeTitleLabel { get; }
     }
 }

@@ -78,7 +78,7 @@ namespace StubRepository
 
         public void Save(Resume resume)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

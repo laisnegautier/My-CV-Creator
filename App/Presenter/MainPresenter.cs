@@ -8,6 +8,7 @@ using App.View;
 using DAL;
 using System.Drawing;
 using System.Windows.Forms;
+using App.Widgets;
 
 namespace App.Presenter
 {
@@ -63,7 +64,17 @@ namespace App.Presenter
         public void AddNew()
         {
             EditorView editForm = new EditorView();
-            IResumeRepository resumeRepo = new StubRepository.ResumeRepository();
+            IResumeRepository resumeRepo = _resumeRepository;
+            editForm.CurrentResume = new Resume();
+
+            SmallTextEditor titleEditor = new SmallTextEditor();
+            titleEditor.Disposed += (s, e) =>
+            {
+                editForm.CurrentResume = new Resume(titleEditor.TextValue);
+            };
+
+            titleEditor.Show("Title", "Give your new Resume a title !");
+
             EditorPresenter editorPresenter = new EditorPresenter(resumeRepo, editForm);
             editForm.Show();
             _view.Close();
