@@ -152,5 +152,20 @@ namespace App
                 if (pic.Parent is Button) UnsetFocus((Button)pic.Parent);
             }
         }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            Presenter.SaveResume();
+        }
+
+        private void PDF_Click(object sender, EventArgs e)
+        {
+            Presenter.PortToPDF();
+        }
+
+        private void HTML_Click(object sender, EventArgs e)
+        {
+            Presenter.PortToHTML();
+        }
     }
 }

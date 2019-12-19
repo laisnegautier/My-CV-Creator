@@ -31,7 +31,12 @@
             this.logoLabel = new System.Windows.Forms.Label();
             this.headerPanelLogo = new System.Windows.Forms.Panel();
             this.headerPanel = new System.Windows.Forms.Panel();
+            this.ToHtmlButton = new System.Windows.Forms.Button();
+            this.ToPdfButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.minimizeButton = new App.RoundButton();
+            this.closeButton = new App.RoundButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.favSectionPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -39,11 +44,6 @@
             this.rightPanel = new System.Windows.Forms.Panel();
             this.defaultElementPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.resumeEditorPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.minimizeButton = new App.RoundButton();
-            this.closeButton = new App.RoundButton();
             this.headerPanelLogo.SuspendLayout();
             this.headerPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -74,8 +74,8 @@
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.headerPanel.Controls.Add(this.button3);
-            this.headerPanel.Controls.Add(this.button2);
+            this.headerPanel.Controls.Add(this.ToHtmlButton);
+            this.headerPanel.Controls.Add(this.ToPdfButton);
             this.headerPanel.Controls.Add(this.saveButton);
             this.headerPanel.Controls.Add(this.panel1);
             this.headerPanel.Controls.Add(this.headerPanelLogo);
@@ -84,6 +84,60 @@
             this.headerPanel.Name = "headerPanel";
             this.headerPanel.Size = new System.Drawing.Size(1152, 45);
             this.headerPanel.TabIndex = 9;
+            // 
+            // ToHtmlButton
+            // 
+            this.ToHtmlButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ToHtmlButton.FlatAppearance.BorderSize = 0;
+            this.ToHtmlButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ToHtmlButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToHtmlButton.ForeColor = System.Drawing.Color.White;
+            this.ToHtmlButton.Location = new System.Drawing.Point(665, 0);
+            this.ToHtmlButton.Name = "ToHtmlButton";
+            this.ToHtmlButton.Size = new System.Drawing.Size(164, 45);
+            this.ToHtmlButton.TabIndex = 19;
+            this.ToHtmlButton.Text = "TO HTML   ";
+            this.ToHtmlButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ToHtmlButton.UseVisualStyleBackColor = true;
+            this.ToHtmlButton.Click += new System.EventHandler(this.HTML_Click);
+            this.ToHtmlButton.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.ToHtmlButton.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
+            // ToPdfButton
+            // 
+            this.ToPdfButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ToPdfButton.FlatAppearance.BorderSize = 0;
+            this.ToPdfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ToPdfButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToPdfButton.ForeColor = System.Drawing.Color.White;
+            this.ToPdfButton.Location = new System.Drawing.Point(501, 0);
+            this.ToPdfButton.Name = "ToPdfButton";
+            this.ToPdfButton.Size = new System.Drawing.Size(164, 45);
+            this.ToPdfButton.TabIndex = 18;
+            this.ToPdfButton.Text = "TO PDF   ";
+            this.ToPdfButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ToPdfButton.UseVisualStyleBackColor = true;
+            this.ToPdfButton.Click += new System.EventHandler(this.PDF_Click);
+            this.ToPdfButton.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.ToPdfButton.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.saveButton.FlatAppearance.BorderSize = 0;
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.ForeColor = System.Drawing.Color.White;
+            this.saveButton.Location = new System.Drawing.Point(337, 0);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(164, 45);
+            this.saveButton.TabIndex = 17;
+            this.saveButton.Text = "SAVE  ";
+            this.saveButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            this.saveButton.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.saveButton.MouseLeave += new System.EventHandler(this.OnMouseLeave);
             // 
             // panel1
             // 
@@ -94,6 +148,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(129, 45);
             this.panel1.TabIndex = 16;
+            // 
+            // minimizeButton
+            // 
+            this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.minimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.minimizeButton.FlatAppearance.BorderSize = 0;
+            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeButton.Location = new System.Drawing.Point(60, 12);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.Size = new System.Drawing.Size(22, 22);
+            this.minimizeButton.TabIndex = 14;
+            this.minimizeButton.UseVisualStyleBackColor = false;
+            this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            this.minimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButton_Enter);
+            this.minimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_Leave);
+            // 
+            // closeButton
+            // 
+            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.closeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Location = new System.Drawing.Point(91, 12);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(22, 22);
+            this.closeButton.TabIndex = 15;
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.closeButton.MouseEnter += new System.EventHandler(this.CloseButton_Enter);
+            this.closeButton.MouseLeave += new System.EventHandler(this.CloseButton_Leave);
             // 
             // panel3
             // 
@@ -176,87 +260,6 @@
             this.resumeEditorPanel.DragOver += new System.Windows.Forms.DragEventHandler(this.OnDragOver);
             this.resumeEditorPanel.DragLeave += new System.EventHandler(this.OnDragLeave);
             // 
-            // saveButton
-            // 
-            this.saveButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.saveButton.FlatAppearance.BorderSize = 0;
-            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.ForeColor = System.Drawing.Color.White;
-            this.saveButton.Location = new System.Drawing.Point(337, 0);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(164, 45);
-            this.saveButton.TabIndex = 17;
-            this.saveButton.Text = "SAVE  ";
-            this.saveButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.saveButton.MouseLeave += new System.EventHandler(this.OnMouseLeave);
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(501, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(164, 45);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "TO PDF   ";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.button2.MouseLeave += new System.EventHandler(this.OnMouseLeave);
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(665, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(164, 45);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "TO HTML   ";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.button3.MouseLeave += new System.EventHandler(this.OnMouseLeave);
-            // 
-            // minimizeButton
-            // 
-            this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.minimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.minimizeButton.FlatAppearance.BorderSize = 0;
-            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeButton.Location = new System.Drawing.Point(60, 12);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(22, 22);
-            this.minimizeButton.TabIndex = 14;
-            this.minimizeButton.UseVisualStyleBackColor = false;
-            this.minimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
-            this.minimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButton_Enter);
-            this.minimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_Leave);
-            // 
-            // closeButton
-            // 
-            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.closeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.closeButton.FlatAppearance.BorderSize = 0;
-            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Location = new System.Drawing.Point(91, 12);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(22, 22);
-            this.closeButton.TabIndex = 15;
-            this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
-            this.closeButton.MouseEnter += new System.EventHandler(this.CloseButton_Enter);
-            this.closeButton.MouseLeave += new System.EventHandler(this.CloseButton_Leave);
-            // 
             // EditorView
             // 
             this.AllowDrop = true;
@@ -297,8 +300,8 @@
         private RoundButton minimizeButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ToHtmlButton;
+        private System.Windows.Forms.Button ToPdfButton;
     }
 }
 

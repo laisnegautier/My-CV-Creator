@@ -17,6 +17,7 @@ namespace App.Presenter
         private IResumeRepository _resumeRepo;
         private EditorView _view;
         private Resume _currentResume;
+        public bool save = true;
         // On ne peut selectionner qu'un element d'interface à la fois
         private object _currentElementSelected;
 
@@ -452,6 +453,7 @@ namespace App.Presenter
             }
         }
 
+        #region TextEdition
         void EditShortText(object sender, EventArgs e)
         {
             Label label = (Label)sender;
@@ -505,5 +507,26 @@ namespace App.Presenter
         {
 
         }
+        #endregion
+
+        #region MainButtons
+        public void SaveResume()
+        {
+            // Rajouter une confirmation modale
+            _resumeRepo.Save(_currentResume);
+            save = true;
+        }
+
+        public void PortToPDF()
+        {
+
+        }
+
+        public void PortToHTML()
+        {
+            HtmlParser parser = new HtmlParser(_currentResume);
+            parser.ParseToHtml();
+        }
+        #endregion
     }
 }
