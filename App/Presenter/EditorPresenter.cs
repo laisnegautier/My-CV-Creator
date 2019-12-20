@@ -531,14 +531,34 @@ namespace App.Presenter
 
         public void PortToPDF()
         {
-            IParser parser = new PdfParser(_currentResume);
-            parser.Parse();
+            using (SaveFileDialog dialog = new SaveFileDialog())
+            {
+                dialog.Filter = "pdf (*.pdf)|*.pdf";
+                dialog.FilterIndex = 2;
+                dialog.RestoreDirectory = true;
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    IParser parser = new PdfParser(_currentResume, dialog.FileName.ToString());
+                    parser.Parse();
+                }
+            }
         }
 
         public void PortToHTML()
         {
-            IParser parser = new HtmlParser(_currentResume);
-            parser.Parse();
+            using (SaveFileDialog dialog = new SaveFileDialog())
+            {
+                dialog.Filter = "html (*.html)|*.html";
+                dialog.FilterIndex = 2;
+                dialog.RestoreDirectory = true;
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    IParser parser = new HtmlParser(_currentResume, dialog.FileName.ToString());
+                    parser.Parse();
+                }
+            }
         }
         #endregion
     }

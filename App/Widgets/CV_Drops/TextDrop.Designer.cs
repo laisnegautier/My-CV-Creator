@@ -34,6 +34,7 @@
             this.upButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.downButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.controlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,12 +52,13 @@
             // 
             this.controlPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.controlPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.controlPanel.Controls.Add(this.button1);
             this.controlPanel.Controls.Add(this.upButton);
             this.controlPanel.Controls.Add(this.deleteButton);
             this.controlPanel.Controls.Add(this.downButton);
-            this.controlPanel.Location = new System.Drawing.Point(611, 3);
+            this.controlPanel.Location = new System.Drawing.Point(611, 5);
             this.controlPanel.Name = "controlPanel";
-            this.controlPanel.Size = new System.Drawing.Size(35, 94);
+            this.controlPanel.Size = new System.Drawing.Size(35, 118);
             this.controlPanel.TabIndex = 3;
             // 
             // upButton
@@ -66,7 +68,7 @@
             this.upButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.upButton.FlatAppearance.BorderSize = 0;
             this.upButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.upButton.Location = new System.Drawing.Point(7, 6);
+            this.upButton.Location = new System.Drawing.Point(8, 37);
             this.upButton.Name = "upButton";
             this.upButton.Size = new System.Drawing.Size(19, 22);
             this.upButton.TabIndex = 4;
@@ -78,7 +80,7 @@
             this.deleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.deleteButton.FlatAppearance.BorderSize = 0;
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteButton.Location = new System.Drawing.Point(7, 59);
+            this.deleteButton.Location = new System.Drawing.Point(8, 87);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(19, 23);
             this.deleteButton.TabIndex = 2;
@@ -90,11 +92,23 @@
             this.downButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.downButton.FlatAppearance.BorderSize = 0;
             this.downButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.downButton.Location = new System.Drawing.Point(7, 34);
+            this.downButton.Location = new System.Drawing.Point(8, 63);
             this.downButton.Name = "downButton";
             this.downButton.Size = new System.Drawing.Size(19, 19);
             this.downButton.TabIndex = 1;
             this.downButton.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(35, 34);
+            this.button1.TabIndex = 5;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // TextDrop
             // 
@@ -118,5 +132,6 @@
         private System.Windows.Forms.Button upButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button downButton;
+        private System.Windows.Forms.Button button1;
     }
 }
