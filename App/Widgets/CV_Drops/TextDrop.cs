@@ -58,6 +58,7 @@ namespace App.Widgets
         #endregion
 
         public Label EditableText { get { return editableText; } }
+
         public string TextValue
         {
             get { return editableText.Text; }
@@ -114,8 +115,16 @@ namespace App.Widgets
         public void ElementView_OnPaint(object sender, PaintEventArgs e)
         {
             // Displaying the container control panel
-            if (IsSelected) controlPanel.Show();
-            else controlPanel.Hide();
+            if (IsSelected)
+            {
+                Height = controlPanel.Height;
+                controlPanel.Show();
+            }
+            else
+            {
+                Height = EditableText.Height;
+                controlPanel.Hide();
+            }
             // Display switch
             if (Content.VisibilityParser) switchButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\switchOn.png");
             else switchButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\switchOff.png");

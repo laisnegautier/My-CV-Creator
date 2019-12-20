@@ -50,13 +50,97 @@ namespace App.Presenter
         }
         #endregion
 
-        #region Construct
+        #region Construct and Init
         public EditorPresenter(IResumeRepository resumeRepo, EditorView editForm)
         {
             _resumeRepo = resumeRepo;
             _view = editForm;
             _view.Presenter = this;
             _currentResume = _view.CurrentResume;
+        }
+
+        // Fonciton à segmenter
+        public void SetUpView()
+        {
+            _view.ResumeTitleLabel.Text = _currentResume.Title;
+
+            List<Container> basicContainers = DefaultContainers();
+            List<IElement> basicElements = DefaultElements();
+            
+
+            List<string> elemNames = new List<string>() { "Paragraph", "Title 1", "Title 2", "Date" };
+            List<string> elemDesc = new List<string>() { " Content a text paragraph ", " Big size title ", " Smaller title ", "renseigne une date" };
+
+            List<string> containerDesc = new List<string>() { "An empty section to customize", "A template to carrer element", "A template to deal with your identity" };
+
+            // Adding the defaults containers
+            foreach (Container c in basicContainers)
+            {
+                ContainerDragItem DraggablePic = new ContainerDragItem(c);
+                DraggablePic.Description.Text = containerDesc[basicContainers.IndexOf(c)];
+                _view.DefaultSectionPanel.Controls.Add(DraggablePic);
+                DraggablePic.Width = _view.DefaultSectionPanel.Width - 20;
+                DraggablePic.Left = _view.DefaultSectionPanel.Left + 10;
+            }
+            // Adding the defaults elements
+            for (int i = 0; i < basicElements.Count; i++)
+            {
+                ElementDragItem DraggableElem = new ElementDragItem(basicElements[i], elemNames[i], elemDesc[i]);
+                _view.DefaultElementPanel.Controls.Add(DraggableElem);
+                DraggableElem.Width = _view.DefaultElementPanel.Width - 20;
+                DraggableElem.Left = _view.DefaultSectionPanel.Left + 10;
+            }
+            // Adding the favorites containers
+
+
+        }
+
+        public List<Container> DefaultContainers()
+        {
+            List<Container> defaultContainers = new List<Container>();
+
+            Container empty = new Container() { Name = "Empty" };
+            Container carreer = new Container() { Name = "Carreer" };
+            Container identity = new Container() { Name = "Identity" };
+
+            // Element de carrière
+            IElement carreerDesc = new H2("My school", carreer);
+            IElement carrerrDate = new Date(DateTime.Now, carreer);
+            IElement carrerrParagraph = new Paragraph("What where you doing ?", carreer);
+            carreer.Elements.Add(carreerDesc);
+            carreer.Elements.Add(carrerrDate);
+            carreer.Elements.Add(carrerrParagraph);
+
+            //Element d'indentité
+            IElement identityFirst = new H1("Name Firstname", identity);
+            IElement idetityPhone = new Paragraph("06-29-39-63-47", identity);
+            IElement identityMail = new Paragraph("NameFirstName@inbox.com", identity);
+            identity.Elements.Add(identityFirst);
+            identity.Elements.Add(idetityPhone);
+            identity.Elements.Add(identityMail);
+
+            defaultContainers.Add(empty);
+            defaultContainers.Add(carreer);
+            defaultContainers.Add(identity);
+            
+            return defaultContainers;
+        }
+
+        public List<IElement> DefaultElements()
+        {
+            List<IElement> defaultElement = new List<IElement>();
+
+            IElement paragraph = new Paragraph();
+            IElement title1 = new H1();
+            IElement title2 = new H2();
+            IElement date = new Date();
+
+            defaultElement.Add(paragraph);
+            defaultElement.Add(title1);
+            defaultElement.Add(title2);
+            defaultElement.Add(date);
+
+            return defaultElement;
         }
         #endregion
 
@@ -352,58 +436,7 @@ namespace App.Presenter
         }
         #endregion
         
-        // Fonciton à segmenter
-        public void SetUpView()
-        {
-            _view.ResumeTitleLabel.Text = _currentResume.Title;
-
-            List<Container> basicContainers = new List<Container>();
-            List<IElement> basicElements = new List<IElement>();
-            Container empty = new Container() { Name = "Empty" };
-            Container carreer = new Container() { Name = "Carreer" };
-
-            IElement carreerDesc = new H2("My school", carreer);
-            IElement carrerrDate = new Date(default, carreer);
-            IElement carrerrParagraph = new Paragraph("What where you doing ?", carreer);
-            carreer.Elements.Add(carreerDesc);
-            carreer.Elements.Add(carrerrDate);
-            carreer.Elements.Add(carrerrDate);
-
-            IElement paragraph = new Paragraph();
-            IElement title1 = new H1();
-            IElement title2 = new H2();
-            IElement date = new Date();
-
-            basicContainers.Add(empty);
-            basicContainers.Add(carreer);
-            basicElements.Add(paragraph);
-            basicElements.Add(title1);
-            basicElements.Add(title2);
-            basicElements.Add(date);
-
-            List<string> elemNames = new List<string>() { "Paragraph", "Title 1", "Title 2", "Date" };
-            List<string> elemDesc = new List<string>() { " Content a text paragraph ", " Big size title ", " Smaller title ", "renseigne une date" };
-
-            // Adding the defaults containers
-            foreach(Container c in basicContainers)
-            {
-                ContainerDragItem DraggablePic = new ContainerDragItem(c);
-                _view.DefaultSectionPanel.Controls.Add(DraggablePic);
-                DraggablePic.Width = _view.DefaultSectionPanel.Width - 20;
-                DraggablePic.Left = _view.DefaultSectionPanel.Left + 10;
-            }
-            // Adding the favorites containers
-
-            // Adding the defaults elements
-            for (int i = 0; i < basicElements.Count; i++)
-            {
-                ElementDragItem DraggableElem = new ElementDragItem(basicElements[i], elemNames[i], elemDesc[i]);
-                _view.DefaultElementPanel.Controls.Add(DraggableElem);
-                DraggableElem.Width = _view.DefaultElementPanel.Width - 20;
-                DraggableElem.Left = _view.DefaultSectionPanel.Left + 10;
-            }
-        }
-
+        #region DragDrop
         // Fonction à ré-écrire
         public void DealDragDrop(object sender, DragEventArgs e)
         {
@@ -472,6 +505,7 @@ namespace App.Presenter
                 RenderResume();
             }
         }
+        #endregion
 
         #region TextEdition
         void EditShortText(object sender, EventArgs e)

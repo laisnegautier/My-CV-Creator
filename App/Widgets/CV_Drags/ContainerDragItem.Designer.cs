@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.ContDragItemNameLabel = new System.Windows.Forms.Label();
-            this.ContDragItemDescp = new System.Windows.Forms.Label();
+            this.contDragItemDescp = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ContDragItemNameLabel
@@ -42,14 +42,14 @@
             this.ContDragItemNameLabel.TabIndex = 0;
             this.ContDragItemNameLabel.Text = "Container Name";
             // 
-            // ContDragItemDescp
+            // contDragItemDescp
             // 
-            this.ContDragItemDescp.AutoSize = true;
-            this.ContDragItemDescp.Location = new System.Drawing.Point(23, 53);
-            this.ContDragItemDescp.Name = "ContDragItemDescp";
-            this.ContDragItemDescp.Size = new System.Drawing.Size(152, 13);
-            this.ContDragItemDescp.TabIndex = 1;
-            this.ContDragItemDescp.Text = "Description du container choisi";
+            this.contDragItemDescp.AutoSize = true;
+            this.contDragItemDescp.Location = new System.Drawing.Point(23, 53);
+            this.contDragItemDescp.Name = "contDragItemDescp";
+            this.contDragItemDescp.Size = new System.Drawing.Size(152, 13);
+            this.contDragItemDescp.TabIndex = 1;
+            this.contDragItemDescp.Text = "Description du container choisi";
             // 
             // ContainerDragItem
             // 
@@ -57,7 +57,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.Controls.Add(this.ContDragItemDescp);
+            this.Controls.Add(this.contDragItemDescp);
             this.Controls.Add(this.ContDragItemNameLabel);
             this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
@@ -73,6 +73,6 @@
         #endregion
 
         private System.Windows.Forms.Label ContDragItemNameLabel;
-        private System.Windows.Forms.Label ContDragItemDescp;
+        private System.Windows.Forms.Label contDragItemDescp;
     }
 }

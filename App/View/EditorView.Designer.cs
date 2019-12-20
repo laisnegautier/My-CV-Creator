@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorView));
             this.logoLabel = new System.Windows.Forms.Label();
             this.headerPanelLogo = new System.Windows.Forms.Panel();
             this.headerPanel = new System.Windows.Forms.Panel();
+            this.htmlPicture = new System.Windows.Forms.PictureBox();
+            this.pdfPicture = new System.Windows.Forms.PictureBox();
+            this.savePicture = new System.Windows.Forms.PictureBox();
+            this.resumeTitleLabel = new System.Windows.Forms.Label();
             this.ToHtmlButton = new System.Windows.Forms.Button();
             this.ToPdfButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
@@ -44,9 +49,12 @@
             this.resumeEditorPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.minimizeButton = new App.RoundButton();
             this.closeButton = new App.RoundButton();
-            this.resumeTitleLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.headerPanelLogo.SuspendLayout();
             this.headerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.htmlPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pdfPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.savePicture)).BeginInit();
             this.panel1.SuspendLayout();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
@@ -75,6 +83,9 @@
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.headerPanel.Controls.Add(this.htmlPicture);
+            this.headerPanel.Controls.Add(this.pdfPicture);
+            this.headerPanel.Controls.Add(this.savePicture);
             this.headerPanel.Controls.Add(this.resumeTitleLabel);
             this.headerPanel.Controls.Add(this.ToHtmlButton);
             this.headerPanel.Controls.Add(this.ToPdfButton);
@@ -87,6 +98,59 @@
             this.headerPanel.Size = new System.Drawing.Size(1152, 45);
             this.headerPanel.TabIndex = 9;
             // 
+            // htmlPicture
+            // 
+            this.htmlPicture.BackColor = System.Drawing.Color.Transparent;
+            this.htmlPicture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("htmlPicture.BackgroundImage")));
+            this.htmlPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.htmlPicture.Location = new System.Drawing.Point(613, 2);
+            this.htmlPicture.Name = "htmlPicture";
+            this.htmlPicture.Size = new System.Drawing.Size(42, 37);
+            this.htmlPicture.TabIndex = 23;
+            this.htmlPicture.TabStop = false;
+            this.htmlPicture.Click += new System.EventHandler(this.HTML_Click);
+            this.htmlPicture.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.htmlPicture.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
+            // pdfPicture
+            // 
+            this.pdfPicture.BackColor = System.Drawing.Color.Transparent;
+            this.pdfPicture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pdfPicture.BackgroundImage")));
+            this.pdfPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pdfPicture.Location = new System.Drawing.Point(476, 2);
+            this.pdfPicture.Name = "pdfPicture";
+            this.pdfPicture.Size = new System.Drawing.Size(41, 37);
+            this.pdfPicture.TabIndex = 22;
+            this.pdfPicture.TabStop = false;
+            this.pdfPicture.Click += new System.EventHandler(this.PDF_Click);
+            this.pdfPicture.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.pdfPicture.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
+            // savePicture
+            // 
+            this.savePicture.BackColor = System.Drawing.Color.Transparent;
+            this.savePicture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("savePicture.BackgroundImage")));
+            this.savePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.savePicture.Location = new System.Drawing.Point(358, 6);
+            this.savePicture.Name = "savePicture";
+            this.savePicture.Size = new System.Drawing.Size(38, 33);
+            this.savePicture.TabIndex = 21;
+            this.savePicture.TabStop = false;
+            this.savePicture.Click += new System.EventHandler(this.SaveButton_Click);
+            this.savePicture.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.savePicture.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
+            // resumeTitleLabel
+            // 
+            this.resumeTitleLabel.AutoSize = true;
+            this.resumeTitleLabel.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resumeTitleLabel.ForeColor = System.Drawing.Color.White;
+            this.resumeTitleLabel.Location = new System.Drawing.Point(917, 10);
+            this.resumeTitleLabel.Name = "resumeTitleLabel";
+            this.resumeTitleLabel.Size = new System.Drawing.Size(42, 25);
+            this.resumeTitleLabel.TabIndex = 20;
+            this.resumeTitleLabel.Text = "Title";
+            // 
             // ToHtmlButton
             // 
             this.ToHtmlButton.Dock = System.Windows.Forms.DockStyle.Left;
@@ -94,9 +158,9 @@
             this.ToHtmlButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ToHtmlButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ToHtmlButton.ForeColor = System.Drawing.Color.White;
-            this.ToHtmlButton.Location = new System.Drawing.Point(665, 0);
+            this.ToHtmlButton.Location = new System.Drawing.Point(613, 0);
             this.ToHtmlButton.Name = "ToHtmlButton";
-            this.ToHtmlButton.Size = new System.Drawing.Size(164, 45);
+            this.ToHtmlButton.Size = new System.Drawing.Size(145, 45);
             this.ToHtmlButton.TabIndex = 19;
             this.ToHtmlButton.Text = "TO HTML   ";
             this.ToHtmlButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -112,9 +176,9 @@
             this.ToPdfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ToPdfButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ToPdfButton.ForeColor = System.Drawing.Color.White;
-            this.ToPdfButton.Location = new System.Drawing.Point(501, 0);
+            this.ToPdfButton.Location = new System.Drawing.Point(470, 0);
             this.ToPdfButton.Name = "ToPdfButton";
-            this.ToPdfButton.Size = new System.Drawing.Size(164, 45);
+            this.ToPdfButton.Size = new System.Drawing.Size(143, 45);
             this.ToPdfButton.TabIndex = 18;
             this.ToPdfButton.Text = "TO PDF   ";
             this.ToPdfButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -132,7 +196,7 @@
             this.saveButton.ForeColor = System.Drawing.Color.White;
             this.saveButton.Location = new System.Drawing.Point(337, 0);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(164, 45);
+            this.saveButton.Size = new System.Drawing.Size(133, 45);
             this.saveButton.TabIndex = 17;
             this.saveButton.Text = "SAVE  ";
             this.saveButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -165,6 +229,7 @@
             this.leftPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.leftPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.leftPanel.Controls.Add(this.label1);
             this.leftPanel.Controls.Add(this.favSectionPanel);
             this.leftPanel.Controls.Add(this.defaultSectionPanel);
             this.leftPanel.Controls.Add(this.panel3);
@@ -190,9 +255,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.defaultSectionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.defaultSectionPanel.ForeColor = System.Drawing.Color.White;
-            this.defaultSectionPanel.Location = new System.Drawing.Point(16, 7);
+            this.defaultSectionPanel.Location = new System.Drawing.Point(16, 44);
             this.defaultSectionPanel.Name = "defaultSectionPanel";
-            this.defaultSectionPanel.Size = new System.Drawing.Size(318, 280);
+            this.defaultSectionPanel.Size = new System.Drawing.Size(318, 243);
             this.defaultSectionPanel.TabIndex = 9;
             // 
             // rightPanel
@@ -261,16 +326,16 @@
             this.closeButton.MouseEnter += new System.EventHandler(this.CloseButton_Enter);
             this.closeButton.MouseLeave += new System.EventHandler(this.CloseButton_Leave);
             // 
-            // resumeTitleLabel
+            // label1
             // 
-            this.resumeTitleLabel.AutoSize = true;
-            this.resumeTitleLabel.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resumeTitleLabel.ForeColor = System.Drawing.Color.White;
-            this.resumeTitleLabel.Location = new System.Drawing.Point(917, 10);
-            this.resumeTitleLabel.Name = "resumeTitleLabel";
-            this.resumeTitleLabel.Size = new System.Drawing.Size(42, 25);
-            this.resumeTitleLabel.TabIndex = 20;
-            this.resumeTitleLabel.Text = "Title";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(19, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(260, 19);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Drag a section on your resume to add it";
             // 
             // EditorView
             // 
@@ -290,8 +355,12 @@
             this.headerPanelLogo.PerformLayout();
             this.headerPanel.ResumeLayout(false);
             this.headerPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.htmlPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pdfPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.savePicture)).EndInit();
             this.panel1.ResumeLayout(false);
             this.leftPanel.ResumeLayout(false);
+            this.leftPanel.PerformLayout();
             this.rightPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -316,6 +385,10 @@
         private System.Windows.Forms.Button ToHtmlButton;
         private System.Windows.Forms.Button ToPdfButton;
         private System.Windows.Forms.Label resumeTitleLabel;
+        private System.Windows.Forms.PictureBox savePicture;
+        private System.Windows.Forms.PictureBox htmlPicture;
+        private System.Windows.Forms.PictureBox pdfPicture;
+        private System.Windows.Forms.Label label1;
     }
 }
 

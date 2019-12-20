@@ -14,6 +14,7 @@ namespace App.Widgets
     public partial class ContainerDragItem : UserControl
     {
         Domain.Container Content { get; set; }
+        public Label Description { get { return contDragItemDescp; } }
 
         public ContainerDragItem(Domain.Container content)
         {

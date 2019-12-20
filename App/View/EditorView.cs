@@ -27,6 +27,15 @@ namespace App
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
+            savePicture.Parent = saveButton;
+            savePicture.Left = 10;
+            savePicture.Top = 4;
+            htmlPicture.Parent = ToHtmlButton;
+            htmlPicture.Left = 10;
+            htmlPicture.Top = 4;
+            pdfPicture.Parent = ToPdfButton;
+            pdfPicture.Left = 10;
+            pdfPicture.Top = 4;
         }
 
         private void EditorView_Load(object sender, EventArgs e)
@@ -114,18 +123,18 @@ namespace App
         {
             button.BackColor = Color.FromArgb(64, 94, 107);
             button.ForeColor = Color.Black;
-            /*if (button == addButton) addPicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\addBlack.png");
-            else if (button == editButton) editPicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\editBlack.png");
-            else if (button == deleteButton) deletePicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\deleteBlack.png");*/
+            if (button == saveButton) savePicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\saveBlack.png");
+            else if (button == ToPdfButton) pdfPicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\pdfBlack.png");
+            else if (button == ToHtmlButton) htmlPicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\htmlBlack.png");
         }
 
         private void UnsetFocus(Button button)
         {
             button.BackColor = Color.FromArgb(18, 18, 18);
             button.ForeColor = Color.White;
-            /*if (button == addButton) addPicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\addWhite.png");
-            else if (button == editButton) editPicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\editWhite.png");
-            else if (button == deleteButton) deletePicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\deleteWhite.png");*/
+            if (button == saveButton) savePicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\saveWhite.png");
+            else if (button == ToPdfButton) pdfPicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\pdfWhite.png");
+            else if (button == ToHtmlButton) htmlPicture.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\htmlWhite.png");
         }
 
         private void OnMouseEnter(object sender, EventArgs e)
