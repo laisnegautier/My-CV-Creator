@@ -3,13 +3,7 @@ using App.View;
 using App.Widgets;
 using Domain;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace App
@@ -37,11 +31,25 @@ namespace App
             pdfPicture.Parent = ToPdfButton;
             pdfPicture.Left = 10;
             pdfPicture.Top = 4;
+
+            resumeTitleLabel.DoubleClick += EditTitle;
         }
 
         private void EditorView_Load(object sender, EventArgs e)
         {
             Presenter.SetUpView();
+        }
+
+        private void EditTitle(object sender, EventArgs e)
+        {
+            SmallTextEditor editor = new SmallTextEditor();
+
+            editor.Disposed += (s, evt) =>
+            {
+                resumeTitleLabel.Text = editor.TextValue;
+            };
+
+            editor.Show(resumeTitleLabel.Text, "Edit the title of your Resume");
         }
 
         #region ConfirmationSection
@@ -92,9 +100,7 @@ namespace App
             button.BackColor = Color.FromArgb(100, 100, 100);
         }
         #endregion
-
-
-
+        
         #region DragDrop
         public void OnDragDrop(object sender, DragEventArgs e)
         {
