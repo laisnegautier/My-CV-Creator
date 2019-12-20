@@ -218,8 +218,8 @@ namespace DAL.Tests
             testResume = new ResumeRepository();
             List<Resume> Resumes = testResume.GetAll();
 
-            Assert.IsTrue(Resumes[0].Title == "Mon_CV1");
-            Assert.IsTrue(Resumes[1].Title == "Mon_CV2");
+            Assert.IsTrue(Resumes[0].Title == "CV de Julien");
+            Assert.IsTrue(Resumes[1].Title == "CV de Sylvie");
         }
 
         [TestMethod()]
@@ -231,13 +231,9 @@ namespace DAL.Tests
             Resume monResume2 = testResume.GetById(2);
             Resume monResume20000 = testResume.GetById(20000);
 
-            H1 h1 = (H1)monResume2.Containers[3].Elements[1];
 
-            Assert.IsTrue(monResume1.Title == "Mon_CV1");
-            Assert.IsTrue(monResume2.Title == "Mon_CV2");
-            Assert.IsTrue(monResume2.Containers[3].Elements[1].Id == 5);
-            Assert.IsTrue(h1.Content == "h1Cont7Pos1");
-            Assert.IsTrue(h1.Bold == false);
+            Assert.IsTrue(monResume1.Title == "CV de Julien");
+            Assert.IsTrue(monResume2.Title == "CV de Sylvie");
             Assert.IsNull(monResume20000);
         }
 
@@ -288,16 +284,19 @@ namespace DAL.Tests
             IResumeRepository testResume;
             testResume = new ResumeRepository();
 
-            Resume resumeToModif = testResume.GetById(7);
-            resumeToModif.Title = "test";
+            Resume resumeToModif = testResume.GetById(1);
+            resumeToModif.Title = "CV de Julien";
+
+            resumeToModif.Containers[0].Name = "modifTest";
             
             // Update an already existing resume
             testResume.Save(resumeToModif);
 
-            Resume resumeModified = testResume.GetById(7);
+            Resume resumeModified = testResume.GetById(1);
 
             Assert.IsNotNull(resumeModified);
             Assert.IsTrue(resumeModified.Title == resumeToModif.Title);
+            Assert.IsTrue(resumeToModif.Containers[0].Name == resumeToModif.Containers[0].Name);
         }
 
         [TestMethod()]
@@ -315,13 +314,17 @@ namespace DAL.Tests
             Assert.IsNull(resumeToDeleteCheck);
         }
 
-        /** 
-         * TO DOOOOOOOO
-         */
         [TestMethod()]
         public void DeleteInCascadeTest()
         {
-            throw new System.NotImplementedException();
+            IResumeRepository testResume;
+            testResume = new ResumeRepository();
+
+            Resume resumeToDelete = testResume.GetById(1);
+            testResume.Delete(resumeToDelete);
+
+            Resume resumeToDeleteCheck = testResume.GetById(1);
+            Assert.IsNull(resumeToDeleteCheck);
         }
     }
 }
