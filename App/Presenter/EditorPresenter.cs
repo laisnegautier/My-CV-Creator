@@ -175,12 +175,14 @@ namespace App.Presenter
                         RenderContainer(cd);
 
                         int _containerHeight = 0;
+                        int _controlHeight = 0;
                         if (c.Elements != null)
                             foreach(IElement e in c.Elements)
                             {
                                 int size = RenderElement(e, c, cd);
-                                _containerHeight += size;
+                                _controlHeight = size;
                             }
+                        _containerHeight = _controlHeight + 5 * c.Elements.Count;
                         cd.Height += _containerHeight;
                         _view.ResumeEditor.Refresh();
                     }
@@ -275,7 +277,7 @@ namespace App.Presenter
 
             td.ParentContainer = cd;
             
-            return td.Height;
+            return td.ControlPanel.Height;
         }
 
         int RenderTitle(TextDrop td, ContainerDrop cd)
@@ -288,7 +290,7 @@ namespace App.Presenter
             td.EditableText.Top = 0;
             td.ParentContainer = cd;
             
-            return td.Height;
+            return td.ControlPanel.Height;
         }
 
         int RenderDate(TextDrop td, ContainerDrop cd)
@@ -301,7 +303,7 @@ namespace App.Presenter
             td.EditableText.Top = 0;
             td.ParentContainer = cd;
 
-            return td.Height;
+            return td.ControlPanel.Height;
         }
         #endregion
 

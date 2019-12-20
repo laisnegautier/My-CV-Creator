@@ -19,7 +19,7 @@ namespace App
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Setting up the Presenter and its dependencies
-            IResumeRepository resumeRepo = new StubRepository.ResumeRepository();
+            IResumeRepository resumeRepo = new ResumeRepository();
             MainView mainForm = new MainView();
             Presenter.MainPresenter mainPresenter = new Presenter.MainPresenter(resumeRepo, mainForm);
             mainForm.Show();

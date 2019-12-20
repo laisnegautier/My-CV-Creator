@@ -32,7 +32,7 @@ create table tbl_element (
 
 create table tbl_paragraph (
 	paragraph_id integer not null primary key auto_increment,
-	paragraph_content varchar(100) not null,
+	paragraph_content varchar(255) not null,
 	paragraph_italic boolean not null,
 	paragraph_bold boolean not null,
 	paragraph_size integer not null,
@@ -44,7 +44,7 @@ create table tbl_paragraph (
 
 create table tbl_h1 (
 	h1_id integer not null primary key auto_increment,
-	h1_content varchar(100) not null,
+	h1_content varchar(255) not null,
 	h1_italic boolean not null,
 	h1_bold boolean not null,
 	h1_size integer not null,

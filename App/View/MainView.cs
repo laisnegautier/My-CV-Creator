@@ -228,6 +228,7 @@ namespace App
             return dialogResult;
         }
 
+        #region MainButtons
         private void AddButton_Click(object sender, EventArgs e)
         {
             Presenter.AddNew();
@@ -247,7 +248,9 @@ namespace App
         {
             Presenter.Copy();
         }
+        #endregion
 
+        #region Utils
         private void SetFocus(Button button)
         {
             button.BackColor = Color.FromArgb(64,94,107);
@@ -287,5 +290,6 @@ namespace App
                 if (pic.Parent is Button) UnsetFocus((Button)pic.Parent);
             }
         }
+        #endregion
     }
 }
