@@ -50,6 +50,7 @@
             this.minimizeButton = new App.RoundButton();
             this.closeButton = new App.RoundButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.headerPanelLogo.SuspendLayout();
             this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.htmlPicture)).BeginInit();
@@ -229,6 +230,7 @@
             this.leftPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.leftPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.leftPanel.Controls.Add(this.label2);
             this.leftPanel.Controls.Add(this.label1);
             this.leftPanel.Controls.Add(this.favSectionPanel);
             this.leftPanel.Controls.Add(this.defaultSectionPanel);
@@ -243,9 +245,9 @@
             this.favSectionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.favSectionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.favSectionPanel.Location = new System.Drawing.Point(16, 293);
+            this.favSectionPanel.Location = new System.Drawing.Point(16, 253);
             this.favSectionPanel.Name = "favSectionPanel";
-            this.favSectionPanel.Size = new System.Drawing.Size(318, 275);
+            this.favSectionPanel.Size = new System.Drawing.Size(318, 315);
             this.favSectionPanel.TabIndex = 10;
             // 
             // defaultSectionPanel
@@ -255,9 +257,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.defaultSectionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.defaultSectionPanel.ForeColor = System.Drawing.Color.White;
-            this.defaultSectionPanel.Location = new System.Drawing.Point(16, 44);
+            this.defaultSectionPanel.Location = new System.Drawing.Point(16, 28);
             this.defaultSectionPanel.Name = "defaultSectionPanel";
-            this.defaultSectionPanel.Size = new System.Drawing.Size(318, 243);
+            this.defaultSectionPanel.Size = new System.Drawing.Size(318, 193);
             this.defaultSectionPanel.TabIndex = 9;
             // 
             // rightPanel
@@ -337,6 +339,17 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Drag a section on your resume to add it";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(19, 231);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(260, 19);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Drag a section on your resume to add it";
+            // 
             // EditorView
             // 
             this.AllowDrop = true;
@@ -389,6 +402,7 @@
         private System.Windows.Forms.PictureBox htmlPicture;
         private System.Windows.Forms.PictureBox pdfPicture;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
