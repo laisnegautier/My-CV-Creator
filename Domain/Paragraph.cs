@@ -34,7 +34,7 @@ namespace Domain
         public Paragraph() 
         {
             VisibilityParser = true;
-            Size = 12;
+            Size = 13;
             Content = "";
             ForegroundColor = "#00000";
             BackgroundColor = "#ffffff";
@@ -84,9 +84,9 @@ namespace Domain
             string style = "";
             style += (Italic ? "font-style: italic;" : "");
             style += (Bold ? "font-weight: 700;" : "");
-            style += "font-size: " + Size + "px";
-            style += "color: " + ForegroundColor;
-            style += "background-color: " + BackgroundColor;
+            style += "font-size: " + Size + "px" + ";";
+            style += "color: " + ForegroundColor + ";";
+            style += "background-color: " + BackgroundColor + ";";
 
             return style;
         }

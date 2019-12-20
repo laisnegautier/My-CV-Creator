@@ -23,8 +23,8 @@ namespace DAL.Tests
 
             Resume resume = testResume.GetById(2);
 
-            HtmlParser test = new HtmlParser(resume);
-            bool success = test.ParseToHtml();
+            IParser test = new HtmlParser(resume);
+            bool success = test.Parse();
 
             Assert.IsTrue(success);
         }
@@ -40,8 +40,8 @@ namespace DAL.Tests
 
             Resume resume = testResume.GetById(1);
 
-            HtmlParser test = new HtmlParser(resume);
-            bool success = test.ParseToHtml();
+            IParser test = new HtmlParser(resume);
+            bool success = test.Parse();
 
             Assert.IsTrue(success);
         }
@@ -57,8 +57,8 @@ namespace DAL.Tests
 
             Resume resume = testResume.GetById(2);
 
-            PdfParser test = new PdfParser(resume);
-            bool success = test.ParseToPdf();
+            IParser test = new PdfParser(resume);
+            bool success = test.Parse();
 
             Assert.IsTrue(success);
         }
@@ -74,8 +74,8 @@ namespace DAL.Tests
 
             Resume resume = testResume.GetById(1);
 
-            PdfParser test = new PdfParser(resume);
-            bool success = test.ParseToPdf();
+            IParser test = new PdfParser(resume);
+            bool success = test.Parse();
 
             Assert.IsTrue(success);
         }

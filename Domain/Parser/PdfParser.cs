@@ -32,7 +32,7 @@ namespace Domain
         #endregion
 
         #region Methods
-        public bool ParseToPdf()
+        public bool Parse()
         {
             bool success = false;
             
