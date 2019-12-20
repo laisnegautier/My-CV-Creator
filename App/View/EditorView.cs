@@ -45,25 +45,13 @@ namespace App
         }
 
         #region ConfirmationSection
-        public DialogResult ConfirmDeleteContainer(string title)
+        public DialogResult ConfirmEdition(string value, string title)
         {
             DialogResult dialogResult = DialogResult.None;
             CustomMessageBox confirmDelete = new CustomMessageBox();
             confirmDelete.Disposed += (s, e) => { dialogResult = confirmDelete.choice; };
-            confirmDelete.Show("Are you sure you want to delete this container ?", title);
+            confirmDelete.Show(value, title);
 
-            return dialogResult;
-        }
-
-        public DialogResult ConfirmDeleteElement(string title)
-        {
-            DialogResult dialogResult = MessageBox.Show("Voulez vous supprimer cet element ?", title, MessageBoxButtons.YesNo);
-            return dialogResult;
-        }
-
-        public DialogResult ConfirmCopyContainer(string title)
-        {
-            DialogResult dialogResult = MessageBox.Show("Voulez vous copier cette section ?", title, MessageBoxButtons.YesNo);
             return dialogResult;
         }
         #endregion

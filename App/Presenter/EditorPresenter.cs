@@ -354,7 +354,7 @@ namespace App.Presenter
             else if (textDrop is H1) name = ((H1)textDrop).Content;
             else if (textDrop is H2) name = ((H2)textDrop).Content;
             else if (textDrop is Date) name = ((Date)textDrop).ToString();
-            if (_view.ConfirmDeleteElement(name) == DialogResult.Yes)
+            if (_view.ConfirmEdition("Are you sure you want to delete this element ?", name) == DialogResult.Yes)
             {
                 c.Elements.Remove(textDrop);
                 RenderResume();
@@ -418,7 +418,7 @@ namespace App.Presenter
         public void DeleteContainer(object sender, EventArgs e)
         {
             Container c = ((ContainerDrop)((Button)sender).Parent.Parent).Content;
-            if(_view.ConfirmDeleteContainer(c.Name) == DialogResult.Yes)
+            if(_view.ConfirmEdition("Are you sure you want to delete this container" ,c.Name) == DialogResult.Yes)
             {
                 _currentResume.Containers.Remove(c);
                 RenderResume();
@@ -428,7 +428,7 @@ namespace App.Presenter
         public void CopyContainer(object sender, EventArgs e)
         {
             Container c = ((ContainerDrop)((Button)sender).Parent.Parent).Content;
-            if (_view.ConfirmCopyContainer(c.Name) == DialogResult.Yes)
+            if (_view.ConfirmEdition("Are you sure you want to copy this container",c.Name) == DialogResult.Yes)
             {
                 _currentResume.Containers.Add(c.Copy());
                 RenderResume();
