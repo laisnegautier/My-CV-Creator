@@ -177,6 +177,7 @@
             this.Controls.Add(this.editButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SmallTextEditor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editor";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);

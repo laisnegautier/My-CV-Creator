@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using App.View;
 using App.Widgets;
 using DAL;
 using Domain;
@@ -354,7 +355,8 @@ namespace App.Presenter
             else if (textDrop is H1) name = ((H1)textDrop).Content;
             else if (textDrop is H2) name = ((H2)textDrop).Content;
             else if (textDrop is Date) name = ((Date)textDrop).ToString();
-            if (_view.ConfirmEdition("Are you sure you want to delete this element ?", name) == DialogResult.Yes)
+            DialogResult dr = _view.ConfirmEdition("Are you sure you want to delete this element ?", name);
+            if ( dr == DialogResult.Yes ||dr == DialogResult.OK)
             {
                 c.Elements.Remove(textDrop);
                 RenderResume();
@@ -418,7 +420,8 @@ namespace App.Presenter
         public void DeleteContainer(object sender, EventArgs e)
         {
             Container c = ((ContainerDrop)((Button)sender).Parent.Parent).Content;
-            if(_view.ConfirmEdition("Are you sure you want to delete this container" ,c.Name) == DialogResult.Yes)
+            DialogResult dr = _view.ConfirmEdition("Are you sure you want to delete this container", c.Name);
+            if (dr == DialogResult.Yes || dr == DialogResult.OK)
             {
                 _currentResume.Containers.Remove(c);
                 RenderResume();
@@ -428,7 +431,8 @@ namespace App.Presenter
         public void CopyContainer(object sender, EventArgs e)
         {
             Container c = ((ContainerDrop)((Button)sender).Parent.Parent).Content;
-            if (_view.ConfirmEdition("Are you sure you want to copy this container",c.Name) == DialogResult.Yes)
+            DialogResult dr = _view.ConfirmEdition("Are you sure you want to copy this container", c.Name);
+            if (dr == DialogResult.Yes || dr == DialogResult.OK)
             {
                 _currentResume.Containers.Add(c.Copy());
                 RenderResume();
@@ -561,7 +565,18 @@ namespace App.Presenter
 
         void EditDate(object sender, EventArgs e)
         {
+            TextDrop td = (TextDrop)((Label)sender).Parent;
+            CurrentSelection = td;
 
+            DateEditor editor = new DateEditor();
+
+            editor.Disposed += (s, evt) =>
+            {
+                ((Date)td.Content).Content = editor.DateValue;
+                RenderResume();
+            };
+            editor.Show(((Date)td.Content).Content, "Change your date");
+            
         }
         #endregion
 
@@ -585,6 +600,8 @@ namespace App.Presenter
                 {
                     IParser parser = new PdfParser(_currentResume, dialog.FileName.ToString());
                     parser.Parse();
+                    OkCustomMessageBox feedBack = new OkCustomMessageBox();
+                    feedBack.Show("Your conversion has been done", " Congrats !");
                 }
             }
         }
@@ -601,6 +618,8 @@ namespace App.Presenter
                 {
                     IParser parser = new HtmlParser(_currentResume, dialog.FileName.ToString());
                     parser.Parse();
+                    OkCustomMessageBox feedBack = new OkCustomMessageBox();
+                    feedBack.Show("Your conversion has been done", " Congrats !");
                 }
             }
         }

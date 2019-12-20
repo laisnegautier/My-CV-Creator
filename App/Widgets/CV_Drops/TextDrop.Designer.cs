@@ -31,21 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TextDrop));
             this.editableText = new System.Windows.Forms.Label();
             this.controlPanel = new System.Windows.Forms.Panel();
+            this.switchButton = new System.Windows.Forms.Button();
             this.upButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.downButton = new System.Windows.Forms.Button();
-            this.switchButton = new System.Windows.Forms.Button();
             this.controlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // editableText
             // 
+            this.editableText.AutoSize = true;
             this.editableText.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editableText.Location = new System.Drawing.Point(5, 5);
             this.editableText.Margin = new System.Windows.Forms.Padding(5, 2, 5, 0);
             this.editableText.Name = "editableText";
-            this.editableText.Size = new System.Drawing.Size(596, 132);
+            this.editableText.Size = new System.Drawing.Size(182, 18);
             this.editableText.TabIndex = 0;
+            this.editableText.Text = "Just the content of yout text";
             this.editableText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // controlPanel
@@ -60,6 +62,18 @@
             this.controlPanel.Name = "controlPanel";
             this.controlPanel.Size = new System.Drawing.Size(35, 118);
             this.controlPanel.TabIndex = 3;
+            // 
+            // switchButton
+            // 
+            this.switchButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchButton.BackgroundImage")));
+            this.switchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.switchButton.FlatAppearance.BorderSize = 0;
+            this.switchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.switchButton.Location = new System.Drawing.Point(0, 0);
+            this.switchButton.Name = "switchButton";
+            this.switchButton.Size = new System.Drawing.Size(35, 34);
+            this.switchButton.TabIndex = 5;
+            this.switchButton.UseVisualStyleBackColor = true;
             // 
             // upButton
             // 
@@ -98,18 +112,6 @@
             this.downButton.TabIndex = 1;
             this.downButton.UseVisualStyleBackColor = true;
             // 
-            // switchButton
-            // 
-            this.switchButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchButton.BackgroundImage")));
-            this.switchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.switchButton.FlatAppearance.BorderSize = 0;
-            this.switchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.switchButton.Location = new System.Drawing.Point(0, 0);
-            this.switchButton.Name = "switchButton";
-            this.switchButton.Size = new System.Drawing.Size(35, 34);
-            this.switchButton.TabIndex = 5;
-            this.switchButton.UseVisualStyleBackColor = true;
-            // 
             // TextDrop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -122,6 +124,7 @@
             this.Size = new System.Drawing.Size(649, 147);
             this.controlPanel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

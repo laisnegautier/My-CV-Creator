@@ -69,9 +69,9 @@ namespace App.Widgets
                 else if (Content is H2) ((H2)Content).Content = value;
                 else if (Content is Date) ((Date)Content).Content = Convert.ToDateTime(value);
 
-                editableText.AutoSize = true;
+                //editableText.AutoSize = true;
                 editableText.Text = value.ToString();
-                editableText.AutoSize = false;
+                //editableText.AutoSize = false;
                 Height = editableText.Height + 20;
             }
         }
@@ -81,6 +81,7 @@ namespace App.Widgets
         {
             InitializeComponent();
             Paint += ElementView_OnPaint;
+            editableText.MaximumSize = new Size(Width, 0);
             InitializeButton();
         }
 
