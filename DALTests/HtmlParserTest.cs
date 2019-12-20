@@ -18,10 +18,24 @@ namespace DAL.Tests
             IResumeRepository testResume;
             testResume = new ResumeRepository();
 
-            Resume resume = testResume.GetById(2);
+            Resume resume = testResume.GetById(1);
 
             HtmlParser test = new HtmlParser(resume);
             bool success = test.ParseToHtml();
+
+            Assert.IsTrue(success);
+        }
+
+        [TestMethod()]
+        public void WritePdfDocument()
+        {
+            IResumeRepository testResume;
+            testResume = new ResumeRepository();
+
+            Resume resume = testResume.GetById(1);
+
+            PdfParser test = new PdfParser(resume);
+            bool success = test.ParseToPdf();
 
             Assert.IsTrue(success);
         }
