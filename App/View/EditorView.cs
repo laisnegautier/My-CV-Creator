@@ -101,12 +101,7 @@ namespace App
         {
             e.Effect = DragDropEffects.Copy;
         }
-
-        public void OnDragLeave(object sender, EventArgs e)
-        {
-
-        }
-
+        
         public void OnDragOver(object sender, DragEventArgs e)
         {
             Cursor.Current = Cursors.Hand;
@@ -114,6 +109,7 @@ namespace App
 
         #endregion
 
+        #region InteractionButton
         private void SetFocus(Button button)
         {
             button.BackColor = Color.FromArgb(64, 94, 107);
@@ -166,5 +162,6 @@ namespace App
         {
             Presenter.PortToHTML();
         }
+        #endregion
     }
 }

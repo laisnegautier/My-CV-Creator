@@ -111,6 +111,7 @@ namespace App.Presenter
             cd.DownButton.Click += MoveContainerDown;
             cd.DeleteButton.Click += DeleteContainer;
             cd.CopyButton.Click += CopyContainer;
+            cd.SwitchButton.Click += SwitchContainerStatus;
 
             cd.ElementPanel.DragDrop += DealDragDrop;
         }
@@ -268,7 +269,15 @@ namespace App.Presenter
         #endregion
 
         #region Container Managers
-       
+       public void SwitchContainerStatus(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            ContainerDrop containerDrop = (ContainerDrop)button.Parent.Parent;
+            Container container = containerDrop.Content;
+
+            container.VisibilityParser = !container.VisibilityParser;
+            containerDrop.Refresh();
+        }
 
         public void SetContainerFav(object sender, EventArgs e)
         {

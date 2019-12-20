@@ -39,6 +39,7 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.downButton = new System.Windows.Forms.Button();
             this.addTip = new System.Windows.Forms.ToolTip(this.components);
+            this.switchButton = new System.Windows.Forms.Button();
             this.controlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +72,7 @@
             // 
             this.controlPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.controlPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.controlPanel.Controls.Add(this.switchButton);
             this.controlPanel.Controls.Add(this.copyButton);
             this.controlPanel.Controls.Add(this.upButton);
             this.controlPanel.Controls.Add(this.favButton);
@@ -151,6 +153,18 @@
             this.addTip.InitialDelay = 100;
             this.addTip.ReshowDelay = 100;
             // 
+            // switchButton
+            // 
+            this.switchButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchButton.BackgroundImage")));
+            this.switchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.switchButton.FlatAppearance.BorderSize = 0;
+            this.switchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.switchButton.Location = new System.Drawing.Point(3, -4);
+            this.switchButton.Name = "switchButton";
+            this.switchButton.Size = new System.Drawing.Size(65, 42);
+            this.switchButton.TabIndex = 6;
+            this.switchButton.UseVisualStyleBackColor = true;
+            // 
             // ContainerDrop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,5 +191,6 @@
         private System.Windows.Forms.ToolTip addTip;
         private System.Windows.Forms.Button upButton;
         private System.Windows.Forms.Button copyButton;
+        private System.Windows.Forms.Button switchButton;
     }
 }

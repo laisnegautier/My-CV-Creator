@@ -5,10 +5,6 @@ C:\Users\glaisne\Downloads\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.dll
 C:\Users\glaisne\Downloads\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.pdb
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\Domain.dll
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\Domain.pdb
-C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
-C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
-C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.dll
-C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.pdb
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\Common.Logging.Core.dll
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\Common.Logging.dll
@@ -21,6 +17,7 @@ C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itext.pdfa.dll
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itext.sign.dll
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itext.styledxmlparser.dll
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itext.svg.dll
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itextsharp.dll
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\BouncyCastle.Crypto.xml
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\Common.Logging.pdb
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\Common.Logging.xml
@@ -35,6 +32,9 @@ C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itext.pdfa.xml
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itext.sign.xml
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itext.styledxmlparser.xml
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itext.svg.xml
-C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.csproj.CopyComplete
-C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itextsharp.dll
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itextsharp.xml
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.dll
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.pdb

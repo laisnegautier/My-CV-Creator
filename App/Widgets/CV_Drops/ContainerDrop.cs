@@ -23,6 +23,7 @@ namespace App.Widgets
         public Button CopyButton { get { return copyButton; } }
         public Button DeleteButton { get { return deleteButton; } }
         public Label ContainerTitleLabel { get { return containerNameLabel; } }
+        public Button SwitchButton { get { return switchButton; } }
 
         public ContainerDrop()
         {
@@ -60,6 +61,15 @@ namespace App.Widgets
             favButton.MouseHover += (s, e) => { addTip.Show("Add to Favorites", favButton); };
             #endregion
 
+            #region switchButton
+            switchButton.FlatAppearance.MouseOverBackColor = switchButton.BackColor;
+            switchButton.BackColorChanged += (s, e) =>
+            {
+                switchButton.FlatAppearance.MouseOverBackColor = favButton.BackColor;
+                switchButton.FlatAppearance.MouseDownBackColor = favButton.BackColor;
+            };
+            switchButton.MouseHover += (s, e) => { addTip.Show("Set visibility for Parsers", switchButton); };
+            #endregion
             // Créer une fonction générique
             #region UpButton
             upButton.FlatAppearance.MouseOverBackColor = upButton.BackColor;
@@ -114,6 +124,9 @@ namespace App.Widgets
             // Favori ou non
             if (Content.Favorite == false) favButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\favFalse.png");
             else favButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\favTrue.png");
+            // Selected Or Not
+            if (Content.VisibilityParser == true) switchButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\switchOn.png");
+            else switchButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\switchOff.png");
             // Design
             FlowLayoutPanel panel = (FlowLayoutPanel)sender;
             if(IsSelected) ControlPaint.DrawBorder(e.Graphics, panel.ClientRectangle, 

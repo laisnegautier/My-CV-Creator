@@ -230,7 +230,6 @@
             this.resumeEditorPanel.DragDrop += new System.Windows.Forms.DragEventHandler(this.OnDragDrop);
             this.resumeEditorPanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnDragEnter);
             this.resumeEditorPanel.DragOver += new System.Windows.Forms.DragEventHandler(this.OnDragOver);
-            this.resumeEditorPanel.DragLeave += new System.EventHandler(this.OnDragLeave);
             // 
             // minimizeButton
             // 
