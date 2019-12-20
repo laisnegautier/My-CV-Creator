@@ -44,8 +44,9 @@
             this.addButton = new System.Windows.Forms.Button();
             this.resumeLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.minimizeButton = new App.RoundButton();
             this.closeButton = new App.RoundButton();
+            this.minimizeButton = new App.RoundButton();
+            this.emptyLabel = new System.Windows.Forms.Label();
             this.dragPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.buttonPanel.SuspendLayout();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.deletePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addPicture)).BeginInit();
+            this.resumeLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // dragPanel
@@ -260,6 +262,7 @@
             // resumeLayoutPanel
             // 
             this.resumeLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.resumeLayoutPanel.Controls.Add(this.emptyLabel);
             this.resumeLayoutPanel.Location = new System.Drawing.Point(181, 51);
             this.resumeLayoutPanel.Name = "resumeLayoutPanel";
             this.resumeLayoutPanel.Size = new System.Drawing.Size(637, 453);
@@ -274,6 +277,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(166, 463);
             this.panel2.TabIndex = 11;
+            // 
+            // closeButton
+            // 
+            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.closeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Location = new System.Drawing.Point(956, 11);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(22, 22);
+            this.closeButton.TabIndex = 13;
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.closeButton.MouseEnter += new System.EventHandler(this.CloseButton_Enter);
+            this.closeButton.MouseLeave += new System.EventHandler(this.CloseButton_Leave);
             // 
             // minimizeButton
             // 
@@ -290,20 +308,15 @@
             this.minimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButton_Enter);
             this.minimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_Leave);
             // 
-            // closeButton
+            // emptyLabel
             // 
-            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.closeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.closeButton.FlatAppearance.BorderSize = 0;
-            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Location = new System.Drawing.Point(956, 11);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(22, 22);
-            this.closeButton.TabIndex = 13;
-            this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
-            this.closeButton.MouseEnter += new System.EventHandler(this.CloseButton_Enter);
-            this.closeButton.MouseLeave += new System.EventHandler(this.CloseButton_Leave);
+            this.emptyLabel.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emptyLabel.ForeColor = System.Drawing.Color.White;
+            this.emptyLabel.Location = new System.Drawing.Point(3, 0);
+            this.emptyLabel.Name = "emptyLabel";
+            this.emptyLabel.Size = new System.Drawing.Size(634, 86);
+            this.emptyLabel.TabIndex = 0;
+            this.emptyLabel.Text = "Vous n\'avez pas de CV enregistés";
             // 
             // MainView
             // 
@@ -327,6 +340,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.deletePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.editPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addPicture)).EndInit();
+            this.resumeLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -349,5 +363,6 @@
         private System.Windows.Forms.Panel panel3;
         private RoundButton minimizeButton;
         private RoundButton closeButton;
+        private System.Windows.Forms.Label emptyLabel;
     }
 }
