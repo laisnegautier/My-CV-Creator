@@ -1,0 +1,158 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": "cfe1dc2a80602aef150a12815387068463a61a0d"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "StubRepository/1.0.0": {
+        "dependencies": {
+          "DAL": "1.0.0",
+          "Domain": "1.0.0",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "StubRepository.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "DAL/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0",
+          "NHibernate": "5.2.0.0",
+          "Remotion.Linq": "2.2.0.0",
+          "Remotion.Linq.EagerFetching": "2.2.0.0",
+          "Antlr3.Runtime": "3.5.0.2",
+          "Iesi.Collections": "4.0.0.4000"
+        },
+        "runtime": {
+          "DAL.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "dependencies": {
+          "IronPdf": "2019.8.9.21868"
+        },
+        "runtime": {
+          "Domain.dll": {}
+        }
+      },
+      "NHibernate.Reference/5.2.0.0": {
+        "runtime": {
+          "NHibernate.dll": {
+            "assemblyVersion": "5.2.0.0",
+            "fileVersion": "5.2.6.0"
+          }
+        }
+      },
+      "IronPdf.Reference/2019.8.9.21868": {
+        "runtime": {
+          "IronPdf.dll": {
+            "assemblyVersion": "2019.8.9.21868",
+            "fileVersion": "2019.8.9.0"
+          }
+        }
+      },
+      "Remotion.Linq.Reference/2.2.0.0": {
+        "runtime": {
+          "Remotion.Linq.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.30000"
+          }
+        }
+      },
+      "Remotion.Linq.EagerFetching.Reference/2.2.0.0": {
+        "runtime": {
+          "Remotion.Linq.EagerFetching.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.30000"
+          }
+        }
+      },
+      "Antlr3.Runtime.Reference/3.5.0.2": {
+        "runtime": {
+          "Antlr3.Runtime.dll": {
+            "assemblyVersion": "3.5.0.2",
+            "fileVersion": "3.5.1.0"
+          }
+        }
+      },
+      "Iesi.Collections.Reference/4.0.0.4000": {
+        "runtime": {
+          "Iesi.Collections.dll": {
+            "assemblyVersion": "4.0.0.4000",
+            "fileVersion": "4.0.4.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "StubRepository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NHibernate.Reference/5.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "IronPdf.Reference/2019.8.9.21868": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Remotion.Linq.Reference/2.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Remotion.Linq.EagerFetching.Reference/2.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Antlr3.Runtime.Reference/3.5.0.2": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Iesi.Collections.Reference/4.0.0.4000": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

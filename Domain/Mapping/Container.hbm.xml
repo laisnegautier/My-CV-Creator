@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain"
+                   namespace="Domain">
+
+  <class name="Container" table="tbl_container">
+
+    <id name="Id" column="container_id" type="int">
+      <generator class="native"></generator>
+    </id>
+
+    <property name="Name" column="container_name" not-null="true"/>
+    <property name="Favorite" column="container_favorite" not-null="true"/>
+    <property name="FavoriteName" column="container_favorite_name" not-null="true"/>
+    <property name="BackgroundColor" column="container_bg_color" not-null="true"/>
+    <property name="BorderColor" column="container_border_color" not-null="true"/>
+
+    <!-- Bidirectional Mapping : A resume has many containers but a container has one resume -->
+    <many-to-one name="Resume" column="resume_id" not-null="true" />
+    
+    <!-- Every elements in the container will be saved/updated/deleted when the container is -->
+    <list name="Elements" cascade="all-delete-orphan" >
+      <key column="container_id" />
+      <index column="container_index" />
+      <one-to-many class="IElement"/>      
+    </list>
+    
+  </class>
+
+</hibernate-mapping>

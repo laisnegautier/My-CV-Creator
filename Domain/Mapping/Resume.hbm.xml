@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain"
+                   namespace="Domain">
+
+  <class name="Resume" table="tbl_resume">
+
+    <!-- Le 'unsaved-value="0"' permet de faire des verifications si l'objet existe deja dans la BDD ou non
+    car on ne peut pas le savoir directement avec SaveOrUpdate(Object obj) method. 
+    cf. ResumeRepository pour l'utilite donc -->
+    <id name="Id" column="resume_id" type="int" unsaved-value="0">
+      <generator class="native"></generator>
+    </id>
+
+    <property name="Title" column="resume_title" not-null="true"/>
+    <property name="Save" column="resume_save" not-null="true"/>
+    <property name="Favorite" column="resume_favorite" not-null="true"/>
+    <!-- Local DateTime pour préciser le format de la date -->
+    <property name="Creation" column="resume_creation" type="LocalDateTime" not-null="true"/>
+    <property name="LastUpdate" column="resume_last_update" type="LocalDateTime" not-null="true"/>
+
+    <!-- 'list' : to keep the container order 
+    'cascade="all-delete-orphan"' : when a resume is saved/updated/deleted, all the containers inside it are too. 
+    Same for the elements inside containers -->
+    <list name="Containers" cascade="all-delete-orphan" >
+      <key column="resume_id" />
+      <index column="resume_index" />
+      <one-to-many class="Container"/>
+    </list>
+    
+  </class>
+
+</hibernate-mapping>
