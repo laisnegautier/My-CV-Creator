@@ -522,13 +522,14 @@ namespace App.Presenter
 
         public void PortToPDF()
         {
-
+            IParser parser = new PdfParser(_currentResume);
+            parser.Parse();
         }
 
         public void PortToHTML()
         {
-            HtmlParser parser = new HtmlParser(_currentResume);
-            parser.ParseToHtml();
+            IParser parser = new HtmlParser(_currentResume);
+            parser.Parse();
         }
         #endregion
     }

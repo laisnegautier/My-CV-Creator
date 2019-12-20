@@ -36,3 +36,5 @@ C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itext.sign.xml
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itext.styledxmlparser.xml
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itext.svg.xml
 C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itextsharp.dll
+C:\Users\simon\Desktop\projet-gl-audrix_laisne\Domain\bin\Debug\itextsharp.xml

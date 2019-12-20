@@ -67,50 +67,76 @@
     <Compile Include="Presenter\EditorPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
     <Compile Include="View\IEditorView.cs" />
-    <Compile Include="Widgets\CV_Drags\ElementDragItem.cs" />
+    <Compile Include="Widgets\CV_Drags\ElementDragItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Widgets\CV_Drags\ElementDragItem.Designer.cs">
       <DependentUpon>ElementDragItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\CV_Drags\ContainerDragItem.cs" />
+    <Compile Include="Widgets\CV_Drags\ContainerDragItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Widgets\CV_Drags\ContainerDragItem.Designer.cs">
       <DependentUpon>ContainerDragItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\CV_Drops\ContainerDrop.cs" />
+    <Compile Include="Widgets\CV_Drops\ContainerDrop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Widgets\CV_Drops\ContainerDrop.Designer.cs">
       <DependentUpon>ContainerDrop.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\OkCustomMessageBox.cs" />
+    <Compile Include="View\OkCustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\OkCustomMessageBox.Designer.cs">
       <DependentUpon>OkCustomMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CustomMessageBox.cs" />
+    <Compile Include="View\CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\CustomMessageBox.Designer.cs">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\CV_Drops\TextDrop.cs" />
+    <Compile Include="Widgets\CV_Drops\TextDrop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Widgets\CV_Drops\TextDrop.Designer.cs">
       <DependentUpon>TextDrop.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SmallTextEditor.cs" />
+    <Compile Include="View\SmallTextEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\SmallTextEditor.Designer.cs">
       <DependentUpon>SmallTextEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\LargeTextEditor.cs" />
+    <Compile Include="View\LargeTextEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\LargeTextEditor.Designer.cs">
       <DependentUpon>LargeTextEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FlatVScroll.cs" />
-    <Compile Include="Widgets\RoundButton.cs" />
-    <Compile Include="Widgets\ResumeMiniaturePic.cs" />
+    <Compile Include="View\FlatVScroll.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Widgets\ResumeMiniaturePic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Widgets\ResumeMiniaturePic.Designer.cs">
       <DependentUpon>ResumeMiniaturePic.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\EditorView.cs" />
+    <Compile Include="View\EditorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\EditorView.Designer.cs">
       <DependentUpon>EditorView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\IMainView.cs" />
-    <Compile Include="View\MainView.cs" />
+    <Compile Include="View\MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
