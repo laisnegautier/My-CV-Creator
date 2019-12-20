@@ -27,6 +27,7 @@ namespace StubRepository
 
         public List<Resume> GetAll()
         {
+            List<Resume> result = new List<Resume>();
             IElement elTest1 = new Paragraph();
             IElement elTest2 = new Paragraph();
             List<IElement> elem1 = new List<IElement>();
@@ -40,23 +41,11 @@ namespace StubRepository
             //container2.Elements = elem1;
             List<Container> cont1 = new List<Container>() { container1, container2 };
             List<Container> cont2 = new List<Container>() { container1, container1, container1 };
-            List<Resume> result = new List<Resume>();
             Resume test = new Resume("CVtest1");
             Resume test2 = new Resume("CVtest2");
             test.Containers = cont2;
             test2.Containers = cont1;
             result.Add(test);
-            result.Add(test);
-            result.Add(test2);
-            result.Add(test);
-            result.Add(test);
-            result.Add(test2);
-            result.Add(test);
-            result.Add(test);
-            result.Add(test);
-            result.Add(test2);
-            result.Add(test);
-            result.Add(test2);
             result.Add(test2);
             return result;
         }

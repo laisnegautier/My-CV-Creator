@@ -316,7 +316,8 @@
             this.emptyLabel.Name = "emptyLabel";
             this.emptyLabel.Size = new System.Drawing.Size(634, 86);
             this.emptyLabel.TabIndex = 0;
-            this.emptyLabel.Text = "Vous n\'avez pas de CV enregistés";
+            this.emptyLabel.Text = "Vous n\'avez pas de CV enregistrés";
+            this.emptyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainView
             // 

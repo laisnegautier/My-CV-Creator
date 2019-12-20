@@ -25,6 +25,12 @@ namespace App.Presenter
             _resumeRepository = resumeRepository;
             _view = view;
             _view.Presenter = this;
+
+            LoadResume();
+        }
+
+        public void LoadResume()
+        {
             Resumes = _resumeRepository.GetAll();
 
             ResumesView = new List<ResumeMiniaturePic>();
@@ -34,7 +40,12 @@ namespace App.Presenter
                 rsmMP.FavButton.Click += Fav_OnClick;
                 ResumesView.Add(rsmMP);
             }
-            _view.Resumes = ResumesView;
+            if (ResumesView.Count == 0) _view.EmptyLabel.Show();
+            else
+            {
+                _view.EmptyLabel.Hide();
+                _view.Resumes = ResumesView;
+            }
         }
 
         public void Fav_OnClick(object sender, EventArgs e)
@@ -75,17 +86,23 @@ namespace App.Presenter
             IResumeRepository resumeRepo = _resumeRepository;
             editForm.CurrentResume = new Resume();
 
+            DialogResult choice = DialogResult.None;
+
             SmallTextEditor titleEditor = new SmallTextEditor();
             titleEditor.Disposed += (s, e) =>
             {
                 editForm.CurrentResume = new Resume(titleEditor.TextValue);
+                choice = titleEditor.DialogResult;
             };
 
             titleEditor.Show("Title", "Give your new Resume a title !");
 
-            EditorPresenter editorPresenter = new EditorPresenter(resumeRepo, editForm);
-            editForm.Show();
-            _view.Close();
+            if(choice == DialogResult.OK || choice == DialogResult.Yes)
+            {
+                EditorPresenter editorPresenter = new EditorPresenter(resumeRepo, editForm);
+                editForm.Show();
+                _view.Close();
+            }
         }
 
         public void Delete()
@@ -96,9 +113,8 @@ namespace App.Presenter
                 if (result == DialogResult.OK || result == DialogResult.Yes)
                 {
                     _resumeRepository.Delete(currentResume.Resume);
-                    ResumesView.Remove(currentResume);
                     currentResume = null;
-                    _view.Resumes = ResumesView;
+                    LoadResume();
                 }
             }
                 

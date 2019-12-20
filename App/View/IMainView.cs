@@ -16,5 +16,6 @@ namespace App.View
         DialogResult ConfirmDelete(string title);
         void Close();
         DialogResult ConfirmCopy(string title);
+        Label EmptyLabel { get; }
     }
 }

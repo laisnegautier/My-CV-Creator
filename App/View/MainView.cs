@@ -21,7 +21,7 @@ namespace App
 
         #region IMainView
         public MainPresenter Presenter { private get; set; }
-
+        public Label EmptyLabel { get { return emptyLabel; } }
         List<ResumeMiniaturePic> IMainView.Resumes
         {
             set
@@ -41,6 +41,7 @@ namespace App
         public MainView()
         {
             InitializeComponent();
+            emptyLabel.Hide();
             SetUpDesing();
             addPicture.Parent = addButton;
             editPicture.Parent = editButton;

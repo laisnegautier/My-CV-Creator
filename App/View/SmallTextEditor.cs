@@ -90,6 +90,7 @@ namespace App.Widgets
         {
             if (editBox.Text != null && editBox.Text != "" && editBox.Text != initValue)
             {
+                DialogResult = DialogResult.OK;
                 TextValue = editBox.Text;
                 Dispose();
             }
