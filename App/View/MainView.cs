@@ -214,7 +214,7 @@ namespace App
             CustomMessageBox confirmDeleterMsgBox = new CustomMessageBox();
             confirmDeleterMsgBox.Disposed += (s, e) => { dialogResult = confirmDeleterMsgBox.choice; };
             confirmDeleterMsgBox.Show("Are you sure you want to delete this container ?",title);
-            //DialogResult dialogResult = MessageBox.Show("Voulez vous supprimer ce CV ?", title, MessageBoxButtons.YesNo);
+
             return dialogResult;
         }
 
@@ -223,7 +223,7 @@ namespace App
             DialogResult dialogResult = DialogResult.None;
             CustomMessageBox confirmCopyMsgBox = new CustomMessageBox();
             confirmCopyMsgBox.Disposed += (s, e) => { dialogResult = confirmCopyMsgBox.choice; };
-            confirmCopyMsgBox.Show("Are you sure you want to delete this resume ?", title);
+            confirmCopyMsgBox.Show("Are you sure you want to copy this resume ?", title);
 
             return dialogResult;
         }
