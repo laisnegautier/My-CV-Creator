@@ -30,9 +30,17 @@ namespace App.Presenter
             ResumesView = new List<ResumeMiniaturePic>();
             foreach (Resume resume in Resumes)
             {
-                ResumesView.Add(new ResumeMiniaturePic(resume));
+                ResumeMiniaturePic rsmMP = new ResumeMiniaturePic(resume);
+                rsmMP.FavButton.Click += Fav_OnClick;
+                ResumesView.Add(rsmMP);
             }
             _view.Resumes = ResumesView;
+        }
+
+        public void Fav_OnClick(object sender, EventArgs e)
+        {
+            SetCurrentResume(((Button)sender).Parent.Parent, e);
+            _resumeRepository.Save(currentResume.Resume);
         }
 
         public void SetCurrentResume(object sender, EventArgs eventArgs)
