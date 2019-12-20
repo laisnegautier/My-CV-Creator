@@ -34,7 +34,7 @@
             this.upButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.downButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.switchButton = new System.Windows.Forms.Button();
             this.controlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             // 
             this.controlPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.controlPanel.BackColor = System.Drawing.Color.Gainsboro;
-            this.controlPanel.Controls.Add(this.button1);
+            this.controlPanel.Controls.Add(this.switchButton);
             this.controlPanel.Controls.Add(this.upButton);
             this.controlPanel.Controls.Add(this.deleteButton);
             this.controlPanel.Controls.Add(this.downButton);
@@ -98,17 +98,17 @@
             this.downButton.TabIndex = 1;
             this.downButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // switchButton
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 34);
-            this.button1.TabIndex = 5;
-            this.button1.UseVisualStyleBackColor = true;
+            this.switchButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchButton.BackgroundImage")));
+            this.switchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.switchButton.FlatAppearance.BorderSize = 0;
+            this.switchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.switchButton.Location = new System.Drawing.Point(0, 0);
+            this.switchButton.Name = "switchButton";
+            this.switchButton.Size = new System.Drawing.Size(35, 34);
+            this.switchButton.TabIndex = 5;
+            this.switchButton.UseVisualStyleBackColor = true;
             // 
             // TextDrop
             // 
@@ -132,6 +132,6 @@
         private System.Windows.Forms.Button upButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button downButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button switchButton;
     }
 }

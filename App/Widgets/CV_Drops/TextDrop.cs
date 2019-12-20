@@ -54,7 +54,7 @@ namespace App.Widgets
         public Button UpButton { get { return upButton; } }
         public Button DownButton { get { return downButton; } }
         public Button DeleteButton { get { return deleteButton; } }
-        public Button RenderButton { get { return null; } } // Ajouter le render button
+        public Button SwitchButton { get { return switchButton; } } // Ajouter le render button
         #endregion
 
         public Label EditableText { get { return editableText; } }
@@ -85,24 +85,22 @@ namespace App.Widgets
 
         public TextDrop(Paragraph p) : this()
         {
-            //InitializeComponent();
             Content = p;
-            //IsSelected = false;
-            editableText.TextAlign = ContentAlignment.MiddleCenter;
+            editableText.TextAlign = ContentAlignment.MiddleLeft;
         }
 
         public TextDrop(H1 title) : this()
         {
             Content = title;
-            editableText.Font = new Font("Arial", 24);
-            editableText.TextAlign = ContentAlignment.MiddleLeft;
+            editableText.Font = new Font("Arial", 20);
+            editableText.TextAlign = ContentAlignment.TopLeft;
         }
 
         public TextDrop(H2 title) : this()
         {
             Content = title;
-            editableText.Font = new Font("Arial", 20);
-            editableText.TextAlign = ContentAlignment.MiddleLeft;
+            editableText.Font = new Font("Arial", 18);
+            editableText.TextAlign = ContentAlignment.TopLeft;
         }
         
         public TextDrop(Date date) : this()
@@ -118,6 +116,9 @@ namespace App.Widgets
             // Displaying the container control panel
             if (IsSelected) controlPanel.Show();
             else controlPanel.Hide();
+            // Display switch
+            if (Content.VisibilityParser) switchButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\switchOn.png");
+            else switchButton.BackgroundImage = Image.FromFile(@"..\..\..\Ressources\switchOff.png");
             // Painting the border
             TextDrop pd = (TextDrop)sender;
             if (IsSelected) ControlPaint.DrawBorder(e.Graphics, pd.ClientRectangle,
@@ -131,6 +132,15 @@ namespace App.Widgets
         public void InitializeButton()
         {
             // Créer une fonction générique
+            #region SwitchButton
+            switchButton.FlatAppearance.MouseOverBackColor = switchButton.BackColor;
+            switchButton.BackColorChanged += (s, e) =>
+            {
+                switchButton.FlatAppearance.MouseOverBackColor = switchButton.BackColor;
+                switchButton.FlatAppearance.MouseDownBackColor = switchButton.BackColor;
+            };
+            #endregion
+
             #region UpButton
             upButton.FlatAppearance.MouseOverBackColor = upButton.BackColor;
             upButton.BackColorChanged += (s, e) =>

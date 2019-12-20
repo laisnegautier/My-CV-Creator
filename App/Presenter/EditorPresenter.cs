@@ -168,7 +168,7 @@ namespace App.Presenter
                 td.UpButton.Click += MoveElementUp;
                 td.DownButton.Click += MoveElementDown;
                 td.DeleteButton.Click += DeleteElement;
-                
+                td.SwitchButton.Click += SwitchElementStatus;
             }
             return height;
         }
@@ -217,6 +217,13 @@ namespace App.Presenter
         #endregion
 
         #region Element Managers
+        public void SwitchElementStatus(object sender, EventArgs e)
+        {
+            TextDrop td = (TextDrop)((Button)sender).Parent.Parent;
+            td.Content.VisibilityParser = !td.Content.VisibilityParser;
+            td.Refresh();
+        }
+
         public void MoveElementUp(object sender, EventArgs e)
         {
             bool moved = false;
@@ -420,6 +427,7 @@ namespace App.Presenter
         public void DealDragDropElement(IElement element ,ContainerDrop targetContainer)
         {
             CurrentSelection = targetContainer;
+            element.VisibilityParser = true;
             // Gestion de l'ajout d'un nouveau paragraph à un CV
             if(element is Paragraph)
             {
@@ -429,17 +437,12 @@ namespace App.Presenter
                                   "sed, dolor.Cras elementum ultrices diam. Maecenas ligula massa, varius a," +
                                   "semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie," +
                                   "enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.";
-                //ParagraphDrop pd = new ParagraphDrop((Paragraph)element);
-                //if (pd.Content.Content == "" || pd.Content.Content == null) pd.TextValue = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.";
-                // Ajout graphique
-                //targetContainer.ElementPanel.Controls.Add(pd);
-                //pd.Width = ((ContainerDrop)pd.Parent).ElementPanel.Width;
-                // Ajout dans le CV
                 targetContainer.Content.Elements.Add(element);
                 active.Container = targetContainer.Content;
                 RenderResume();
             }
-            if(element is H1)
+
+            if (element is H1)
             {
                 H1 active = (H1)element;
                 active.Content = "- Titre 1 -";
@@ -447,7 +450,8 @@ namespace App.Presenter
                 active.Container = targetContainer.Content;
                 RenderResume();
             }
-            if(element is H2)
+
+            if (element is H2)
             {
                 H2 active = (H2)element;
                 active.Content = "- Titre 2 -";
@@ -455,7 +459,8 @@ namespace App.Presenter
                 active.Container = targetContainer.Content;
                 RenderResume();
             }
-            if(element is Date)
+
+            if (element is Date)
             {
                 Date active = (Date)element;
                 active.Content = DateTime.Today;
