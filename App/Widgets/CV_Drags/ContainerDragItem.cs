@@ -15,6 +15,7 @@ namespace App.Widgets
     {
         Domain.Container Content { get; set; }
         public Label Description { get { return contDragItemDescp; } }
+        Label feedBack = new Label();
 
         public ContainerDragItem(Domain.Container content)
         {
@@ -29,6 +30,12 @@ namespace App.Widgets
 
             MouseEnter += Item_OnMouseEnter;
             MouseLeave += Item_OnMouseLeave;
+            GiveFeedback += OnGiveFeedBack;
+
+            feedBack.Text = content.Name;
+            BackColor = Color.FromArgb(48, 48, 48);
+            ForeColor = Color.White;
+            feedBack.Hide();
         }
 
         public void OnMouseDown(object sender, MouseEventArgs e)
@@ -45,7 +52,12 @@ namespace App.Widgets
             DoDragDrop(Content, DragDropEffects.Copy);
         }
 
-
+        // Pourquoi ca marche pas ???
+        public void OnGiveFeedBack(object sender, EventArgs e)
+        {
+            feedBack.Show();
+            feedBack.Location = Cursor.Position;
+        }
 
         #region Shadows
         private void DropShadow(object sender, PaintEventArgs e)

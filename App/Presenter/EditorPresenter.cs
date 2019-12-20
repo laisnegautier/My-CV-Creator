@@ -82,6 +82,7 @@ namespace App.Presenter
                 _view.DefaultSectionPanel.Controls.Add(DraggablePic);
                 DraggablePic.Width = _view.DefaultSectionPanel.Width - 20;
                 DraggablePic.Left = _view.DefaultSectionPanel.Left + 10;
+                
             }
             // Adding the defaults elements
             for (int i = 0; i < basicElements.Count; i++)
@@ -144,7 +145,7 @@ namespace App.Presenter
             return defaultElement;
         }
         #endregion
-
+        
         // A segmenter en rendu des containers et des elements
         #region MainRenderers
         public void RenderResume()
