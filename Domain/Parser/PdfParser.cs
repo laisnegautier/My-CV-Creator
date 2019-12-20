@@ -36,10 +36,10 @@ namespace Domain
         {
             bool success = false;
             
-                    iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4.Rotate());
-             try
-             {
-                PdfWriter.GetInstance(doc, new FileStream(DocumentName, FileMode.Create));
+            iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4);
+            try
+            {
+                PdfWriter.GetInstance(doc, new FileStream(DocumentName + ".pdf", FileMode.Create));
                 doc.Open();
                 doc.Add(new iTextSharp.text.Paragraph(Content));
 
@@ -68,7 +68,6 @@ namespace Domain
             catch (Exception e)
             {
                 success = false;
-
             }
             finally
             {
