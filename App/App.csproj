@@ -140,7 +140,9 @@
       <DependentUpon>EditorView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\IMainView.cs" />
-    <Compile Include="View\MainView.cs" />
+    <Compile Include="View\MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
