@@ -443,8 +443,9 @@ namespace App.Presenter
             try
             {
                 Container _container = (Container)e.Data.GetData(e.Data.GetFormats()[0]);
-                ContainerDrop c = new ContainerDrop(_container.Copy());
-                _currentResume.Containers.Add(_container.Copy());
+                _container = _container.Copy();
+                ContainerDrop c = new ContainerDrop(_container);
+                _currentResume.Containers.Add(_container);
                 _container.Resume = _currentResume;
                 RenderResume();
             }

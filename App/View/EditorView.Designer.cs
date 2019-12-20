@@ -40,17 +40,17 @@
             this.ToPdfButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.minimizeButton = new App.RoundButton();
+            this.closeButton = new App.RoundButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.containerExp = new System.Windows.Forms.Label();
             this.favSectionPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.defaultSectionPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.defaultElementPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.resumeEditorPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.minimizeButton = new App.RoundButton();
-            this.closeButton = new App.RoundButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.elementExp = new System.Windows.Forms.Label();
             this.headerPanelLogo.SuspendLayout();
             this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.htmlPicture)).BeginInit();
@@ -216,88 +216,6 @@
             this.panel1.Size = new System.Drawing.Size(129, 45);
             this.panel1.TabIndex = 16;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(89)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 582);
-            this.panel3.TabIndex = 8;
-            // 
-            // leftPanel
-            // 
-            this.leftPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.leftPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.leftPanel.Controls.Add(this.label2);
-            this.leftPanel.Controls.Add(this.label1);
-            this.leftPanel.Controls.Add(this.favSectionPanel);
-            this.leftPanel.Controls.Add(this.defaultSectionPanel);
-            this.leftPanel.Controls.Add(this.panel3);
-            this.leftPanel.Location = new System.Drawing.Point(0, 44);
-            this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(337, 582);
-            this.leftPanel.TabIndex = 11;
-            // 
-            // favSectionPanel
-            // 
-            this.favSectionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.favSectionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.favSectionPanel.Location = new System.Drawing.Point(16, 253);
-            this.favSectionPanel.Name = "favSectionPanel";
-            this.favSectionPanel.Size = new System.Drawing.Size(318, 315);
-            this.favSectionPanel.TabIndex = 10;
-            // 
-            // defaultSectionPanel
-            // 
-            this.defaultSectionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.defaultSectionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.defaultSectionPanel.ForeColor = System.Drawing.Color.White;
-            this.defaultSectionPanel.Location = new System.Drawing.Point(16, 28);
-            this.defaultSectionPanel.Name = "defaultSectionPanel";
-            this.defaultSectionPanel.Size = new System.Drawing.Size(318, 193);
-            this.defaultSectionPanel.TabIndex = 9;
-            // 
-            // rightPanel
-            // 
-            this.rightPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.rightPanel.Controls.Add(this.defaultElementPanel);
-            this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rightPanel.Location = new System.Drawing.Point(919, 45);
-            this.rightPanel.Name = "rightPanel";
-            this.rightPanel.Size = new System.Drawing.Size(233, 579);
-            this.rightPanel.TabIndex = 12;
-            // 
-            // defaultElementPanel
-            // 
-            this.defaultElementPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.defaultElementPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.defaultElementPanel.Location = new System.Drawing.Point(3, 7);
-            this.defaultElementPanel.Name = "defaultElementPanel";
-            this.defaultElementPanel.Size = new System.Drawing.Size(227, 560);
-            this.defaultElementPanel.TabIndex = 0;
-            // 
-            // resumeEditorPanel
-            // 
-            this.resumeEditorPanel.AllowDrop = true;
-            this.resumeEditorPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.resumeEditorPanel.AutoScroll = true;
-            this.resumeEditorPanel.Location = new System.Drawing.Point(343, 52);
-            this.resumeEditorPanel.Name = "resumeEditorPanel";
-            this.resumeEditorPanel.Size = new System.Drawing.Size(570, 535);
-            this.resumeEditorPanel.TabIndex = 13;
-            this.resumeEditorPanel.DragDrop += new System.Windows.Forms.DragEventHandler(this.OnDragDrop);
-            this.resumeEditorPanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnDragEnter);
-            this.resumeEditorPanel.DragOver += new System.Windows.Forms.DragEventHandler(this.OnDragOver);
-            // 
             // minimizeButton
             // 
             this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -328,27 +246,108 @@
             this.closeButton.MouseEnter += new System.EventHandler(this.CloseButton_Enter);
             this.closeButton.MouseLeave += new System.EventHandler(this.CloseButton_Leave);
             // 
-            // label1
+            // panel3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(19, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 19);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Drag a section on your resume to add it";
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(89)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(10, 582);
+            this.panel3.TabIndex = 8;
             // 
-            // label2
+            // leftPanel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(19, 231);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(260, 19);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Drag a section on your resume to add it";
+            this.leftPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.leftPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.leftPanel.Controls.Add(this.containerExp);
+            this.leftPanel.Controls.Add(this.favSectionPanel);
+            this.leftPanel.Controls.Add(this.defaultSectionPanel);
+            this.leftPanel.Controls.Add(this.panel3);
+            this.leftPanel.Location = new System.Drawing.Point(0, 44);
+            this.leftPanel.Name = "leftPanel";
+            this.leftPanel.Size = new System.Drawing.Size(337, 582);
+            this.leftPanel.TabIndex = 11;
+            // 
+            // containerExp
+            // 
+            this.containerExp.AutoSize = true;
+            this.containerExp.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.containerExp.ForeColor = System.Drawing.Color.White;
+            this.containerExp.Location = new System.Drawing.Point(19, 6);
+            this.containerExp.Name = "containerExp";
+            this.containerExp.Size = new System.Drawing.Size(260, 19);
+            this.containerExp.TabIndex = 11;
+            this.containerExp.Text = "Drag a section on your resume to add it";
+            // 
+            // favSectionPanel
+            // 
+            this.favSectionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.favSectionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.favSectionPanel.Location = new System.Drawing.Point(16, 253);
+            this.favSectionPanel.Name = "favSectionPanel";
+            this.favSectionPanel.Size = new System.Drawing.Size(318, 315);
+            this.favSectionPanel.TabIndex = 10;
+            // 
+            // defaultSectionPanel
+            // 
+            this.defaultSectionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.defaultSectionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.defaultSectionPanel.ForeColor = System.Drawing.Color.White;
+            this.defaultSectionPanel.Location = new System.Drawing.Point(16, 28);
+            this.defaultSectionPanel.Name = "defaultSectionPanel";
+            this.defaultSectionPanel.Size = new System.Drawing.Size(318, 193);
+            this.defaultSectionPanel.TabIndex = 9;
+            // 
+            // rightPanel
+            // 
+            this.rightPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.rightPanel.Controls.Add(this.elementExp);
+            this.rightPanel.Controls.Add(this.defaultElementPanel);
+            this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rightPanel.Location = new System.Drawing.Point(919, 45);
+            this.rightPanel.Name = "rightPanel";
+            this.rightPanel.Size = new System.Drawing.Size(233, 579);
+            this.rightPanel.TabIndex = 12;
+            // 
+            // defaultElementPanel
+            // 
+            this.defaultElementPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.defaultElementPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.defaultElementPanel.Location = new System.Drawing.Point(3, 55);
+            this.defaultElementPanel.Name = "defaultElementPanel";
+            this.defaultElementPanel.Size = new System.Drawing.Size(227, 512);
+            this.defaultElementPanel.TabIndex = 0;
+            // 
+            // resumeEditorPanel
+            // 
+            this.resumeEditorPanel.AllowDrop = true;
+            this.resumeEditorPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resumeEditorPanel.AutoScroll = true;
+            this.resumeEditorPanel.Location = new System.Drawing.Point(343, 52);
+            this.resumeEditorPanel.Name = "resumeEditorPanel";
+            this.resumeEditorPanel.Size = new System.Drawing.Size(570, 535);
+            this.resumeEditorPanel.TabIndex = 13;
+            this.resumeEditorPanel.DragDrop += new System.Windows.Forms.DragEventHandler(this.OnDragDrop);
+            this.resumeEditorPanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnDragEnter);
+            this.resumeEditorPanel.DragOver += new System.Windows.Forms.DragEventHandler(this.OnDragOver);
+            // 
+            // elementExp
+            // 
+            this.elementExp.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.elementExp.ForeColor = System.Drawing.Color.White;
+            this.elementExp.Location = new System.Drawing.Point(3, 3);
+            this.elementExp.Name = "elementExp";
+            this.elementExp.Size = new System.Drawing.Size(227, 47);
+            this.elementExp.TabIndex = 12;
+            this.elementExp.Text = "Drag an element on a section to add it";
             // 
             // EditorView
             // 
@@ -401,8 +400,8 @@
         private System.Windows.Forms.PictureBox savePicture;
         private System.Windows.Forms.PictureBox htmlPicture;
         private System.Windows.Forms.PictureBox pdfPicture;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label containerExp;
+        private System.Windows.Forms.Label elementExp;
     }
 }
 
