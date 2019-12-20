@@ -87,7 +87,7 @@
             this.copyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.copyButton.FlatAppearance.BorderSize = 0;
             this.copyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.copyButton.Location = new System.Drawing.Point(18, 185);
+            this.copyButton.Location = new System.Drawing.Point(18, 192);
             this.copyButton.Name = "copyButton";
             this.copyButton.Size = new System.Drawing.Size(34, 33);
             this.copyButton.TabIndex = 5;
@@ -100,7 +100,7 @@
             this.upButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.upButton.FlatAppearance.BorderSize = 0;
             this.upButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.upButton.Location = new System.Drawing.Point(18, 52);
+            this.upButton.Location = new System.Drawing.Point(18, 78);
             this.upButton.Name = "upButton";
             this.upButton.Size = new System.Drawing.Size(34, 34);
             this.upButton.TabIndex = 4;
@@ -113,7 +113,7 @@
             this.favButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.favButton.FlatAppearance.BorderSize = 0;
             this.favButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.favButton.Location = new System.Drawing.Point(18, 12);
+            this.favButton.Location = new System.Drawing.Point(18, 38);
             this.favButton.Name = "favButton";
             this.favButton.Size = new System.Drawing.Size(34, 34);
             this.favButton.TabIndex = 3;
@@ -125,7 +125,7 @@
             this.deleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.deleteButton.FlatAppearance.BorderSize = 0;
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteButton.Location = new System.Drawing.Point(18, 135);
+            this.deleteButton.Location = new System.Drawing.Point(18, 151);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(34, 33);
             this.deleteButton.TabIndex = 2;
@@ -137,7 +137,7 @@
             this.downButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.downButton.FlatAppearance.BorderSize = 0;
             this.downButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.downButton.Location = new System.Drawing.Point(18, 89);
+            this.downButton.Location = new System.Drawing.Point(18, 115);
             this.downButton.Name = "downButton";
             this.downButton.Size = new System.Drawing.Size(34, 36);
             this.downButton.TabIndex = 1;
