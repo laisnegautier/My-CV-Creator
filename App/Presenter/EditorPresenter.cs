@@ -13,16 +13,16 @@ namespace App.Presenter
     public class EditorPresenter
     {
         enum Editable { ContTitle, H1, H2 };
+
         #region Attributes
         private IResumeRepository _resumeRepo;
         private EditorView _view;
         private Resume _currentResume;
         public bool save = true;
-        // On ne peut selectionner qu'un element d'interface à la fois
         private object _currentElementSelected;
-
         #endregion
 
+        #region Properties
         private object CurrentSelection
         {
             get { return _currentElementSelected; }
@@ -48,7 +48,9 @@ namespace App.Presenter
                 ((Control)_currentElementSelected).Refresh();
             }
         }
+        #endregion
 
+        #region Construct
         public EditorPresenter(IResumeRepository resumeRepo, EditorView editForm)
         {
             _resumeRepo = resumeRepo;
@@ -56,6 +58,7 @@ namespace App.Presenter
             _view.Presenter = this;
             _currentResume = _view.CurrentResume;
         }
+        #endregion
 
         // A segmenter en rendu des containers et des elements
         #region MainRenderers
