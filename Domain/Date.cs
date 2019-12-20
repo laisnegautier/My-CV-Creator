@@ -32,7 +32,7 @@ namespace Domain
         public Date()
         {
             VisibilityParser = true;
-            Size = 14;
+            Size = 11;
             Bold = true;
             Content = DateTime.Now;
             ForegroundColor = "";
@@ -54,7 +54,7 @@ namespace Domain
         #region Methods
         public override string ToString()
         {
-            return Content.Day + "/" + Content.Month + "/" + Content.Year;
+            return Content.ToString("MM/yyyy");
         }
 
         /// <summary>
@@ -81,9 +81,9 @@ namespace Domain
             string style = "";
             style += (Italic ? "font-style: italic;" : "");
             style += (Bold ? "font-weight: 700;" : "");
-            style += "font-size: " + Size + "px";
-            style += "color: " + ForegroundColor;
-            style += "background-color: " + BackgroundColor;
+            style += "font-size: " + Size + "px;";
+            style += "color: " + ForegroundColor + ";" ;
+            style += "background-color: " + BackgroundColor + ";";
 
             return style;
         }

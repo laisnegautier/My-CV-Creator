@@ -12,6 +12,10 @@ namespace DAL.Tests
     [TestClass()]
     public class ResumeRepositoryTests
     {
+
+        /// <summary>
+        /// 1st method that test insertion into database and create some background to work on
+        /// </summary>
         [TestMethod()]
         public void Resume1CreationDatabase()
         {
@@ -123,6 +127,88 @@ namespace DAL.Tests
 
 
             testResume.Save(cvJulien);
+        }
+
+        /// <summary>
+        /// 2nd method that test insertion into database and create some background to work on
+        /// </summary>
+        [TestMethod()]
+        public void Resume2CreationDatabase()
+        {
+            IResumeRepository testResume;
+            testResume = new ResumeRepository();
+
+            // EMPTY RESUME-TEST
+            Resume cvSylvie = new Resume("CV de Sylvie");
+
+            testResume.Save(cvSylvie);
+
+            // ADDING CONTAINERS
+            Container contact = new Container("Information", cvSylvie);
+            Container formations = new Container("Mon parcours", cvSylvie);
+            Container experiences = new Container("Mes Expériences", cvSylvie);
+            Container competences = new Container("Mes Compétences", cvSylvie);
+            Container interets = new Container("Intérêts", cvSylvie);
+            cvSylvie.Containers.Add(contact);
+            cvSylvie.Containers.Add(formations);
+            cvSylvie.Containers.Add(experiences);
+            cvSylvie.Containers.Add(competences);
+            cvSylvie.Containers.Add(interets);
+
+            testResume.Save(cvSylvie);
+
+            // ADDING ELEMENTS IN EACH CONTAINER
+            H1 nomPrenom = new H1("Sylvie LAISNE", contact);
+            H2 age = new H2("12 ans, né le 23/12/20..", contact);
+            Paragraph adresse = new Paragraph("4 Rue de la GLog 76000 ROUEN", contact);
+            Paragraph telephone = new Paragraph("07 12 12 12 12", contact);
+            Paragraph mail = new Paragraph("sylvie.vie@fatal.com", contact);
+            contact.Elements.Add(nomPrenom);
+            contact.Elements.Add(age);
+            contact.Elements.Add(adresse);
+            contact.Elements.Add(telephone);
+            contact.Elements.Add(mail);
+
+
+            Date bacDate = new Date(DateTime.Now, formations);
+            Paragraph bac = new Paragraph("Baccalauréat L parcours Musique et Danse", formations);
+            formations.Elements.Add(bacDate);
+            formations.Elements.Add(bac);
+
+
+            H2 langues = new H2("Langues écrites et parlées", competences);
+            Paragraph langue1 = new Paragraph("Anglais - Courant (TOEIC : 900/900 en 2012)", competences);
+            Paragraph langue2 = new Paragraph("Allemand - Confirmé", competences);
+            Paragraph langue3 = new Paragraph("Chinois - Débutant", competences);
+            competences.Elements.Add(langues);
+            competences.Elements.Add(langue1);
+            competences.Elements.Add(langue2);
+            competences.Elements.Add(langue3);
+            H2 informatique = new H2("Informatique", competences);
+            Paragraph outilsInformatique1 = new Paragraph("Word", competences);
+            Paragraph outilsInformatique2 = new Paragraph("Protégé", competences);
+            competences.Elements.Add(informatique);
+            competences.Elements.Add(outilsInformatique1);
+            competences.Elements.Add(outilsInformatique2);
+
+
+            Date jobDate = new Date(DateTime.Now);
+            jobDate.Container = experiences;
+            H2 jobTitre = new H2("Job d'été", experiences);
+            Paragraph jobFonction = new Paragraph("Vendanges", experiences);
+            jobFonction.Italic = true;
+            Paragraph jobDescription = new Paragraph("A joué avec des renards toute la journée.", experiences);
+            experiences.Elements.Add(jobDate);
+            experiences.Elements.Add(jobTitre);
+            experiences.Elements.Add(jobFonction);
+            experiences.Elements.Add(jobDescription);
+
+            H2 musique = new H2("Musique", interets);
+            Paragraph cithar = new Paragraph("Joue du cithar des fois", interets);
+            interets.Elements.Add(musique);
+            interets.Elements.Add(cithar);
+
+            testResume.Save(cvSylvie);
         }
 
         [TestMethod()]
