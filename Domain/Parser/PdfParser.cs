@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 
 using System.IO;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
+using IronPdf;
 
 namespace Domain
 {
@@ -35,43 +34,20 @@ namespace Domain
         public bool Parse()
         {
             bool success = false;
-            
-            iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4);
+
             try
             {
-                PdfWriter.GetInstance(doc, new FileStream(DocumentName + ".pdf", FileMode.Create));
-                doc.Open();
-                doc.Add(new iTextSharp.text.Paragraph(Content));
+                var Renderer = new IronPdf.HtmlToPdf();
 
-                if (Resume.Containers.Count > 0)
-                    foreach (Container c in Resume.Containers)
-                    {
-                        doc.Add(new iTextSharp.text.Paragraph(c.Name));
-
-                        if (c.VisibilityParser && c.Elements.Count > 0)
-                        {
-                            Content += c.Name;
-
-                            foreach (IElement e in c.Elements)
-                                if (e.VisibilityParser)
-                                {
-                                    if (e is Line) doc.Add(new iTextSharp.text.Paragraph(e.ToString()));
-                                    else if (e is Paragraph) doc.Add(new iTextSharp.text.Paragraph(e.ToString()));
-                                    else if (e is H1) doc.Add(new iTextSharp.text.Paragraph(e.ToString()));
-                                    else if (e is H2) doc.Add(new iTextSharp.text.Paragraph(e.ToString()));
-                                    else if (e is Date) doc.Add(new iTextSharp.text.Paragraph(e.ToString()));
-                                    Content += e.ToString() + "\n";
-                                }
-                        }
-                    }
+                IParser ToHTML = new HtmlParser(Resume, "convertion");
+                ((HtmlParser)ToHTML).Parse(100);
+                var doc = Renderer.RenderHTMLFileAsPdf("convertion.html");
+                
+                doc.SaveAs(DocumentName + ".pdf");
             }
             catch (Exception e)
             {
                 success = false;
-            }
-            finally
-            {
-                doc.Close();
             }
                 
             /*

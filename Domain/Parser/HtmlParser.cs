@@ -35,6 +35,11 @@ namespace Domain
         #region Methods
         public bool Parse()
         {
+            return this.Parse(50);
+        }
+
+        public bool Parse(int pageSize)
+        {
             bool success = false;
 
             string fileName = DocumentName + ".html";
@@ -45,7 +50,7 @@ namespace Domain
                 "<title>" + Resume.Title + "</title>" +
                 "<style>" +
                 "html{}" +
-                "body{width:70%;margin: auto;font-family: Calibri; background-color: white;}" +
+                "body{width:" + pageSize + "%;margin: auto;font-family: Calibri; background-color: white;}" +
                 "h1{line-height: 1.2ft}" +
                 "h2{line-height: 1.2ft; margin-top: 0px;}" +
                 ".entete{overflow: hidden; background: white; box-shadow: 5px 5px 0px lightgray; border-color: gray; font-size: 14px; border: 1px solid lightgray; padding: 0px; margin: 20px auto;}" +
@@ -65,11 +70,9 @@ namespace Domain
 
                     if (Resume.Containers.Count > 0)
                         foreach (Container c in Resume.Containers)
-                        {
-                            sw.WriteLine("<div class='entete'><div class='titreEntete'>" + c.Name + "</div><div class='contenu'>");
-
                             if (c.VisibilityParser && c.Elements.Count > 0)
                             {
+                                sw.WriteLine("<div class='entete'><div class='titreEntete'>" + c.Name + "</div><div class='contenu'>");
                                 Content += c.Name;
 
                                 foreach (IElement e in c.Elements)
@@ -83,9 +86,8 @@ namespace Domain
                                         Content += e.ToString() + "\n";
                                     }
 
+                                sw.WriteLine("</div></div>");
                             }
-                            sw.WriteLine("</div></div>");
-                        }
 
                     sw.WriteLine(bottom);
                 }
