@@ -54,3 +54,30 @@ C:\Users\simon\Documents\Cours 1A\projet-gl-audrix_laisne\StubRepository\obj\Deb
 C:\Users\simon\Documents\Cours 1A\projet-gl-audrix_laisne\StubRepository\obj\Debug\netstandard2.0\StubRepository.csproj.CopyComplete
 C:\Users\simon\Documents\Cours 1A\projet-gl-audrix_laisne\StubRepository\obj\Debug\netstandard2.0\StubRepository.dll
 C:\Users\simon\Documents\Cours 1A\projet-gl-audrix_laisne\StubRepository\obj\Debug\netstandard2.0\StubRepository.pdb
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\MySql.Data.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\hibernate.cfg.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\StubRepository.deps.json
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\StubRepository.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\StubRepository.pdb
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\DAL.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\Domain.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\NHibernate.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\IronPdf.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\Remotion.Linq.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\Remotion.Linq.EagerFetching.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\Antlr3.Runtime.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\Iesi.Collections.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\DAL.pdb
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\Domain.pdb
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\NHibernate.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\IronPdf.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\Remotion.Linq.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\Remotion.Linq.EagerFetching.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\Antlr3.Runtime.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\bin\Debug\netstandard2.0\Iesi.Collections.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\obj\Debug\netstandard2.0\StubRepository.csprojAssemblyReference.cache
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\obj\Debug\netstandard2.0\StubRepository.AssemblyInfoInputs.cache
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\obj\Debug\netstandard2.0\StubRepository.AssemblyInfo.cs
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\obj\Debug\netstandard2.0\StubRepository.csproj.CopyComplete
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\obj\Debug\netstandard2.0\StubRepository.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\StubRepository\obj\Debug\netstandard2.0\StubRepository.pdb

@@ -63,3 +63,25 @@ C:\Users\simon\Documents\Cours 1A\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.cspr
 C:\Users\simon\Documents\Cours 1A\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\simon\Documents\Cours 1A\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.dll
 C:\Users\simon\Documents\Cours 1A\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.pdb
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\MySql.Data.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\hibernate.cfg.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\DAL.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\DAL.pdb
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\Antlr3.Runtime.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\Domain.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\Iesi.Collections.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\NHibernate.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\Remotion.Linq.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\Remotion.Linq.EagerFetching.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\IronPdf.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\Domain.pdb
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\Antlr3.Runtime.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\Iesi.Collections.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\NHibernate.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\Remotion.Linq.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\Remotion.Linq.EagerFetching.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\bin\Debug\IronPdf.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\DAL\obj\Debug\DAL.pdb

@@ -37,3 +37,19 @@ C:\Users\simon\Documents\Cours 1A\projet-gl-audrix_laisne\Domain\obj\Debug\Domai
 C:\Users\simon\Documents\Cours 1A\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.csproj.CopyComplete
 C:\Users\simon\Documents\Cours 1A\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.dll
 C:\Users\simon\Documents\Cours 1A\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.pdb
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\bin\Debug\Domain.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\bin\Debug\Domain.pdb
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\bin\Debug\Common.Logging.Core.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\bin\Debug\Common.Logging.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\bin\Debug\IronPdf.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\bin\Debug\Common.Logging.pdb
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\bin\Debug\Common.Logging.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\bin\Debug\Common.Logging.Core.pdb
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\bin\Debug\Common.Logging.Core.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\bin\Debug\IronPdf.xml
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.dll
+C:\Users\Gautier\source\repos\projet-gl-audrix_laisne\Domain\obj\Debug\Domain.pdb
