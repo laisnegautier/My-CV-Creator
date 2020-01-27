@@ -71,7 +71,7 @@ namespace App.Presenter
             if (currentResume != null)
             {
                 EditorView editForm = new EditorView();
-                IResumeRepository resumeRepo = new StubRepository.ResumeRepository();
+                IResumeRepository resumeRepo = new ResumeRepository();
                 editForm.CurrentResume = currentResume.Resume;
                 EditorPresenter editorPresenter = new EditorPresenter(resumeRepo, editForm);
                 editForm.Show();

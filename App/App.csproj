@@ -38,7 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>7.1</LangVersion>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -217,10 +217,6 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{671856e4-bfe5-4254-bc8c-5dbed7a80f44}</Project>
       <Name>Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\StubRepository\StubRepository.csproj">
-      <Project>{9c736d04-1cf6-439f-a4b1-baa958d6e8c3}</Project>
-      <Name>StubRepository</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

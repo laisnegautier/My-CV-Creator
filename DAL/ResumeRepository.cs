@@ -45,7 +45,7 @@ namespace DAL
             try
             {
                 // This allows to build the creation date when insert and not override it when updating
-                if (resume.Id == default) resume.Creation = DateTime.Now;
+                if (resume.Id == default(int)) resume.Creation = DateTime.Now;
                 resume.LastUpdate = DateTime.Now;
 
                 // The object is indeed being saved/updated

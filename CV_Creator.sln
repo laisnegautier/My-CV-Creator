@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2036
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "App\App.csproj", "{5D8C4DA0-43EA-4D66-9E70-EADB3AF5D4B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{671856E4-BFE5-4254-BC8C-5DBED7A80F44}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{8CE50579-42DD-479E-9377-C2B344AEAA74}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StubRepository", "StubRepository\StubRepository.csproj", "{9C736D04-1CF6-439F-A4B1-BAA958D6E8C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALTests", "DALTests\DALTests.csproj", "{2641E101-17EB-4282-90F9-27E97A3B0081}"
 EndProject
@@ -31,10 +29,6 @@ Global
 		{8CE50579-42DD-479E-9377-C2B344AEAA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CE50579-42DD-479E-9377-C2B344AEAA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CE50579-42DD-479E-9377-C2B344AEAA74}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9C736D04-1CF6-439F-A4B1-BAA958D6E8C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9C736D04-1CF6-439F-A4B1-BAA958D6E8C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9C736D04-1CF6-439F-A4B1-BAA958D6E8C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9C736D04-1CF6-439F-A4B1-BAA958D6E8C3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2641E101-17EB-4282-90F9-27E97A3B0081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2641E101-17EB-4282-90F9-27E97A3B0081}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2641E101-17EB-4282-90F9-27E97A3B0081}.Release|Any CPU.ActiveCfg = Release|Any CPU
